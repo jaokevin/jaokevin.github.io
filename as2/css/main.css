@@ -62,6 +62,12 @@ h2{
     background-color: dimgray;
     width: 1200px;
     clear: both;
+    margin: 0px auto;
+
+}
+
+#footer p{
+    margin: 0px;
 }
 
 #about, #education, #experience, #course, #publication{
