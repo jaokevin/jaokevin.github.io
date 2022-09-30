@@ -28,26 +28,22 @@
         </div>
     </div>
 
-    <div id="nav" class="container-fluid">
+    <div class="container-fluid">
 
         <div class="row">
-            <div class="col-sm-4"><a href="#intro">自我介紹</a></div>
-            <div class="col-sm-4"><a href="#works">工作剪影</a></div>
-            <div class="col-sm-4"><a href="#homework">作業區</a></div>
-        </div>
 
-    </div>
+                <div id="nav" class="col-md-4"><a href="#intro">自我介紹</a></div>
+                <div id="nav" class="col-md-4"><a href="#works">工作剪影</a></div>
+                <div id="nav" class="col-md-4"><a href="#homework">作業區</a></div>
 
-    <div id="intro" class="container-fluid">
-        <h1 style="margin-bottom: 0px; font-weight: bold;">自我介紹</h1>
-    </div>
-    <div id="intro-content" class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
+            <div id="intro" class="col-md-12">
+                <h1 style="margin-bottom: 0px; font-weight: bold;">自我介紹</h1>
+            </div>
+            <div class="col-md-4" style="display: flex;align-items: center;">
                 <img src="../assets/myphoto.jpg" class="img-fluid" alt="一張圖片" style="object-fit: cover;">
             </div>
-            <div class="col-sm-8">
-                <h1 class="display-3 text-center" style="margin-top: 40px;"><b>饒 辰 書<br>Jao Chen-Shu</b></h1>
+            <div class="col-md-8">
+                <h1 class="display-3 text-center" style="margin-top: 20px;margin-bottom: 20px ;font-family: 'Noto Serif TC', serif;"><b>饒 辰 書<br>Jao Chen-Shu</b></h1>
                 <div class="alert alert-primary text-center" role="alert">求學經驗</div>
                 <p class="text-center">國立新竹中學</p>
                 <p class="text-center">國立臺灣師範大學社會教育學系</p>
@@ -57,57 +53,59 @@
                 <p class="text-center">台灣媒體觀察教育基金會PT</p>
                 <p class="text-center">臺師大校園記者</p>
             </div>
-        </div>
-    </div>
 
-    <div id="works" class="container-fluid">
-        <h1 style="margin-bottom: 0px; font-weight: bold;">工作剪影</h1>
-    </div>
-    <div id="works-content" class="container-fluid">
-        <div style="height: 30px;"></div>
-        <div class="lightbox">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="../assets/1.jpg" data-mdb-img="/assets/1.jpg" alt="Table Full of Spices"
-                        class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" />
-                    <img src="../assets/2.jpg" data-mdb-img="/assets/2.jpg" alt="Coconut with Strawberries"
-                        class="w-100 shadow-1-strong rounded" />
-                </div>
-                <div class="col-lg-6">
-                    <img src="../assets/3.PNG" data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
-                        alt="Dark Roast Iced Coffee" class="w-100 shadow-1-strong rounded" />
+            <div id="works" class="col-md-12">
+                <h1 style="margin-bottom: 0px; font-weight: bold;">工作剪影</h1>
+            </div>
+            <div class="col-md-12" style="height: 30px;"></div>
+
+            <div class="col-md-6">
+                <img src="../assets/1.jpg" data-mdb-img="/assets/1.jpg" alt="Table Full of Spices"
+                    class="w-100 mb-2 mb-md-4 shadow-1-strong rounded" />
+                <img src="../assets/2.jpg" data-mdb-img="/assets/2.jpg" alt="Coconut with Strawberries"
+                    class="w-100 mb-2 mb-md-4  shadow-1-strong rounded" />
+            </div>
+            <div class="col-md-6">
+                <img src="../assets/3.PNG" data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Vertical/1.webp"
+                    alt="Dark Roast Iced Coffee" class="w-100 mb-2 mb-md-4  shadow-1-strong rounded" />
+            </div>
+
+            <div id="homework" class="col-md-12">
+                <h1 style="margin-bottom: 0px; font-weight: bold;">作業區</h1>
+            </div>
+            <div class="col-md-12" style="height: 50px;"></div>
+            <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile02">
+                            <label class="custom-file-label" for="inputGroupFile02"
+                                aria-describedby="inputGroupFileAddon02">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-    <div id="homework" class="container-fluid">
-        <h1 style="margin-bottom: 0px; font-weight: bold;">作業區</h1>
-    </div>
-    <div id="homework-content" class="container-fluid">
-        <div style="height: 50px;"></div>
-        <div class="input-group mb-3">
-            <div class="input-group mb-3">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile02">
-                    <label class="custom-file-label" for="inputGroupFile02"
-                        aria-describedby="inputGroupFileAddon02">Choose file</label>
-                </div>
-                <div class="input-group-append">
-                    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-                </div>
+
+            <div id="footer" class="col-md-12">
+                <div style="height: 40px;"></div>
+                <h2 style="color: white; font-family: 'Ultra', serif;">Contact Me</h2>
+                <h5 style="margin-top: 30px;"><b>饒辰書 Jao Chen-Shu</b></h5>
+                <p style="margin-bottom: 0px;">Phone: <a href="tel:+886958991004"
+                        style="color:lightpink;">0958-991-004</a>
+                </p>
+                <p>E-mail: <a href="mailto:jaokevin2009@hotmail.com"
+                        style="color:lightpink;">jaokevin2009@hotmail.com</a>
+                </p>
+                <div style="height: 40px;"></div>
+                <p>AS#3_1005</p>
             </div>
-        </div>
-    </div>
 
-    <div id="footer" class="container-fluid text-center">
-        <div style="height: 40px;"></div>
-        <h2 style="color: white; font-family: 'Ultra', serif;">Contact Me</h2>
-        <h5 style="margin-top: 30px;"><b>饒辰書 Jao Chen-Shu</b></h5>
-        <p style="margin-bottom: 0px;">Phone: <a href="tel:+886958991004" style="color:lightpink;">0958-991-004</a></p>
-        <p>E-mail: <a href="mailto:jaokevin2009@hotmail.com" style="color:lightpink;">jaokevin2009@hotmail.com</a></p>
-        <div style="height: 40px;"></div>
-        <p>AS#3_1005</p>
+        </div>
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

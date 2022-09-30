@@ -14,11 +14,8 @@
     margin-top: 10%;
 }
 
-.container-fluid .row {
+#nav {
     height: 10vh;
-}
-
-#nav .row .col-sm-4 {
     background-color: cadetblue;
     text-align: center;
     /* 水平＋垂直置中方法： */
@@ -30,13 +27,13 @@
     font-family: 'Noto Serif TC', serif;
 }
 
-#nav .row .col-sm-4:hover {
+#nav:hover {
     background-color: white;
     text-align: center;
     font-family: 'Noto Serif TC', serif;
 }
 
-.container-fluid .row .col-sm-4 a{
+#nav a{
     font-size: 20px;
     font-weight:bold;
     margin-bottom: 0px;
@@ -57,14 +54,6 @@
     font-family: 'Noto Serif TC', serif;
 }
 
-#intro-content{
-    height: 90vh;
-}
-
-#intro-content img{
-   margin-top: 20%;
-}
-
 #works{
     height: 10vh;
     background-color: darkslategray;
@@ -77,10 +66,6 @@
     /* 垂直置中 */
     align-items: center;
     font-family: 'Noto Serif TC', serif;
-}
-
-#works-content{
-    height: 140vh;
 }
 
 #homework{
@@ -97,11 +82,8 @@
     font-family: 'Noto Serif TC', serif;
 }
 
-#homework-content{
-    height: 20vh;
-}
-
 #footer{
     height: 300px;
     background-color: cadetblue ;
+    text-align: center;
 }
