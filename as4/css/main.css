@@ -1,0 +1,57 @@
+#banner_word {
+    /* height: 1000vh; */
+    background-color: darkslategray;
+    padding: 0px;
+}
+
+#h1 {
+    height: 90vh;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+}
+
+#footer h1 {
+    height: 100vh;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+    color: azure;
+    font-size: 150px;
+}
+
+#banner_word h1 {
+    color: azure;
+    font-size: 200px;
+}
+
+#h2 h2 {
+    color: azure;
+    /* background-color: darkslategray; */
+    /* height: 10vh; */
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-bottom: 4px;
+}
+
+#img {
+    /* 打開div的高度，否則不會出現*/
+    min-height: 200vh;
+    /* 讓圖片黏在最上面 */
+    background-attachment: fixed;
+    /* 位置固定在中間 */
+    background-position: center;
+    /* 照片不要重複 */
+    background-repeat: no-repeat;
+    /* 照片滿版呈現 */
+    background-size: cover;
+}
