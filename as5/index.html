@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>AS5_我的一天</title>
+    <style>
+        #picture {
+            position: relative;
+            left: 0px;
+            height: 100vh;
+            width:7000px;
+            background-image: url(assets/底圖.jpg);
+            background-size:contain;
+            background-repeat: no-repeat;
+        }
+
+        #target{
+            background-image: url(assets/多邊形\ 1.png);
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 85vh;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div style="height: 300px; background-color:blueviolet"></div> -->
+    <div style="height: 9000px;">
+        <div class="sticky-top">
+            <div id="picture"></div>
+            <div id="target"></div>
+        </div>
+    </div>
+    <!-- <div style="height: 100vh; background-color:dimgray"></div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var doch = $(document).height();
+            var winw = $(window).width();
+            var winh = $(window).height();
+            var scroll_max = doch - winh;
+            var width_max = $("#picture").width() - winw;
+            console.log(scroll_max);
+            console.log(width_max);
+            console.log($("#picture").width());
+            console.log($(window).width());
+            console.log($(window).height());
+            console.log(doch);
+
+            $(window).scroll(function () {
+                var current_pos = $(window).scrollTop();
+                var new_pos = current_pos / scroll_max * width_max * (-1);
+                if(current_pos < scroll_max){
+                    $("#picture").css("left", new_pos);
+                }
+                // $("#picture").css("left", new_pos);
+                console.log(current_pos);
+            });
+        });
+    </script>
+</body>
+
+</html>
