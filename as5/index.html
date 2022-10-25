@@ -40,11 +40,15 @@
 
 <body>
     <!-- <div style="height: 300px; background-color:blueviolet"></div> -->
-    <div style="height: 9000px;">
+    <div id="hframe" style="height: 9000px;">
         <div class="sticky-top">
             <div id="picture"></div>
             <div id="target"></div>
         </div>
+    </div>
+
+    <div style="height:120vh;background-color:gray">
+        <h1 class="text-center" style="position:relative; top: 60vh; color:azure">新聞所碩一 饒辰書 R11342007 _ as5</h1> 
     </div>
     <!-- <div style="height: 100vh; background-color:dimgray"></div> -->
 
@@ -66,6 +70,7 @@
             var winh = $(window).height();
             var scroll_max = doch - winh;
             var width_max = $("#picture").width() - winw;
+            var h_top = $("#hframe").offset().top;
             console.log(scroll_max);
             console.log(width_max);
             console.log($("#picture").width());
@@ -76,7 +81,7 @@
             $(window).scroll(function () {
                 var current_pos = $(window).scrollTop();
                 var new_pos = current_pos / scroll_max * width_max * (-1);
-                if(current_pos < scroll_max){
+                if(current_pos > h_top && current_pos < h_top + $("#hframe").height() - $(window).height()){
                     $("#picture").css("left", new_pos);
                 }
                 // $("#picture").css("left", new_pos);
