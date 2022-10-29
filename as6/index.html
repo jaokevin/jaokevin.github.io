@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        #video {
+            position: fixed;
+            /* left: -250px; */
+            /* top: -250px; */
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="container-fluid" style="height: 100vh;padding: 0px;">
+        <video id="video" src="assets/Video2.mp4"></video>
+        <h1 style="position: relative; top:50vh; right: -120vh;background-color:black;width:26vw;">試著捲動，一窺手機市佔率變化趨勢</h1>
+    </div>
+    
+    <div style="height: 5000vh;">
+        <h1 style="position: relative; top:600vh; left: 20vh;background-color:black;width:fit-content;">注意三星！</h1>
+        <h1 style="position: relative; top:1200vh; left: 20vh;background-color:black;width:fit-content;">三星即將超越蘋果？</h1>
+        <h1 style="position: relative; top:1400vh; left: 20vh;background-color:black;width:fit-content;">結果蘋果直接變第一！</h1>
+        <h1 style="position: relative; top:1700vh; left: 20vh;background-color:black;width:fit-content;">但最後三星還是追過去了</h1>
+        <h1 style="position: relative; top:1800vh; left: 20vh;background-color:black;width:fit-content;">而且市占猛衝！</h1>
+        <h1 style="position: relative; top:2100vh; left: 20vh;background-color:black;width:fit-content;">注意後面的排名，變動激烈</h1>
+        <h1 style="position: relative; top:2900vh; left: 20vh;background-color:black;width:fit-content;">注意Nokia，即將跌出排行榜</h1>
+        <h1 style="position: relative; top:4000vh; left: 20vh;background-color:black;width:fit-content;">蘋果急起直追</h1>
+    </div>
+
+    <div class="container-fluid" style="height: 100vh;padding: 0px; background-color: gray;">
+        <h1 style="position: relative; top:40vh; left: 20vh;background-color:black;width:40vw;">新聞所碩一 饒辰書 R11342007 <br> AS6</h1>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var scroll_max = $(document).height() - $(window).height();
+            $(window).scroll(function () {
+                var current_pos = $(document).scrollTop();
+                var video = $("#video").get(0);
+                var videolength = video.duration;
+                video.currentTime = current_pos / scroll_max * videolength;
+            });
+        });
+    </script>
+</body>
+
+</html>
