@@ -1,0 +1,110 @@
+#banner h1 {
+    position: relative;
+    top: 45vh;
+}
+
+#part1_banner {
+    /* height: 1000vh; */
+    background-color: darkslategray;
+    padding: 0px;
+}
+
+#part1_h1 {
+    height: 90vh;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+}
+
+#par1_footer h1 {
+    position:relative;
+    top: 25vh;
+    color: azure;
+    font-size: 150px;
+}
+
+#part1_banner h1 {
+    color: azure;
+    font-size: 200px;
+}
+
+#par1_h2 h2 {
+    color: azure;
+    /* background-color: darkslategray; */
+    /* height: 10vh; */
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-bottom: 4px;
+}
+
+#img {
+    /* 打開div的高度，否則不會出現*/
+    min-height: 200vh;
+    /* 讓圖片黏在最上面 */
+    background-attachment: fixed;
+    /* 位置固定在中間 */
+    background-position: center;
+    /* 照片不要重複 */
+    background-repeat: no-repeat;
+    /* 照片滿版呈現 */
+    background-size: cover;
+}
+
+#part2_picture {
+    position: relative;
+    left: 0px;
+    height: 100vh;
+    width:7000px;
+    background-image: url(../assets/底圖.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+#part2_target{
+    background-image: url(../assets/多邊形\ 1.png);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 85vh;
+    left: 50%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.bardiv{
+    background-color: brown;
+    color: white;
+    position: relative;
+}
+
+.animatebar div:not(.slide){
+    opacity: 0;
+}
+
+.slide{
+    animation: slide 1s ease;
+}
+
+@keyframes slide{
+    0%{
+        opacity: 0;
+        transform: scaleX(0.2);
+
+    }
+
+    100%{
+        opacity: 1;
+        transform: scaleX(1);
+
+    }
+}
