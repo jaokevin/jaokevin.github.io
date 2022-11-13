@@ -108,3 +108,17 @@ body {
 
     }
 }
+
+.animation-loading{
+    animation: loading 0.5s 0s 10 ease alternate forwards;
+    background-color: azure;
+    width: 300px;
+    position: relative;
+    left: 38vw;
+    border-radius: 100px;
+}
+
+@keyframes loading{
+    0% {transform: translateY(-50%); opacity: 0;}
+    100% {transform: translateY(0%); opacity: 1;}
+}
