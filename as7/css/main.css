@@ -19,7 +19,7 @@
 }
 
 #par1_footer h1 {
-    position:relative;
+    position: relative;
     top: 25vh;
     color: azure;
     font-size: 150px;
@@ -61,13 +61,13 @@
     position: relative;
     left: 0px;
     height: 100vh;
-    width:7000px;
+    width: 7000px;
     background-image: url(../assets/底圖.jpg);
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
-#part2_target{
+#part2_target {
     background-image: url(../assets/多邊形\ 1.png);
     height: 100%;
     width: 100%;
@@ -81,44 +81,53 @@ body {
     overflow-x: hidden;
 }
 
-.bardiv{
+.bardiv {
     background-color: brown;
     color: white;
     position: relative;
 }
 
-.animatebar div:not(.slide){
+.animatebar div:not(.slide) {
     opacity: 0;
 }
 
-.slide{
+.slide {
     animation: slide 1s ease;
 }
 
-@keyframes slide{
-    0%{
+@keyframes slide {
+    0% {
         opacity: 0;
         transform: scaleX(0.2);
 
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: scaleX(1);
 
     }
 }
 
-.animation-loading{
+.animation-loading {
     animation: loading 0.5s 0s 10 ease alternate forwards;
     background-color: azure;
     width: 300px;
     position: relative;
-    left: 38vw;
+    /* left: 38vw; */
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 100px;
 }
 
-@keyframes loading{
-    0% {transform: translateY(-50%); opacity: 0;}
-    100% {transform: translateY(0%); opacity: 1;}
+@keyframes loading {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
