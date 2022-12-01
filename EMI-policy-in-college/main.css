@@ -1,5 +1,9 @@
+body{
+    overflow-x:hidden;
+}
+
 #video {
-    position: fixed;
+    /* position: fixed; */
     padding:0px;
     margin:0px;
     width:100%;

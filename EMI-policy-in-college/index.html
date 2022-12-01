@@ -15,14 +15,27 @@
 </head>
 
 <body>
+ <!-- 封面 -->
   <div class="container-fluid scroll_video" style="height: 250vh; padding: 0px;">
     <video id="video" src="assets/start_scrolled-video.mp4"></video>
-    <div style="position: fixed; height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
+    <div id="video_fliter" style="height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
   </div>
 
   <div style="height: 250vh;">
-    <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/second cover 改-01.png">
+    <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
   </div>
+
+  <!-- 標題＋進度條 -->
+  <div id="topic" class="sticky-top" style="height: 10vh;background-color: cadetblue;">
+    <h1 style="color: white;top: 10%;text-align: center; width:99vw; position:absolute">快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？</h1>
+    <div class="sticky-top" style="height: 1vh; background-color:gray;position: relative;top: 9vh;">
+      <div id="statusbar" style="height: 1vh; width: 0px; background-color:gold;position: relative;">
+        <!-- <p>Now is <span id="currentpersentage">0</span> %</p> -->
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 1000vh;"></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -36,14 +49,42 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <script>
+
+    // 封面捲動式影片
     $(function () {
       var scroll_max = $(".scroll_video").height() - $(window).height();
       $(window).scroll(function () {
         var current_pos = $(document).scrollTop();
         var video = $("#video").get(0);
         var videolength = video.duration;
-        video.currentTime = current_pos / scroll_max * videolength;
-        $("#video").css("opacity", 1 - (current_pos / scroll_max - 0.7));
+        if (current_pos >= $(".scroll_video").offset().top && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
+          $("#video").css("position", "fixed");
+          $("#video_fliter").css("position", "fixed");
+          video.currentTime = current_pos / scroll_max * videolength;
+          $("#video").css("opacity", 1 - (current_pos / scroll_max - 0.7));
+        } else {
+          $("#video").css("position", "");
+          $("#video_fliter").css("position", "");
+        }
+      });
+    });
+
+    // 進度條
+    $(function () {
+      var doch = $(document).height();
+      var winw = $(window).width();
+      var winh = $(window).height();
+      var topic_offset_top = $("#topic").offset().top
+      var scroll_max = doch - topic_offset_top - winh;
+
+      $(window).scroll(function () {
+        var current_pos = $(window).scrollTop();
+        var new_width = (current_pos - topic_offset_top) / scroll_max * winw;
+        if (new_width > 0) {
+          $("#statusbar").css("width", new_width);
+          // $("#currentpersentage").html(parseInt((current_pos - topic_offset_top) / scroll_max * 100));
+        }
+
       });
     });
 
