@@ -12,11 +12,11 @@ body{
     z-index: -1;
 }
 
-/* .fadeOut{
-    animation:fadeOut 1s ease;
+#horizontal {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 1340vw;
+    background-color: black;
+    /* background-image: url("https://static01.nyt.com/newsgraphics/2016/07/14/france-attack-scroller/9ec6dcec7e22fffa81a21fb790ba566f2c6aee83/base-big.jpg"); */
 }
-
-@keyframes fadeOut{
-    0% {opacity: 1;}
-    100% {opacity: 0;}
-} */
