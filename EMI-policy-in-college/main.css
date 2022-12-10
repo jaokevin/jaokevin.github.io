@@ -1,114 +1,150 @@
-body{
-    overflow-x:hidden;
+body {
+  overflow-x: hidden;
 }
 
 #video {
-    /* position: fixed; */
-    padding:0px;
-    margin:0px;
-    width:100%;
-    height:100vh;
-    object-fit: cover;
-    z-index: -1;
+  /* position: fixed; */
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 #horizontal {
-    position: absolute;
-    left: 0;
-    height: 100vh;
-    width: 1340vw;
-    background-color: black;
-    /* background-image: url("https://static01.nyt.com/newsgraphics/2016/07/14/france-attack-scroller/9ec6dcec7e22fffa81a21fb790ba566f2c6aee83/base-big.jpg"); */
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 1340vw;
+  background-color: black;
+  /* background-image: url("https://static01.nyt.com/newsgraphics/2016/07/14/france-attack-scroller/9ec6dcec7e22fffa81a21fb790ba566f2c6aee83/base-big.jpg"); */
 }
 
-.container-fluid{
-    padding: 0;
+.container-fluid {
+  padding: 0;
 }
 
 
 
-#foot-animation{
-    animation: foot-animation 2.5s infinite;
+#foot-animation {
+  animation: foot-animation 2.5s infinite;
 }
 
-@keyframes foot-animation{
-    0% {transform: translateX(-10vw);}
-    20% {transform: translateX(-5vw);}
-    40% {transform: translateX(0vw);}
-    60% {transform: translateX(5vw);}
-    80% {transform: translateX(10vw);}
-    100% {transform: translateX(10vw);}
+@keyframes foot-animation {
+  0% {
+    transform: translateX(-10vw);
+  }
+
+  20% {
+    transform: translateX(-5vw);
+  }
+
+  40% {
+    transform: translateX(0vw);
+  }
+
+  60% {
+    transform: translateX(5vw);
+  }
+
+  80% {
+    transform: translateX(10vw);
+  }
+
+  100% {
+    transform: translateX(10vw);
+  }
 
 }
 
 /* 翻卡 */
 
 .card {
-    perspective: 150rem;
-    position: relative;
-    height: 40rem;
-    max-width: 400px;
-    margin: 2rem;
-    box-shadow: none;
-    background: none;
-  }
-  
-  .card-side {
-    height: 35rem;
-    border-radius: 15px;
-    transition: all 0.8s ease;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    padding: 2rem;
-    color: white;
-  }
-  
-  .card-side.back {
-    transform: rotateY(-180deg);
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%, #FFCC70 100%);
-  }
-  
-  .card-side.front {
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  }
-  
-  .card:hover .card-side.front {
-    transform: rotateY(180deg);
-  }
-  
-  .card:hover .card-side.back {
-    transform: rotateY(0deg);
+  perspective: 150rem;
+  position: relative;
+  height: 40rem;
+  max-width: 400px;
+  margin: 2rem;
+  box-shadow: none;
+  background: none;
+}
+
+.card-side {
+  height: 35rem;
+  border-radius: 15px;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  padding: 2rem;
+  color: white;
+}
+
+.card-side.back {
+  transform: rotateY(-180deg);
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.card-side.front {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.card:hover .card-side.front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+  transform: rotateY(0deg);
+}
+
+/* 對話 */
+
+.chat {
+  visibility: hidden;
+}
+
+.chat-2 {
+  visibility: hidden;
+}
+
+.slideanimation {
+  animation: loading-picture 1s 0s 1 ease;
+  visibility: visible;
+}
+
+@keyframes loading-picture {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(100%);
   }
 
-  /* 對話 */
-
-  .chat {
-    visibility: hidden;
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
   }
-  .chat-2 {
-    visibility: hidden;
+}
+
+/* loading */
+
+.animation-loading {
+  animation: loading 0.5s 0s 10 ease-out alternate forwards;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
   }
 
-  .slideanimation {
-    animation: loading-picture 1s 0s 1 ease;
-    visibility:visible;
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
-
-  @keyframes loading-picture {
-    0% {
-      visibility:visible;
-      opacity: 0;
-      transform: translateY(100%);
-    }
-
-    100% {
-      visibility:visible;
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
+}
