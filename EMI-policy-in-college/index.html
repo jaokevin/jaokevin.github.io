@@ -122,7 +122,7 @@
 
     <!-- EMI歷年圖表 -->
     <div style="height:200vh;background-color:ghostwhite;">
-      <div class="container-fluid sticky-top"
+      <div id="infogram" class="container-fluid sticky-top"
         style="width:40vw;margin: 0 auto;top:15vh;box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">
         <div class="infogram-embed" data-id="f26aea3a-d0c9-4700-b7fc-54903c93b008" data-type="interactive"
           data-title="Line Chart"></div>
@@ -334,11 +334,26 @@
 
         if (current_pos > hor_pos && current_pos < hor_pos + $("#hframe").height() - $(window).height()) {
           var new_left = (-0.3 * max_w * (current_pos - hor_pos)) / hor_max_scroll;
-          console.log(new_left);
-          console.log(hor_pos);
+          // console.log(new_left);
+          // console.log(hor_pos);
           $("#horizontal").css({
             left: new_left
           });
+        }
+      });
+    });
+
+    // infogram
+    $(function(){
+      var winw = $(window).width();
+      $(window).scroll(function(){
+        var winw = $(window).width();
+        var current_pos = $(window).scrollTop();
+        console.log(winw);
+        if (winw <= 1000){
+          $("#infogram").css("width", 80 + "vw");
+        }else{
+          $("#infogram").css("width", 40 + "vw");
         }
       });
     });
