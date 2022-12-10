@@ -19,17 +19,27 @@
 
 <body>
   <!-- 封面 -->
-  <div class="container-fluid scroll_video" style="height: 300vh; padding: 0px;">
-    <video id="video" src="assets/start_scrolled-video.mp4"></video>
-    <div id="video_fliter" style="height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
+  <div class="container-fluid">
+    <div class="scroll_video" style="height: 300vh; padding: 0px;">
+      <video id="video" src="assets/start_scrolled-video.mp4"></video>
+      <div id="video_fliter" style="height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
+    </div>
   </div>
 
   <div style="height: 200vh;">
     <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
   </div>
 
+  <div id="tofix1" class="container-fluid sticky-top" style="background-color:coral;width:100%;min-height:50px;">
+    <h3>tofix1: min-height: 50px</h3>
+    <p><code>.sticky-top</code> to fix something after scrolling to the top.</p>
+    <p>See <a
+        href="https://getbootstrap.com/docs/4.1/utilities/position/">https://getbootstrap.com/docs/4.1/utilities/position/</a>
+    </p>
+  </div>
+
   <!-- 標題＋進度條 -->
-  <div id="topic" class="container-fluid sticky-top" style="height: 10vh;padding: 0;">
+  <div id="topic" class="container-fluid sticky-top" style="height: 10vh;padding: 0;z-index: 2000;">
     <div style="height: 9vh;display: flex;align-items: center;background-color:darkslateblue;">
       <h2 style="color: white;text-align: center; width:99vw;height: fit-content;">快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？
       </h2>
@@ -44,7 +54,7 @@
 
     <!-- 導言 -->
     <div style="height:300vh;">
-      <img src="assets/pexels-stanley-morales-1454360.jpg" class="sticky-top"
+      <img src="assets/pexels-stanley-morales-1454360-cut.jpg" class="sticky-top"
         style="width:100%;height:100vh;object-fit: cover;z-index: -2;">
       <div class="container-fluid sticky-top"
         style="width: 50vw;background-color: rgba(0, 0, 0, 0.5);top:30vh;left: 25%;z-index: -1;display: flex;align-items: center">
@@ -119,8 +129,13 @@
     </div>
 
     <!-- EMI歷年圖表 -->
-    <div style="height: 100vh;background-color:black">
-      <p style="color:white;position: relative;top:50vh">這裡會是兩張圖表</p>
+    <div style="height:200vh;background-color:ghostwhite;">
+      <div class="container-fluid sticky-top"
+        style="width:40vw;margin: 0 auto;top:15vh;box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">
+        <div class="infogram-embed" data-id="f26aea3a-d0c9-4700-b7fc-54903c93b008" data-type="interactive"
+          data-title="Line Chart"></div>
+        <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
+      </div>
     </div>
 
     <!-- 解釋雙語計畫落實到各校的狀況 -->
@@ -128,86 +143,41 @@
       <div class="container-fluid"
         style="width: 70vw;background-color: rgba(255, 255, 255, 1);position: relative;top:190vh;display: flex;align-items: center">
         <p style="margin:10%;position:relative;">
-            為讓各大學在推動EMI教學上有可供學習的典範對象，教育部挹注具國際競爭力之大學轉型為「標竿學校及學院」，重點培育雙語專業人才，2021年已核定4所標竿學校（臺灣大學、臺灣師範大學、成功大學、中山大學）蓄勢待發。<br><br>
-            投入大量經費資源，雙語標竿學校將完成什麼政策目標？2030年前，雙語標竿學校要讓半數學生自大二起的英文能力達B2以上，且至少半數大二及碩一學生其修習學分有一半以上為EMI課程，具體提升學生英語能力。<br><br>
-            以臺大及臺師大為例，臺大在被核定為標竿學校後的第一次教務會議提出，「鼓勵各系新增二年級上下學期各二門系必修EMI課程」，像是臺大社會學系近三年上學期EMI課程占比就從
-            0％一路飆升至15％，臺大全校EMI課程比例也達到近10％；臺師大也不落人後，在教務會議上要求各系所研擬至少18學分EMI課程規劃，而今臺師大全校EMI課程比例已超車臺大成長至15％。<br><br>
-            與此同時，在亮麗數字的背後，來自EMI教學現場的聲音，又將讓我們瞭解什麼高教雙語教育故事？
-          </p>
+          為讓各大學在推動EMI教學上有可供學習的典範對象，教育部挹注具國際競爭力之大學轉型為「標竿學校及學院」，重點培育雙語專業人才，2021年已核定4所標竿學校（臺灣大學、臺灣師範大學、成功大學、中山大學）蓄勢待發。<br><br>
+          投入大量經費資源，雙語標竿學校將完成什麼政策目標？2030年前，雙語標竿學校要讓半數學生自大二起的英文能力達B2以上，且至少半數大二及碩一學生其修習學分有一半以上為EMI課程，具體提升學生英語能力。<br><br>
+          以臺大及臺師大為例，臺大在被核定為標竿學校後的第一次教務會議提出，「鼓勵各系新增二年級上下學期各二門系必修EMI課程」，像是臺大社會學系近三年上學期EMI課程占比就從
+          0％一路飆升至15％，臺大全校EMI課程比例也達到近10％；臺師大也不落人後，在教務會議上要求各系所研擬至少18學分EMI課程規劃，而今臺師大全校EMI課程比例已超車臺大成長至15％。<br><br>
+          與此同時，在亮麗數字的背後，來自EMI教學現場的聲音，又將讓我們瞭解什麼高教雙語教育故事？
+        </p>
       </div>
     </div>
+  </div>
+  <!-- 左右互搏帶出受訪者觀點 -->
+  <script>
+    (function () {
+      var namespace = '__twreporterEmbeddedData';
+      var pkg = 'dual-channel';
+      if (typeof window != 'undefined') {
+        if (!window.hasOwnProperty(namespace)) {
+          window[namespace] = {};
+        }
+        if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+          window[namespace][pkg] = [];
+        }
+        if (Array.isArray(window[namespace][pkg])) {
+          var data = { "chapters": [{ "id": "2143095237", "label": "臺大社會系助理教授林孟瑢", "content": [{ "id": "chapter-2143095237-section-1", "content": [{ "type": "header-two", "content": ["臺大社會系助理教授林孟瑢"] }, { "type": "header-two", "content": [""] }, { "type": "paragraph", "content": ["「像我教社會統計，以前上課舉例都是用美國的，現在雖然我想換成臺灣的例子，但臺灣在地的例子都是中文的，轉換成英文，需要花另外一點時間，這是目前比較大的挑戰。」臺大社會學系助理教授林孟瑢，今年8月剛從美國返臺任教，試著將美國英語授課的經驗運用至臺大社會系的EMI社會統計課堂。\r\n\r\n\r\n臺大社會系配合雙語政策趨勢，逐年將必修課轉換為EMI授課形式，社會統計正是社會系大一必修課。社會統計全班有73人，外籍生僅有2位，教師授課的主要語言是英語，課程討論時考量學生語言溝通狀況，則不會強迫用英語。\r\n\r\n\r\n然而，對於甫上大學的社會新鮮人而言，確實需要一些時間適應EMI，幾位修習社會統課成的同學紛紛表示：「統計學有很多專有名詞，會聽不太懂」、「我覺得用中文可以學到更多，畢竟是習慣的語言」、「不是每個人都想要走向國際化，應該是讓有需要的人去選擇，而不是強迫每個人都進入EMI環境」\r\n\r\n\r\n林孟瑢會提供課程簡報、助教討論與課後諮詢協助學生學習，但他也不諱言，2030年雙語國家政策可能太過倉促，需要時間持續觀察：「要大家都會講英文，以現階段來講，看起來是比較困難。」他也期待在適當的政策配套下，臺灣能經營出英語友善環境。"] }] }] }, { "id": "263614548", "label": "臺師大台文系副教授莊佳穎", "content": [{ "id": "chapter-263614548-section-1", "content": [{ "type": "header-two", "content": ["臺師大台文系副教授莊佳穎"] }, { "type": "header-two", "content": [""] }, { "type": "paragraph", "content": ["「當面對臺下有八九成都是本國學生，心裡就會有掙扎（為什麼不能用共通語言）的小宇宙。」臺師大臺灣語文學系副教授莊佳穎語帶無奈，為配合雙語政策而將臺灣流行文化課程轉換為EMI課程。\r\n\r\n臺灣流行文化課程探討在地社會的文化現象，運用許多臺灣人共同使用的日常語彙，生動介紹臺灣電影、通俗文學、流行音樂等。如今這些語彙卻要透過一大串英文去解釋，像是「ts'iauˊ tāi-tsì（喬事情）」就不是三言兩語能精準說清其文化內涵。\r\n\r\n難道EMI課程就是變向讓大學教育成為英語的一言堂嗎？為此，莊佳穎嘗試以「國家語言」變通。臺灣在2018年同時通過國家語言發展法和雙語政策，兩者看似衝突，莊佳穎還是以「跳脫華語的主流思維」作為共通點，若能妥善規劃相關配套，EMI課程和國家語言可相得益彰。\r\n\r\n「多語環境實踐的最高真諦，是就算你聽不懂，還是努力地去學習。」我們走入臺灣流行文化的EMI課堂，雖少了華語，仍可聽見英語、臺灣閩南語、印尼語等多語並的豐富成情境。莊佳穎感性說到：「日常生活中使用的語言，就是讓我們在交流的時候，點點滴滴形塑出臺灣人的樣子！」\r"] }] }] }, { "id": "1111594724", "label": "臺大學生會學權部詹博穎", "content": [{ "id": "chapter-1111594724-section-1", "content": [{ "type": "header-two", "content": ["臺大學生會學權部詹博穎"] }, { "type": "header-two", "content": [""] }, { "type": "paragraph", "content": ["「雙語政策已經在實行，學生會將加強學生權利保障，做好監督和配套！」臺大學生會高等教育小組對雙語教政策的關注不遺餘力，負責人詹博穎自己也在這學期修習個體經濟學EMI課程，頗有心得。\r\n\r\n詹博穎觀察到，同學們在EMI小組討論時可能會覺得，既然都是臺灣人，何不就採用較熟悉的華語進行討論。此外，聽聞部分教師在EMI課程會預設學生無法吸收大量知識，反而就自行先把課程簡化，詹博穎下了註解：「目前EMI課程在學生幾乎都是臺灣人的情況下，全面使用英語是多了一層語言隔閡，要更多配套才能良好運行。」\r\n\r\n為瞭解學生在EMI課程的學習現況，學生會曾進行全校問卷調查，發現大多數學生覺得課堂討論最為不易；一些問卷也反應教師的英語表達能力、教材教法未必達到可EMI授課的程度，影響學生受教權益，足見師生雙方都需要時間來調適這波EMI課程的變革。\r\n\r\n詹博穎建議，EMI課程可搭配更堅強的助教和更精緻的團體互助來支持學生學習，同時校方也可設計EMI銜接課程（例如改善大一英文），和依各系所不同狀況調整雙語教育KPI。否則較小規模的系所恐無充足人力開授EMI課程，如此將嚴重壓縮教師開課量能和學生選課權益。\r"] }] }] }, { "id": "1550617360", "label": "臺師大通識教育中心主任鄭怡庭", "content": [{ "id": "chapter-1550617360-section-1", "content": [{ "type": "header-two", "content": ["臺師大通識教育中心主任鄭怡庭"] }, { "type": "header-two", "content": [""] }, { "type": "paragraph", "content": ["「EMI到底重不重要，我們就要先去想要怎麼走出臺灣？」臺師大東亞學系副教授鄭怡庭希望大家先想想，即便是本土文化，要進行國際交流前還是要先轉換成英語。EMI課程正是提升競爭力、打開世界大門的絕佳機會。\r\n\r\n事實上，學校行政單位為推動EMI課程「用心良苦」，鄭怡庭同時兼任通識中心主任，即使有心想把通識課程EMI比例拉高，但政策推動之初多數教師都還在觀望，很難找到願意獨自開授EMI課程的師資。鄭怡庭便與三位志同道合的教師合授「臺灣教育」通識課，四人輪流講述課程，希望逐漸摸索出吸引更多教師合授／獨自開授EMI課程的成功模式。\r\n\r\n鄭怡庭也不斷鼓勵學生修EMI是自我挑戰、對未來有所助益。當面對外界質疑EMI課程將使學生學習成效大打折扣，鄭怡庭反而認為：「也不用說這樣學生學習效果會變差，自主學習的方式這麼多，學生未必要靠老師，一些延伸閱讀、學習資源這是能靠自己找到東西的。」\r\n\r\n「EMI課程對學生好，雖然改變一定會有陣痛期，但不可能等所有東西ready之後再開始推！」鄭怡庭肯定臺師大教發中心為全校師生成立雙語教育推動辦公室與英語學術素養中心，開設教師增能課程、籌組教師社群，提供學生寫作諮詢、英語學術講座，讓臺師大雙語教育的支持體系日漸完備。\r"] }] }] }, { "id": "260348439", "label": "臺大雙語教育中心", "content": [{ "id": "chapter-260348439-section-1", "content": [{ "type": "header-two", "content": ["臺大雙語教育中心"] }, { "type": "header-two", "content": [""] }, { "type": "paragraph", "content": ["「最希望增進學生英語能力，對未來出國交換、求職就業都有幫助！」相較於追求雙語政策的EMI課程目標，臺大更希望能普遍增能學生英語，臺大雙語教育中心執行長鍾明恂指出，會盡力串聯校內外資源、推動 EMI課程，並鼓勵各院系所優化雙語環境。\r\n\r\n「我們追求把整個英語學習的氣氛帶起來，而不是只開幾門課！」英文授課師資培力組組長邱振豪樂觀看待台大推動EMI，但面對有些學科領域因開課量能、授課內容可能不適合轉換為EMI，邱振豪表示，確實各院系情況有所差異，因此不會將開課標準一體適用，而是讓各院系適時調整、因地制宜。\r\n\r\n學生英文能力提升組組長黃恆綜也認同，推動EMI應以「讓師生都能自由選擇」為前提。從雙語教育中心收集到逾2600份問卷，六成以上台大學生支持雙語教育，EMI課程有利於增加競爭力、出國發展，但學生們也建議EMI要有更多彈性選擇和配套。為此，目前台大開授EMI課程以選修為主，如果EMI是必修課的話，也會盡可能同時有中文授課可供選擇，避免違反師生意願。\r\n\r\n「雙語教育政策能否順利推動，最重要的是『關係』，尤其是跨校之間的關係網絡。」扮演高教龍頭的臺大，接下來將著手把落實EMI課程的經驗分享至全國大專校院，負責建構跨校資源共享平台的EMI教學資源中心組長李婉甄認為，跨校連結將有助於經驗交流、互助支持，同時也凝聚第一線執行EMI課程的共識，將向教育部反映教學現場所見，是後續政策重要參考。\r"] }] }] }], "embeddedItems": [[["\u003Cpicture\u003E\u003Cimg alt=\"\" src=\"https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002F林孟瑢.png\" style=\"width:100%;height%:100\" \u002F\u003E\u003C\u002Fpicture\u003E", "fadeIn"]], [["\u003Cpicture\u003E\u003Cimg alt=\"\" src=\"https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002F莊佳穎.png\" style=\"width:100%;height%:100\" \u002F\u003E\u003C\u002Fpicture\u003E", "fadeIn"]], [["\u003Cpicture\u003E\u003Cimg alt=\"\" src=\"https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002F台大學生會.png\" style=\"width:100%;height%:100\" \u002F\u003E\u003C\u002Fpicture\u003E", "fadeIn"]], [["\u003Cpicture\u003E\u003Cimg alt=\"\" src=\"https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002F鄭怡庭.png\" style=\"width:100%;height%:100\" \u002F\u003E\u003C\u002Fpicture\u003E", "fadeIn"]], [["\u003Cpicture\u003E\u003Cimg alt=\"\" src=\"https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002F台大雙語辦公室.png\" style=\"width:100%;height%:100\" \u002F\u003E\u003C\u002Fpicture\u003E", "fadeIn"]]], "isFullWidth": undefined, "uuid": "4a9380d8-8704-4add-8e90-45d90cb4c0e7" };
+          window[namespace][pkg].push(data);
+        }
+      }
+    })()
+  </script>
+  <div id=4a9380d8-8704-4add-8e90-45d90cb4c0e7></div>
 
-    <!-- 左右互搏帶出受訪者觀點 -->
-    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-      <h3 style="width:100%;color:white">臺大社會系助理教授林孟瑢</h3>
-    </div>
-    <div class="row" style="height: 300vh;">
-      <div class="col-5 sticky-top" style="height:fit-content;top:30vh;left:5%;z-index: -1;">
-        <img src="assets/林孟瑢.png" style="height:50vh">
-      </div>
-      <div class="col-7" style="height: 300vh;">
-        <div style="height: 100vh;background-color:yellow">div1</div>
-        <div style="height: 100vh;background-color:violet">div2</div>
-        <div style="height: 100vh;background-color:blueviolet">div3</div>
-      </div>
-    </div>
+  <script type="text/javascript" crossorigin
+    src="https://unpkg.com/@twreporter/dual-channel@2.1.4/dist/main.d1f6d30de1b41dfaf8a1.bundle.js">
+    </script>
 
-    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-      <h3 style="width:100%;color:white">臺師大台文系副教授莊佳穎</h3>
-    </div>
-    <div class="row" style="height: 300vh;">
-      <div class="col-5 sticky-top" style="height:fit-content;top:33vh;left:7%;z-index: -1;">
-        <img src="assets/莊佳穎.png" style="height:50vh">
-      </div>
-      <div class="col-7" style="height: 300vh;">
-        <div style="height: 100vh;background-color:yellow">div1</div>
-        <div style="height: 100vh;background-color:violet">div2</div>
-        <div style="height: 100vh;background-color:blueviolet">div3</div>
-      </div>
-    </div>
-
-    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-      <h3 style="width:100%;color:white">臺大學生會學權部詹博穎</h3>
-    </div>
-    <div class="row" style="height: 300vh;">
-      <div class="col-5 sticky-top" style="height:fit-content;top:33vh;left:5%;z-index: -1;">
-        <img src="assets/台大學生會.png" style="height:50vh">
-      </div>
-      <div class="col-7" style="height: 300vh;">
-        <div style="height: 100vh;background-color:yellow">div1</div>
-        <div style="height: 100vh;background-color:violet">div2</div>
-        <div style="height: 100vh;background-color:blueviolet">div3</div>
-      </div>
-    </div>
-
-    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-      <h3 style="width:100%;color:white">臺師大通識教育中心主任鄭怡庭</h3>
-    </div>
-    <div class="row" style="height: 300vh;">
-      <div class="col-5 sticky-top" style="height:fit-content;top:30vh;left:6%;z-index: -1;">
-        <img src="assets/鄭怡庭.png" style="height:50vh">
-      </div>
-      <div class="col-7" style="height: 300vh;">
-        <div style="height: 100vh;background-color:yellow">div1</div>
-        <div style="height: 100vh;background-color:violet">div2</div>
-        <div style="height: 100vh;background-color:blueviolet">div3</div>
-      </div>
-    </div>
-
-    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-      <h3 style="width:100%;color:white">臺大雙語教育中心</h3>
-    </div>
-    <div class="row" style="height: 300vh;">
-      <div class="col-5 sticky-top" style="height:fit-content;top:36vh;left:1%;z-index: -1;">
-        <img src="assets/台大雙語辦公室.png" style="height:40vh">
-      </div>
-      <div class="col-7" style="height: 300vh;">
-        <div style="height: 100vh;background-color:yellow">div1</div>
-        <div style="height: 100vh;background-color:violet">div2</div>
-        <div style="height: 100vh;background-color:blueviolet">div3</div>
-      </div>
-    </div>
-
+  <div class="container-fluid" style="padding:0;">
     <!-- 翻卡解方 -->
     <div style="height: 100vh;background-color:black">
       <p style="color:white;position: relative;top:50vh">這裡會是翻卡CSS</p>
@@ -267,7 +237,7 @@
         var current_pos = $(document).scrollTop();
         var video = $("#video").get(0);
         var videolength = video.duration;
-        if (current_pos >= $(".scroll_video").offset().top && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
+        if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
           $("#video").css("position", "fixed");
           $("#video_fliter").css("position", "fixed");
           video.currentTime = current_pos / cover_scroll_max * videolength;
@@ -276,6 +246,17 @@
           $("#video").css("position", "");
           $("#video_fliter").css("position", "");
         }
+
+        // if (current_pos >= $(".scroll_video").offset().top && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
+        //   $("#video").css("position", "fixed");
+        //   $("#video_fliter").css("position", "fixed");
+        //   video.currentTime = current_pos / cover_scroll_max * videolength;
+        //   $("#video").css("opacity", 1 - (current_pos / cover_scroll_max - 0.7));
+        // } else {
+        //   $("#video").css("position", "");
+        //   $("#video_fliter").css("position", "");
+        // }
+
       });
     });
 
