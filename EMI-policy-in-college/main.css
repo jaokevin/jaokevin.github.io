@@ -20,3 +20,21 @@ body{
     background-color: black;
     /* background-image: url("https://static01.nyt.com/newsgraphics/2016/07/14/france-attack-scroller/9ec6dcec7e22fffa81a21fb790ba566f2c6aee83/base-big.jpg"); */
 }
+
+.container-fluid{
+    padding: 0;
+}
+
+#foot-animation{
+    animation: foot-animation 2.5s infinite;
+}
+
+@keyframes foot-animation{
+    0% {transform: translateX(-10vw);}
+    20% {transform: translateX(-5vw);}
+    40% {transform: translateX(0vw);}
+    60% {transform: translateX(5vw);}
+    80% {transform: translateX(10vw);}
+    100% {transform: translateX(10vw);}
+
+}

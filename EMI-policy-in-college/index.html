@@ -9,6 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css">
 
   <title>快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？</title>
@@ -17,211 +19,220 @@
 
 <body>
   <!-- 封面 -->
-  <div class="container-fluid scroll_video" style="height: 250vh; padding: 0px;">
+  <div class="container-fluid scroll_video" style="height: 300vh; padding: 0px;">
     <video id="video" src="assets/start_scrolled-video.mp4"></video>
     <div id="video_fliter" style="height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
   </div>
 
-  <div style="height: 250vh;">
+  <div style="height: 200vh;">
     <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
   </div>
 
   <!-- 標題＋進度條 -->
-  <div id="topic" class="sticky-top" style="height: 10vh;background-color:darkslateblue;">
-    <h1 style="color: white;top: 10%;text-align: center; width:99vw; position:absolute">快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？</h1>
-    <div class="sticky-top" style="height: 1vh; background-color:gray;position: relative;top: 9vh;">
+  <div id="topic" class="container-fluid sticky-top" style="height: 10vh;padding: 0;">
+    <div style="height: 9vh;display: flex;align-items: center;background-color:darkslateblue;">
+      <h2 style="color: white;text-align: center; width:99vw;height: fit-content;">快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？
+      </h2>
+    </div>
+    <div class="sticky-top" style="height: 1vh; background-color:gray;">
       <div id="statusbar" style="height: 1vh; width: 0px; background-color:gold;position: relative;">
-        <!-- <p>Now is <span id="currentpersentage">0</span> %</p> -->
       </div>
     </div>
   </div>
 
-  <!-- 導言 -->
-  <div style="height:300vh;">
-    <img src="assets/pexels-stanley-morales-1454360.jpg" class="sticky-top"
-      style="width:100vw;z-index: -2;margin: -20px;">
-    <div class="sticky-top"
-      style="height: 70vh; width: 50vw;background-color: rgba(0, 0, 0, 0.5);top:20vh;left: 25%;z-index: -1;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;color: white;">
-        行政院在2018年提出「2030雙語國家政策發展藍圖」，欲在2030年前透過強化英語教育，提升臺灣競爭力、厚植國人英語力，並帶動全民學習英語的雙語國家。教育部也隨之在2021年9月啟動「大專校院學生雙語化學習計畫」，希望增加高教端「全英語授課」（English
-        as a Medium of Instruction，簡稱EMI）比例，欲整體提升高教國際競爭力。<br><br>
-        高教人才培育成功與否，影響國家未來發展尤甚。雙語政策似乎是增進高教師生英語力的一帖良方，卻已有諸多專家學者預警，在師資教學人力、EMI課程設計、學生英語程度等各方面都未有周延規劃前，操之過急的雙語政策，恐如同洪水猛獸嚴重威脅高等教育現有品質。如今政策實施已逾一年，令人好奇教學現場如何了呢？
-      </p>
-    </div>
-  </div>
+  <div class="container-fluid" style="padding:0;">
 
-  <!-- 橫向捲軸 -->
-  <div id="hframe" style="min-height:1340vh;">
-    <div class="sticky-top" style="z-index: -1;">
-      <div id="horizontal">
-        <img src="assets/taiwan-popular-culture-1.jpg" style="height: 100vh;"></img>
-        <img src="assets/taiwan-popular-culture-2.jpg" style="height: 100vh;"></img>
-        <img src="assets/taiwan-popular-culture-3.jpg" style="height: 100vh;"></img>
-        <img src="assets/taiwan-popular-culture-4.jpg" style="height: 100vh;"></img>
-      </div>
-    </div>
-    <div
-      style="position: relative;top:100vh;left:60%;height: 15vh; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;color: white;">英文版簡報是EMI課程「台灣流行文化」的上課PPT，<br>而右方的華文版簡報是我們提供的翻譯。</p>
-    </div>
-    <div
-      style="position: relative;top:500vh;left:60%;height: 15vh; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;color: white;">進下一張簡報之前，我們會問兩個是非題，<br>請你先從英文版簡報尋找解答。</p>
-    </div>
-    <div
-      style="position: relative;top:750vh;left:3%;height: 15vh; width:37vw; background-color:cornflowerblue;display: flex;align-items: center">
-      <p style="margin:5%;position:relative;color: white;">
-        是非題：<br>1.1950到1980年代，多數的熱門通俗劇都有被保存下來。<br>2.保存下來的台語電影，雖然數量少，但都屬於最具代表性的。</p>
-    </div>
-    <div
-      style="position: relative;top:1100vh;left:10%;height: 15vh; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;color: white;">
-        答案是兩者皆非！<br>再看一次華文版，會不會比較容易理解呢？</p>
-    </div>
-  </div>
-
-  <!-- 學生對話 -->
-  <div style="height: 850vh;background-color:lightgrey;">
-    <div style="height: 150vh;">
-      <h1 class="text-center" style="height:100vh;width: 100%;display: flex;align-items: center"><b
-          style="width: 100%;">學生究竟怎麼看待雙語政策的呢？他們對EMI課程的實際感受是什麼？<br>往下滑，一起聽聽看他們的想法吧！</b></h1>
-    </div>
-
-    <div style="height: 700vh;">
-      <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-      <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-      <div
-        style="height: 50vh; width: 50vw;background-color: rgba(0, 0, 0, 0.5);position: relative;top:15vh;left: 25%;display: flex;align-items: center">
+    <!-- 導言 -->
+    <div style="height:300vh;">
+      <img src="assets/pexels-stanley-morales-1454360.jpg" class="sticky-top"
+        style="width:100%;height:100vh;object-fit: cover;z-index: -2;">
+      <div class="container-fluid sticky-top"
+        style="width: 50vw;background-color: rgba(0, 0, 0, 0.5);top:30vh;left: 25%;z-index: -1;display: flex;align-items: center">
         <p style="margin:10%;position:relative;color: white;">
-          這裡可以放小結
+          行政院在2018年提出「2030雙語國家政策發展藍圖」，欲在2030年前透過強化英語教育，提升臺灣競爭力、厚植國人英語力，並帶動全民學習英語的雙語國家。教育部也隨之在2021年9月啟動「大專校院學生雙語化學習計畫」，希望增加高教端「全英語授課」（English
+          as a Medium of Instruction，簡稱EMI）比例，欲整體提升高教國際競爭力。<br><br>
+          高教人才培育成功與否，影響國家未來發展尤甚。雙語政策似乎是增進高教師生英語力的一帖良方，卻已有諸多專家學者預警，在師資教學人力、EMI課程設計、學生英語程度等各方面都未有周延規劃前，操之過急的雙語政策，恐如同洪水猛獸嚴重威脅高等教育現有品質。如今政策實施已逾一年，令人好奇教學現場如何了呢？
         </p>
       </div>
     </div>
-  </div>
 
-  <!-- EMI歷年圖表 -->
-  <div style="height: 100vh;background-color:black">
-    <p style="color:white;position: relative;top:50vh">這裡會是兩張圖表</p>
-  </div>
+    <div class="container-fluid text-center" style="height: 100vh;background-color:cornsilk;">
+      <h1 style="position: relative;top:30vh;"><strong>往下滑<br><br>一起走進EMI教學現場吧<br><br><br></strong></h1>
+      <h1 id="foot-animation" style="position: relative;top:30vh">👣</h1>
+    </div>
 
-  <!-- 解釋雙語計畫落實到各校的狀況 -->
-  <div style="height: 300vh;background-image: url(assets/competition.jpg);background-size: cover;">
-    <div
-      style="height: 80vh; width: 70vw;background-color: rgba(255, 255, 255, 0.7);position: relative;top:200vh;left:14%;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;"><b>
-          為讓各大學在推動EMI教學上有可供學習的典範對象，教育部挹注具國際競爭力之大學轉型為「標竿學校及學院」，重點培育雙語專業人才，2021年已核定4所標竿學校（臺灣大學、臺灣師範大學、成功大學、中山大學）蓄勢待發。<br><br>
-          投入大量經費資源，雙語標竿學校將完成什麼政策目標？2030年前，雙語標竿學校要讓半數學生自大二起的英文能力達B2以上，且至少半數大二及碩一學生其修習學分有一半以上為EMI課程，具體提升學生英語能力。<br><br>
-          以臺大及臺師大為例，臺大在被核定為標竿學校後的第一次教務會議提出，「鼓勵各系新增二年級上下學期各二門系必修EMI課程」，像是臺大社會學系近三年上學期EMI課程占比就從
-          0％一路飆升至15％，臺大全校EMI課程比例也達到近10％；臺師大也不落人後，在教務會議上要求各系所研擬至少18學分EMI課程規劃，而今臺師大全校EMI課程比例已超車臺大成長至15％。<br><br>
-          與此同時，在亮麗數字的背後，來自EMI教學現場的聲音，又將讓我們瞭解什麼高教雙語教育故事？
-        </b></p>
+    <!-- 橫向捲軸 -->
+    <div id="hframe" style="min-height:1340vh;">
+      <div class="sticky-top" style="z-index: -1;">
+        <div id="horizontal">
+          <img src="assets/taiwan-popular-culture-1.jpg" style="height: 100vh;"></img>
+          <img src="assets/taiwan-popular-culture-2.jpg" style="height: 100vh;"></img>
+          <img src="assets/taiwan-popular-culture-3.jpg" style="height: 100vh;"></img>
+          <img src="assets/taiwan-popular-culture-4.jpg" style="height: 100vh;"></img>
+        </div>
+      </div>
+      <div class="container-fluid"
+        style="position: relative;top:100vh;left:25%; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;color: white;">英文版簡報是EMI課程「台灣流行文化」的上課PPT，<br>而右方的華文版簡報是我們提供的翻譯。</p>
+      </div>
+      <div class="container-fluid"
+        style="position: relative;top:500vh;left:25%; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;color: white;">進下一張簡報之前，我們會問兩個是非題，<br>請你先從英文版簡報尋找解答。</p>
+      </div>
+      <div class="container-fluid"
+        style="position: relative;top:700vh;left:-20%; width:37vw; background-color:cornflowerblue;display: flex;align-items: center">
+        <p style="margin:5%;position:relative;color: white;">
+          是非題：<br>1.1950到1980年代，多數的熱門通俗劇都有被保存下來。<br>2.保存下來的台語電影，雖然數量少，但都屬於最具代表性的。</p>
+      </div>
+      <div class="container-fluid"
+        style="position: relative;top:1100vh;left:-20%; width:35vw; background-color:cornflowerblue;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;color: white;">
+          答案是兩者皆非！<br>再看一次華文版，會不會比較容易理解呢？</p>
+      </div>
     </div>
-  </div>
 
-  <!-- 左右互搏帶出受訪者觀點 -->
-  <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-    <h3 style="width:100%;color:white">臺大社會系助理教授林孟瑢</h3>
-  </div>
-  <div class="row" style="height: 300vh;">
-    <div class="col-5 sticky-top" style="height:fit-content;top:23vh;left:5%;z-index: -1;">
-      <div style="height: 300vh;position: fixed;background-color: wheat;"></div>
-      <img src="assets/林孟瑢.png" style="height:70vh">
-    </div>
-    <div class="col-7" style="height: 300vh;">
-      <div style="height: 100vh;background-color:yellow">div1</div>
-      <div style="height: 100vh;background-color:violet">div2</div>
-      <div style="height: 100vh;background-color:blueviolet">div3</div>
-    </div>
-  </div>
+    <!-- 學生對話 -->
+    <div style="height: 850vh;background-color:lightgrey;">
+      <div class="container-fluid" style="height: 150vh;">
+        <h1 class="text-center" style="height:100vh;width: 100%;display: flex;align-items: center"><b
+            style="width: 100%;">學生究竟怎麼看待雙語政策的呢？他們對EMI課程的實際感受是什麼？<br>往下滑，一起聽聽看他們的想法吧！</b></h1>
+      </div>
 
-  <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-    <h3 style="width:100%;color:white">臺師大台文系副教授莊佳穎</h3>
-  </div>
-  <div class="row" style="height: 300vh;">
-    <div class="col-5 sticky-top" style="height:fit-content;top:7vh;left:0%;z-index: -1;">
-      <img src="assets/莊佳穎.png" style="height:100vh">
+      <div style="height: 700vh;">
+        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
+        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
+        <div
+          style="height: 50vh; width: 50vw;background-color: rgba(0, 0, 0, 0.5);position: relative;top:15vh;left: 25%;display: flex;align-items: center">
+          <p style="margin:10%;position:relative;color: white;">
+            這裡可以放小結
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="col-7" style="height: 300vh;">
-      <div style="height: 100vh;background-color:yellow">div1</div>
-      <div style="height: 100vh;background-color:violet">div2</div>
-      <div style="height: 100vh;background-color:blueviolet">div3</div>
-    </div>
-  </div>
 
-  <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-    <h3 style="width:100%;color:white">臺大學生會學權部詹博穎</h3>
-  </div>
-  <div class="row" style="height: 300vh;">
-    <div class="col-5 sticky-top" style="height:fit-content;top:20vh;left:4%;z-index: -1;">
-      <img src="assets/台大學生會.png" style="height:70vh">
+    <!-- EMI歷年圖表 -->
+    <div style="height: 100vh;background-color:black">
+      <p style="color:white;position: relative;top:50vh">這裡會是兩張圖表</p>
     </div>
-    <div class="col-7" style="height: 300vh;">
-      <div style="height: 100vh;background-color:yellow">div1</div>
-      <div style="height: 100vh;background-color:violet">div2</div>
-      <div style="height: 100vh;background-color:blueviolet">div3</div>
-    </div>
-  </div>
 
-  <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-    <h3 style="width:100%;color:white">臺師大通識教育中心主任鄭怡庭</h3>
-  </div>
-  <div class="row" style="height: 300vh;">
-    <div class="col-5 sticky-top" style="height:fit-content;top:20vh;left:4%;z-index: -1;">
-      <img src="assets/鄭怡庭.png" style="height:70vh">
+    <!-- 解釋雙語計畫落實到各校的狀況 -->
+    <div style="height: 300vh;background-image: url(assets/competition.jpg);background-size: cover;">
+      <div class="container-fluid"
+        style="width: 70vw;background-color: rgba(255, 255, 255, 1);position: relative;top:190vh;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;">
+            為讓各大學在推動EMI教學上有可供學習的典範對象，教育部挹注具國際競爭力之大學轉型為「標竿學校及學院」，重點培育雙語專業人才，2021年已核定4所標竿學校（臺灣大學、臺灣師範大學、成功大學、中山大學）蓄勢待發。<br><br>
+            投入大量經費資源，雙語標竿學校將完成什麼政策目標？2030年前，雙語標竿學校要讓半數學生自大二起的英文能力達B2以上，且至少半數大二及碩一學生其修習學分有一半以上為EMI課程，具體提升學生英語能力。<br><br>
+            以臺大及臺師大為例，臺大在被核定為標竿學校後的第一次教務會議提出，「鼓勵各系新增二年級上下學期各二門系必修EMI課程」，像是臺大社會學系近三年上學期EMI課程占比就從
+            0％一路飆升至15％，臺大全校EMI課程比例也達到近10％；臺師大也不落人後，在教務會議上要求各系所研擬至少18學分EMI課程規劃，而今臺師大全校EMI課程比例已超車臺大成長至15％。<br><br>
+            與此同時，在亮麗數字的背後，來自EMI教學現場的聲音，又將讓我們瞭解什麼高教雙語教育故事？
+          </p>
+      </div>
     </div>
-    <div class="col-7" style="height: 300vh;">
-      <div style="height: 100vh;background-color:yellow">div1</div>
-      <div style="height: 100vh;background-color:violet">div2</div>
-      <div style="height: 100vh;background-color:blueviolet">div3</div>
-    </div>
-  </div>
 
-  <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
-    <h3 style="width:100%;color:white">臺大雙語教育中心</h3>
-  </div>
-  <div class="row" style="height: 300vh;">
-    <div class="col-5 sticky-top" style="height:fit-content;top:33vh;left:0%;z-index: -1;">
-      <img src="assets/台大雙語辦公室.png" style="height:47vh">
+    <!-- 左右互搏帶出受訪者觀點 -->
+    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
+      <h3 style="width:100%;color:white">臺大社會系助理教授林孟瑢</h3>
     </div>
-    <div class="col-7" style="height: 300vh;">
-      <div style="height: 100vh;background-color:yellow">div1</div>
-      <div style="height: 100vh;background-color:violet">div2</div>
-      <div style="height: 100vh;background-color:blueviolet">div3</div>
+    <div class="row" style="height: 300vh;">
+      <div class="col-5 sticky-top" style="height:fit-content;top:30vh;left:5%;z-index: -1;">
+        <img src="assets/林孟瑢.png" style="height:50vh">
+      </div>
+      <div class="col-7" style="height: 300vh;">
+        <div style="height: 100vh;background-color:yellow">div1</div>
+        <div style="height: 100vh;background-color:violet">div2</div>
+        <div style="height: 100vh;background-color:blueviolet">div3</div>
+      </div>
     </div>
-  </div>
 
-  <!-- 翻卡解方 -->
-  <div style="height: 100vh;background-color:black">
-    <p style="color:white;position: relative;top:50vh">這裡會是翻卡CSS</p>
-  </div>
+    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
+      <h3 style="width:100%;color:white">臺師大台文系副教授莊佳穎</h3>
+    </div>
+    <div class="row" style="height: 300vh;">
+      <div class="col-5 sticky-top" style="height:fit-content;top:33vh;left:7%;z-index: -1;">
+        <img src="assets/莊佳穎.png" style="height:50vh">
+      </div>
+      <div class="col-7" style="height: 300vh;">
+        <div style="height: 100vh;background-color:yellow">div1</div>
+        <div style="height: 100vh;background-color:violet">div2</div>
+        <div style="height: 100vh;background-color:blueviolet">div3</div>
+      </div>
+    </div>
 
-  <!-- 結論 -->
-  <div style="height: 500vh;">
-    <img class="sticky-top" src="assets/conclusion.jpg" style="width: 100vw;z-index: -1;">
-    <div
-      style="height: 20vh; width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:20vh;left:50%;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;">
-        為提升臺灣競爭力、厚植國人英語力，高教雙語政策推動至今已逾一年，各大學配合政策目標總動員，讓全校師生集體投入這場全球化下的英語軍備競賽，外國學生也得利於雙語教學的環境，教室裡的學生面貌日趨多元、「國際化」有成。</p>
+    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
+      <h3 style="width:100%;color:white">臺大學生會學權部詹博穎</h3>
     </div>
-    <div
-      style="height: 20vh; width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:110vh;left:50%;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;">
-        然而，當我們知悉教學現場各殊異想法後，再次攤開雙語教育政策檢視，除了政策績效目標之外，難見其他實質政策內容。不完備的政策讓執行責任落在第一線的學校、教師及學生身上，教育部往往是在得到教學現場反映後才彈性調整政策績效目標。
-      </p>
+    <div class="row" style="height: 300vh;">
+      <div class="col-5 sticky-top" style="height:fit-content;top:33vh;left:5%;z-index: -1;">
+        <img src="assets/台大學生會.png" style="height:50vh">
+      </div>
+      <div class="col-7" style="height: 300vh;">
+        <div style="height: 100vh;background-color:yellow">div1</div>
+        <div style="height: 100vh;background-color:violet">div2</div>
+        <div style="height: 100vh;background-color:blueviolet">div3</div>
+      </div>
     </div>
-    <div
-      style="height: 20vh; width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:200vh;left:50%;display: flex;align-items: center">
-      <p style="margin:10%;position:relative;">
-        各校百花齊放的雙語教育資源，仍不脫政策核心價值－「國際競爭力」。但透過英語追求競爭力真的是社會普遍共識嗎？追求競爭力的同時，是否無意間排除了些什麼？難以適應雙語教育的學生其學習權益是否被打折扣？雙語政策諸多影響猶待關注，方能讓後續推動，不只能顧及「雙語」，還有「教育」。
-      </p>
+
+    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
+      <h3 style="width:100%;color:white">臺師大通識教育中心主任鄭怡庭</h3>
+    </div>
+    <div class="row" style="height: 300vh;">
+      <div class="col-5 sticky-top" style="height:fit-content;top:30vh;left:6%;z-index: -1;">
+        <img src="assets/鄭怡庭.png" style="height:50vh">
+      </div>
+      <div class="col-7" style="height: 300vh;">
+        <div style="height: 100vh;background-color:yellow">div1</div>
+        <div style="height: 100vh;background-color:violet">div2</div>
+        <div style="height: 100vh;background-color:blueviolet">div3</div>
+      </div>
+    </div>
+
+    <div class="text-center" style="height:20vh;background-color:brown;display: flex;align-items: center">
+      <h3 style="width:100%;color:white">臺大雙語教育中心</h3>
+    </div>
+    <div class="row" style="height: 300vh;">
+      <div class="col-5 sticky-top" style="height:fit-content;top:36vh;left:1%;z-index: -1;">
+        <img src="assets/台大雙語辦公室.png" style="height:40vh">
+      </div>
+      <div class="col-7" style="height: 300vh;">
+        <div style="height: 100vh;background-color:yellow">div1</div>
+        <div style="height: 100vh;background-color:violet">div2</div>
+        <div style="height: 100vh;background-color:blueviolet">div3</div>
+      </div>
+    </div>
+
+    <!-- 翻卡解方 -->
+    <div style="height: 100vh;background-color:black">
+      <p style="color:white;position: relative;top:50vh">這裡會是翻卡CSS</p>
+    </div>
+
+    <!-- 結論 -->
+    <div style="height: 500vh;">
+      <img class="sticky-top" src="assets/conclusion.jpg" style="width: 100vw;z-index: -1;">
+      <div class="container-fluid"
+        style="width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:20vh;left:23%;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;">
+          為提升臺灣競爭力、厚植國人英語力，高教雙語政策推動至今已逾一年，各大學配合政策目標總動員，讓全校師生集體投入這場全球化下的英語軍備競賽，外國學生也得利於雙語教學的環境，教室裡的學生面貌日趨多元、「國際化」有成。</p>
+      </div>
+      <div class="container-fluid"
+        style="width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:110vh;left:23%;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;">
+          然而，當我們知悉教學現場各殊異想法後，再次攤開雙語教育政策檢視，除了政策績效目標之外，難見其他實質政策內容。不完備的政策讓執行責任落在第一線的學校、教師及學生身上，教育部往往是在得到教學現場反映後才彈性調整政策績效目標。
+        </p>
+      </div>
+      <div class="container-fluid"
+        style="width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:200vh;left:23%;display: flex;align-items: center">
+        <p style="margin:10%;position:relative;">
+          各校百花齊放的雙語教育資源，仍不脫政策核心價值－「國際競爭力」。但透過英語追求競爭力真的是社會普遍共識嗎？追求競爭力的同時，是否無意間排除了些什麼？難以適應雙語教育的學生其學習權益是否被打折扣？雙語政策諸多影響猶待關注，方能讓後續推動，不只能顧及「雙語」，還有「教育」。
+        </p>
+      </div>
     </div>
   </div>
 
