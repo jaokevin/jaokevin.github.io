@@ -30,14 +30,6 @@
     <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
   </div>
 
-  <div id="tofix1" class="container-fluid sticky-top" style="background-color:coral;width:100%;min-height:50px;">
-    <h3>tofix1: min-height: 50px</h3>
-    <p><code>.sticky-top</code> to fix something after scrolling to the top.</p>
-    <p>See <a
-        href="https://getbootstrap.com/docs/4.1/utilities/position/">https://getbootstrap.com/docs/4.1/utilities/position/</a>
-    </p>
-  </div>
-
   <!-- 標題＋進度條 -->
   <div id="topic" class="container-fluid sticky-top" style="height: 10vh;padding: 0;z-index: 2000;">
     <div style="height: 9vh;display: flex;align-items: center;background-color:darkslateblue;">
@@ -179,8 +171,60 @@
 
   <div class="container-fluid" style="padding:0;">
     <!-- 翻卡解方 -->
-    <div style="height: 100vh;background-color:black">
-      <p style="color:white;position: relative;top:50vh">這裡會是翻卡CSS</p>
+    <div class="row" style="background-color:black;">
+      <!-- <p style="color:white;position: relative;top:50vh">這裡會是翻卡CSS</p> -->
+      <div class="col-12" style="height: 10vh;"></div>
+      <div class="col-sm-12 col-lg-6 col-xl-4">
+        <div class="card" style="margin: 0 auto;">
+          <div class="card-side front">
+            <div>Front Side</div>
+          </div>
+          <div class="card-side back">
+            <div>Back Side</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 col-xl-4">
+        <div class="card" style="margin: 0 auto;">
+          <div class="card-side front">
+            <div>Front Side</div>
+          </div>
+          <div class="card-side back">
+            <div>Back Side</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 col-xl-4">
+        <div class="card" style="margin: 0 auto;">
+          <div class="card-side front">
+            <div>Front Side</div>
+          </div>
+          <div class="card-side back">
+            <div>Back Side</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 col-xl-6">
+        <div class="card" style="margin: 0 auto;">
+          <div class="card-side front">
+            <div>Front Side</div>
+          </div>
+          <div class="card-side back">
+            <div>Back Side</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-6 col-xl-6">
+        <div class="card" style="margin: 0 auto;">
+          <div class="card-side front">
+            <div>Front Side</div>
+          </div>
+          <div class="card-side back">
+            <div>Back Side</div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- 結論 -->
@@ -206,7 +250,8 @@
     </div>
   </div>
 
-  <div class="sticky-top text-center" style="height: 100vh;background-color:gray;display: flex;align-items: center;">
+  <div class="sticky-top text-center"
+    style="height: 100vh;background-color:gray;display: flex;align-items: center;z-index: 2001;">
     <div style="height:fit-content;position:relative;margin:auto;color:white">
       <h2><b>快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？</b></h2>
       <br>
