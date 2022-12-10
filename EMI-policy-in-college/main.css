@@ -25,6 +25,8 @@ body{
     padding: 0;
 }
 
+
+
 #foot-animation{
     animation: foot-animation 2.5s infinite;
 }
@@ -38,6 +40,8 @@ body{
     100% {transform: translateX(10vw);}
 
 }
+
+/* 翻卡 */
 
 .card {
     perspective: 150rem;
@@ -79,4 +83,32 @@ body{
   
   .card:hover .card-side.back {
     transform: rotateY(0deg);
+  }
+
+  /* 對話 */
+
+  .chat {
+    visibility: hidden;
+  }
+  .chat-2 {
+    visibility: hidden;
+  }
+
+  .slideanimation {
+    animation: loading-picture 1s 0s 1 ease;
+    visibility:visible;
+  }
+
+  @keyframes loading-picture {
+    0% {
+      visibility:visible;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    100% {
+      visibility:visible;
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }

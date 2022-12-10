@@ -94,29 +94,35 @@
     </div>
 
     <!-- 學生對話 -->
-    <div style="height: 850vh;background-color:lightgrey;">
-      <div class="container-fluid" style="height: 150vh;">
+    <div class="container-fluid" style="background-color:lightgrey;">
+      <div class="container-fluid" style="height: 100vh;">
         <h1 class="text-center" style="height:100vh;width: 100%;display: flex;align-items: center"><b
-            style="width: 100%;">學生究竟怎麼看待雙語政策的呢？他們對EMI課程的實際感受是什麼？<br>往下滑，一起聽聽看他們的想法吧！</b></h1>
+            style="width: 100%;">學生究竟怎麼看待雙語政策的呢？他們對EMI課程的實際感受是什麼？<br>往下滑，一起聽聽看他們的想法吧！</b>
+        </h1>
       </div>
 
-      <div style="height: 700vh;">
-        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:10%;"><img src="assets/student1.png"></div>
-        <div style="position: relative;left:70%;"><img src="assets/student1.png"></div>
-        <div
-          style="height: 50vh; width: 50vw;background-color: rgba(0, 0, 0, 0.5);position: relative;top:15vh;left: 25%;display: flex;align-items: center">
+      <div class="container-fluid">
+        <img class="img-fluid chat" style="margin: 0 auto;display: block;" src="assets/chats/資產 1.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 2.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 3.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 4.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 5.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 6.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 7.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 8.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 9.png">
+        <img class="img-fluid chat" style="margin: 50px auto;display: block;" src="assets/chats/資產 10.png">
+        <div class="container-fluid chat-2"
+          style="width: 70vw;background-color:rgba(0, 0, 0, 0.8);display: flex;align-items: center;">
           <p style="margin:10%;position:relative;color: white;">
-            這裡可以放小結
+            上述牛頭不對馬嘴的對話，可說是EMI課程見怪不怪的日常。<br><br>
+            問題不只是「英文能力」，而是當課程或小組討論主題相當在地化時，學生不僅會卡在不知道怎麼將熟悉的華語翻譯成英語外（如「那些年我們一起追的女孩」英文片名為「You Are the Apple of My
+            Eye」），更因此而無法有效率地針對課程專業核心進行討論，讓內容流於淺碟化。<br><br>
+            <b style="font-size: 18pt;">那麼，這樣的EMI課程目前究竟佔總課程數的多少比例？</b>
           </p>
+          
         </div>
+        <div style="height: 10vh;"></div>
       </div>
     </div>
 
@@ -229,7 +235,8 @@
 
     <!-- 結論 -->
     <div style="height: 500vh;">
-      <img class="sticky-top" src="assets/conclusion.jpg" style="width:100%;height:100vh;object-fit: cover;z-index: -1;">
+      <img class="sticky-top" src="assets/conclusion.jpg"
+        style="width:100%;height:100vh;object-fit: cover;z-index: -1;">
       <div class="container-fluid"
         style="width: 40vw;background-color: rgba(255, 255, 255,1);position: relative;top:20vh;left:23%;display: flex;align-items: center">
         <p style="margin:10%;position:relative;">
@@ -344,17 +351,37 @@
     });
 
     // infogram
-    $(function(){
+    $(function () {
       var winw = $(window).width();
-      $(window).scroll(function(){
+      $(window).scroll(function () {
         var winw = $(window).width();
         var current_pos = $(window).scrollTop();
         console.log(winw);
-        if (winw <= 1000){
+        if (winw <= 1000) {
           $("#infogram").css("width", 80 + "vw");
-        }else{
+        } else {
           $("#infogram").css("width", 40 + "vw");
         }
+      });
+    });
+
+    // 對話
+    $(function () {
+      var winh = $(window).height();
+      $(window).scroll(function () {
+        var current_pos = $(window).scrollTop();
+        $(".chat").each(function () {
+          var imgs_pos = $(this).offset().top;
+          if (current_pos > imgs_pos - winh / 2) {
+            $(this).addClass("slideanimation");
+          }
+        });
+        $(".chat-2").each(function () {
+          var imgs_pos = $(this).offset().top;
+          if (current_pos > imgs_pos - winh / 3) {
+            $(this).addClass("slideanimation");
+          }
+        });
       });
     });
 
