@@ -58,6 +58,37 @@ body {
 
 }
 
+#jt-animation {
+  animation: jt-animation 2.5s infinite;
+}
+
+@keyframes jt-animation {
+  0% {
+    transform: translateY(-10vh);
+  }
+
+  20% {
+    transform: translateY(-5vh);
+  }
+
+  40% {
+    transform: translateY(0vh);
+  }
+
+  60% {
+    transform: translateY(5vh);
+  }
+
+  80% {
+    transform: translateY(10vh);
+  }
+
+  100% {
+    transform: translateY(10vh);
+  }
+
+}
+
 /* 翻卡 */
 
 .card {
