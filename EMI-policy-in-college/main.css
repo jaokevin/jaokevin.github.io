@@ -89,20 +89,52 @@ body {
 
 }
 
+#mouse-animation {
+  animation: mouse-animation 2.5s infinite;
+  transform: rotate(-0.05turn);
+}
+
+@keyframes mouse-animation {
+  0% {
+    transform: translateX(3vh) translateY(2vw) rotate(-0.05turn);
+  }
+
+  20% {
+    transform: translateX(3vh) translateY(2vw) rotate(-0.05turn);
+  }
+
+  40% {
+    transform: translateX(0vh) translateY(0vw) rotate(-0.05turn);
+  }
+
+  60% {
+    transform: translateX(0vh) translateY(0vw) rotate(-0.05turn);
+  }
+
+  80% {
+    transform: translateX(0vh) translateY(0vw) rotate(-0.05turn);
+  }
+
+  100% {
+    transform: translateX(3vh) translateY(2vw) rotate(-0.05turn);
+  }
+}
+
 /* 翻卡 */
 
 .card {
   perspective: 150rem;
   position: relative;
-  height: 40rem;
+  height: 20rem;
   max-width: 400px;
   margin: 2rem;
   box-shadow: none;
   background: none;
+  border-color: transparent;
 }
 
 .card-side {
-  height: 35rem;
+  height: 15rem;
   border-radius: 15px;
   transition: all 0.8s ease;
   backface-visibility: hidden;
