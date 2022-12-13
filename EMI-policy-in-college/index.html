@@ -86,7 +86,7 @@
       </div>
     </div>
 
-    <div class="container-fluid text-center" style="height: 100vh;background-color:rgb(208, 86, 99);">
+    <div class="container-fluid text-center" style="height: 100vh;background-color:ghostwhite;">
       <h1 style="position: relative;top:30vh;color: white;"><strong>往下滑<br><br>一起走進EMI教學現場吧<br><br><br></strong></h1>
       <h1 id="foot-animation" style="position: relative;top:30vh;color: transparent;text-shadow: 0 0 0 white;">👣</h1>
     </div>
@@ -127,6 +127,7 @@
         <h1 class="text-center" style="height:100vh;width: 100%;display: flex;align-items: center"><b
             style="width: 100%;color: rgb(42, 64, 61);">學生究竟怎麼看待雙語政策的呢？他們對EMI課程的實際感受是什麼？<br>往下滑，一起聽聽看他們的想法吧！</b>
         </h1>
+        <h1 id="jt-animation" style="position: relative;top:20vh;">⬇️</h1>
       </div>
 
       <div class="container-fluid">
@@ -157,7 +158,7 @@
     <!-- EMI歷年圖表 -->
     <div style="height:200vh;background-color:ghostwhite;">
       <div id="infogram" class="container-fluid sticky-top"
-        style="width:40vw;margin: 0 auto;top:15vh;box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">
+        style="width:45vw;margin: 0 auto;top:15vh;box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">
         <div class="infogram-embed" data-id="f26aea3a-d0c9-4700-b7fc-54903c93b008" data-type="interactive"
           data-title="Line Chart"></div>
         <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
@@ -321,7 +322,8 @@
         <div class="container-fluid"
           style="width: 40vw;background-color: rgb(42, 64, 61);position: relative;top:200vh;left:23%;display: flex;align-items: center">
           <p style="margin:10%;position:relative;color: white;">
-            各校百花齊放的雙語教育資源，仍不脫政策核心價值－「國際競爭力」。但透過英語追求競爭力真的是社會普遍共識嗎？追求競爭力的同時，是否無意間排除了些什麼？難以適應雙語教育的學生其學習權益是否被打折扣？雙語政策諸多影響猶待關注，方能讓後續推動，不只能顧及「雙語」，還有「教育」。
+            各校百花齊放的雙語教育資源，仍不脫政策核心價值－「國際競爭力」。但透過英語追求競爭力真的是社會普遍共識嗎？追求競爭力的同時，是否無意間排除了些什麼？難以適應雙語教育的學生其學習權益是否被打折扣？<br><br>
+            <b>雙語政策諸多影響猶待關注，方能讓後續推動，<br>不只能顧及「雙語」，還有「教育」。</b>
           </p>
         </div>
         <div class="container-fluid"
@@ -444,19 +446,19 @@
     });
 
     // infogram
-    $(function () {
-      var winw = $(window).width();
-      $(window).scroll(function () {
-        var winw = $(window).width();
-        var current_pos = $(window).scrollTop();
-        console.log(winw);
-        if (winw <= 1000) {
-          $("#infogram").css("width", 80 + "vw");
-        } else {
-          $("#infogram").css("width", 40 + "vw");
-        }
-      });
-    });
+    // $(function () {
+    //   var winw = $(window).width();
+    //   $(window).scroll(function () {
+    //     var winw = $(window).width();
+    //     var current_pos = $(window).scrollTop();
+    //     console.log(winw);
+    //     if (winw <= 1000) {
+    //       $("#infogram").css("width", 80 + "vw");
+    //     } else {
+    //       $("#infogram").css("width", 40 + "vw");
+    //     }
+    //   });
+    // });
 
     // 對話
     $(function () {
