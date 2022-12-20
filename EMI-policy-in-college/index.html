@@ -21,6 +21,15 @@
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css">
 
+  <!-- Google Font -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Vollkorn:wght@500&display=swap"
+    rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Vollkorn:wght@500&display=swap');
+  </style> -->
+
   <title>快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？</title>
   <link rel="icon" type="image/x-icon" href="assets/icon.ico">
 </head>
@@ -330,7 +339,7 @@
           </p>
         </div>
         <div class="container-fluid"
-          style="width: 40vw;background-color: rgba(255, 255, 255,0);position: relative;top:300vh;left:23%;display: flex;align-items: center">
+          style="width: 40vw;background-color: rgba(255, 255, 255,0);position: relative;top:240vh;left:23%;display: flex;align-items: center">
           <div class="strawpoll-embed" id="strawpoll_6QnM7eweAZe"
             style="height: 480px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
             <iframe title="StrawPoll Embed" id="strawpoll_iframe_6QnM7eweAZe"
@@ -489,12 +498,13 @@
         var current_pos = $(window).scrollTop();
         var leftandright_pos = $("#leftandright").offset().top;
         var leftandright_height = $("#leftandright").height();
-        if (current_pos >= leftandright_pos - 50 && current_pos <= leftandright_pos + leftandright_height - 100){
+        if (current_pos >= leftandright_pos - 50 && current_pos <= leftandright_pos + leftandright_height - 100) {
           // $("#topic").css("visibility", "hidden");
           $("#topic").removeClass("sticky-top");
-        }else{
-        // $("#topic").css("visibility", "visible");
-        $("#topic").addClass("sticky-top");}
+        } else {
+          // $("#topic").css("visibility", "visible");
+          $("#topic").addClass("sticky-top");
+        }
       });
     });
 
