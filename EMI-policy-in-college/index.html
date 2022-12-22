@@ -42,12 +42,21 @@
       <p style="color: white;">Loading</p>
     </div>
   </div>
+  
+  <!-- 舊捲動影片 -->
   <div class="container-fluid">
+    <div class="scroll_video" style="height: 300vh; padding: 0px;">
+      <video id="video" class="sticky-top" src="assets/start_scrolled-video.mp4"></video>
+      <div id="video_fliter" class="sticky-top" style="height:100vh;width: 100vw; background-color:black; z-index:-2;"></div>
+    </div>
+  </div>
+
+  <!-- <div class="container-fluid">
     <div class="scroll_video" style="height: 300vh; padding: 0px;">
       <video id="video" src="assets/start_scrolled-video.mp4"></video>
       <div id="video_fliter" style="height:250vh;width: 100vw; background-color:black; z-index:-2;"></div>
     </div>
-  </div>
+  </div> -->
 
   <div style="height: 200vh;">
     <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
@@ -107,27 +116,27 @@
     <div id="hframe" style="min-height:1340vh;">
       <div class="sticky-top" style="z-index: -1;">
         <div id="horizontal">
-          <img src="assets/taiwan-popular-culture-1.jpg" style="height: 100vh;"></img>
-          <img src="assets/taiwan-popular-culture-2.jpg" style="height: 100vh;"></img>
-          <img src="assets/taiwan-popular-culture-3.jpg" style="height: 100vh;"></img>
-          <img src="assets/taiwan-popular-culture-4.jpg" style="height: 100vh;"></img>
+          <img src="assets/ppt1.jpg" style="height: 100vh;"></img>
+          <img src="assets/ppt2.jpg" style="height: 100vh;"></img>
+          <img src="assets/ppt3.jpg" style="height: 100vh;"></img>
+          <img src="assets/ppt4.jpg" style="height: 100vh;"></img>
         </div>
       </div>
       <div class="container-fluid"
-        style="position: relative;top:100vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
+        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:100vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
         <p style="margin:10%;position:relative;color: white;">英文版簡報是EMI課程「台灣流行文化」的上課PPT，<br>而右方的華文版簡報是我們提供的翻譯。</p>
       </div>
       <div class="container-fluid"
-        style="position: relative;top:500vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
+        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:500vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
         <p style="margin:10%;position:relative;color: white;">進下一張簡報之前，我們會問兩個是非題，<br>請你先從英文版簡報尋找解答。</p>
       </div>
       <div class="container-fluid"
-        style="position: relative;top:700vh;left:-20%; width:37vw; background-color:rgb(208, 86, 99);display: flex;align-items: center">
+        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:700vh;left:-20%; width:37vw; background-color:rgb(208, 86, 99);display: flex;align-items: center">
         <p style="margin:5%;position:relative;color: white;">
           是非題：<br>1.1950到1980年代，多數的熱門通俗劇都有被保存下來。<br>2.保存下來的台語電影，雖然數量少，但都屬於最具代表性的。</p>
       </div>
       <div class="container-fluid"
-        style="position: relative;top:1100vh;left:-20%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
+        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:1100vh;left:-20%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
         <p style="margin:10%;position:relative;color: white;">
           答案是兩者皆非！<br>再看一次華文版，會不會比較容易理解呢？</p>
       </div>
@@ -397,14 +406,24 @@
         var video = $("#video").get(0);
         var videolength = video.duration;
         if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
-          $("#video").css("position", "fixed");
-          $("#video_fliter").css("position", "fixed");
+          
+          
           video.currentTime = current_pos / cover_scroll_max * videolength;
           $("#video").css("opacity", 1 - (current_pos / cover_scroll_max - 0.7));
         } else {
-          $("#video").css("position", "");
-          $("#video_fliter").css("position", "");
+          
+          
         }
+
+        // if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
+        //   $("#video").css("position", "fixed");
+        //   $("#video_fliter").css("position", "fixed");
+        //   video.currentTime = current_pos / cover_scroll_max * videolength;
+        //   $("#video").css("opacity", 1 - (current_pos / cover_scroll_max - 0.7));
+        // } else {
+        //   $("#video").css("position", "");
+        //   $("#video_fliter").css("position", "");
+        // }
 
         // if (current_pos >= $(".scroll_video").offset().top && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
         //   $("#video").css("position", "fixed");
