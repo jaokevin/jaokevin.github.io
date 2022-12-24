@@ -188,8 +188,8 @@
 
     <!-- 解釋雙語計畫落實到各校的狀況 -->
     <div style="height: 330vh;background-image: url(assets/competition.jpg);background-size: cover;">
-      <div class="container-fluid"
-        style="width: 70vw;background-color: rgba(255,255,255,0.8);position: relative;top:170vh;display: flex;align-items: center">
+      <div id="textbox1" class="container-fluid"
+        style="width: 70vw;background-color: rgba(255,255,255,0.8);position: relative;top:200vh;display: flex;align-items: center">
         <p style="margin:10%;position:relative;color: rgb(42,64,61);font-size: 18px;">
           為讓各大學在推動EMI教學上有可供學習的典範對象，教育部挹注具國際競爭力之大學轉型為「標竿學校及學院」，重點培育雙語專業人才，2021年已核定4所標竿學校（台灣大學、台灣師範大學、成功大學、中山大學）蓄勢待發。<br><br>
           投入大量經費資源，雙語標竿學校將完成什麼政策目標？2030年前，雙語標竿學校要讓半數學生自大二起的英文能力達B2以上，且至少半數大二及碩一學生其修習學分有一半以上為EMI課程，具體提升學生英語能力。<br><br>
@@ -487,6 +487,21 @@
           $("#infogram").css("width", 80 + "vw");
         } else {
           $("#infogram").css("width", 45 + "vw");
+        }
+      });
+    });
+
+    // textbox1
+    $(function () {
+      var winw = $(window).width();
+      $(window).scroll(function () {
+        var winw = $(window).width();
+        var current_pos = $(window).scrollTop();
+        console.log(winw);
+        if (winw <= 1000) {
+          $("#textbox1").css("top", 150 + "vh");
+        } else {
+          $("#textbox1").css("top", 200 + "vh");
         }
       });
     });
