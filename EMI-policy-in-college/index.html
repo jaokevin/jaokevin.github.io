@@ -46,8 +46,8 @@
   <!-- 舊捲動影片 -->
   <div class="container-fluid">
     <div class="scroll_video" style="height: 300vh; padding: 0px;">
-      <div class="sticky-top" style="z-index: -1;"><video id="video" src="assets/start_scrolled-video.mp4"
-          type="video/mp4" playsinline></video></div>
+      <video id="video" src="assets/start_scrolled-video.mp4"
+          type="video/mp4" playsinline></video>
       <div id="video_fliter" class="sticky-top" style="height:100vh;width: 100vw; background-color:black; z-index:-2;">
       </div>
     </div>
@@ -405,11 +405,12 @@
     // 封面捲動式影片
     $(function () {
       var cover_scroll_max = $(".scroll_video").height() - $(window).height();
+      $(window).on("load", function() { $("video").addClass("sticky-top"); });
       $(window).scroll(function () {
         var current_pos = $(document).scrollTop();
         var video = $("#video").get(0);
         var videolength = video.duration;
-        if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
+        if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) { 
 
 
           video.currentTime = current_pos / cover_scroll_max * videolength;
