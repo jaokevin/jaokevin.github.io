@@ -42,12 +42,14 @@
       <p style="color: white;">Loading</p>
     </div>
   </div>
-  
+
   <!-- 舊捲動影片 -->
   <div class="container-fluid">
     <div class="scroll_video" style="height: 300vh; padding: 0px;">
-      <video id="video" class="sticky-top" src="assets/start_scrolled-video.mp4" type="video/mp4" playsinline></video>
-      <div id="video_fliter" class="sticky-top" style="height:100vh;width: 100vw; background-color:black; z-index:-2;"></div>
+      <div class="sticky-top" style="z-index: -1;"><video id="video" src="assets/start_scrolled-video.mp4"
+          type="video/mp4" playsinline></video></div>
+      <div id="video_fliter" class="sticky-top" style="height:100vh;width: 100vw; background-color:black; z-index:-2;">
+      </div>
     </div>
   </div>
 
@@ -124,7 +126,8 @@
       </div>
       <div class="container-fluid"
         style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:100vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
-        <p style="margin:8%;position:relative;color: white;font-size: 18px;">左方英文版是EMI課程「台灣流行文化」的簡報，<br>而右方的華文版簡報是我們提供的翻譯。</p>
+        <p style="margin:8%;position:relative;color: white;font-size: 18px;">
+          左方英文版是EMI課程「台灣流行文化」的簡報，<br>而右方的華文版簡報是我們提供的翻譯。</p>
       </div>
       <div class="container-fluid"
         style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;position: relative;top:500vh;left:25%; width:35vw; background-color:rgb(42, 64, 61);display: flex;align-items: center">
@@ -245,7 +248,7 @@
           <div class="card-side front" style="margin: auto auto;">
             <div>
               <h4><b>困境一</b></h4>
-                <p style="font-size: 18px;">學生缺乏專業領域的英語先備知識，以致EMI課程變相讓學生得先學好「英文」才能學好「專業」。</p>
+              <p style="font-size: 18px;">學生缺乏專業領域的英語先備知識，以致EMI課程變相讓學生得先學好「英文」才能學好「專業」。</p>
             </div>
           </div>
           <div class="card-side back" style="margin: auto auto;">
@@ -315,7 +318,8 @@
           <div class="card-side back">
             <div>
               <h4><b>解方五</b></h3>
-                <p style="font-size: 18px;">雖與雙語國家推行同年，「國家語言發展法」欲保障的本土語言卻在高教裡相對弱勢。可參考莊佳穎老師的授課模式，以營造多語友善的高教環境，讓雙語教育和國家語言兼容並蓄。</p>
+                <p style="font-size: 18px;">
+                  雖與雙語國家推行同年，「國家語言發展法」欲保障的本土語言卻在高教裡相對弱勢。可參考莊佳穎老師的授課模式，以營造多語友善的高教環境，讓雙語教育和國家語言兼容並蓄。</p>
             </div>
           </div>
         </div>
@@ -406,13 +410,13 @@
         var video = $("#video").get(0);
         var videolength = video.duration;
         if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
-          
-          
+
+
           video.currentTime = current_pos / cover_scroll_max * videolength;
           $("#video").css("opacity", 1 - (current_pos / cover_scroll_max - 0.7));
         } else {
-          
-          
+
+
         }
 
         // if (current_pos >= 0 && current_pos < $(".scroll_video").offset().top + $(".scroll_video").height()) {
