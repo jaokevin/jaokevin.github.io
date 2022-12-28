@@ -35,6 +35,8 @@
 </head>
 
 <body>
+  <div style="height: 1px;background-color: black;"></div>
+  
   <!-- 封面 -->
   <div class="container-fluid" style="position: absolute;height:100vh;width:100vw">
     <div class="text-center animation-loading"
@@ -44,14 +46,13 @@
   </div>
 
   <!-- 舊捲動影片 -->
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="scroll_video" style="height: 300vh; padding: 0px;">
-      <video id="video" class="sticky-top" src="assets/start_scrolled-video.mp4"
-          type="video/mp4" playsinline></video>
+      <video id="video" class="sticky-top" src="assets/start_scrolled-video.mp4" type="video/mp4" playsinline></video>
       <div id="video_fliter" class="sticky-top" style="height:100vh;width: 100vw; background-color:black; z-index:-2;">
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- <div class="container-fluid">
     <div class="scroll_video" style="height: 300vh; padding: 0px;">
@@ -60,18 +61,46 @@
     </div>
   </div> -->
 
+  <!-- 新捲動影片 -->
+  <div style="height: 300vh;">
+    <script>
+      (function () {
+        var namespace = '__twreporterEmbeddedData';
+        var pkg = 'scrollable-video';
+        if (typeof window != 'undefined') {
+          if (!window.hasOwnProperty(namespace)) {
+            window[namespace] = {};
+          }
+          if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+            window[namespace][pkg] = [];
+          }
+          if (Array.isArray(window[namespace][pkg])) {
+            var data = { "video": { "sources": [{ "type": "video\u002Fmp4", "src": "https:\u002F\u002Fjaokevin.github.io\u002FEMI-policy-in-college\u002Fassets\u002Fstart_scrolled-video.mp4", "width": 1920, "height": 1080 }] }, "captions": [], "appProps": { "captionsSetting": { "xBoxAlign": "right", "xPosition": "8.7%", "yBoxAlign": "bottom", "yPosition": "20px" }, "captionSetting": { "textAlign": "right" }, "secondsPer100vh": 1.5, "skipLoadLocationRegExp": "editor", "forcedPreloadVideo": true, "gsapVersion": "3.5.1", "scrollTriggerVersion": "3.5.1", "pollingTimeout": 700, "preloadCacheType": "force-cache" }, "theme": { "mq": { "mobileMaxWidth": "767px" }, "captions": { "color": "#fff", "link": { "color": "#a67a44", "underlineColor": "#a67a44" }, "lineHieght": "1.7", "mobileLineHeight": "1.7", "fontStyle": "normal", "fontWeight": "bold", "fontSize": "24px", "mobile": { "fontSize": "22px" }, "fontFamily": "ff-tisa-web-pro, source-han-sans-traditional, Noto Sans TC, PingFang TC, Apple LiGothic Medium, Roboto, Microsoft JhengHei, Lucida Grande, Lucida Sans Unicode, sans-serif", "box": { "background": "#404040", "width": "450px", "mobileWidth": "77%", "spanPadding": "6px 15px", "mobilePadding": "12px 12px 14px 18px" } } }, "uuid": "9c157eff-3ec7-4b00-9c2b-487e05f0694c" };
+            window[namespace][pkg].push(data);
+          }
+        }
+      })()
+    </script>
+    <div id="9c157eff-3ec7-4b00-9c2b-487e05f0694c"></div>
+    <script type="text/javascript" crossorigin
+      src="https://unpkg.com/@twreporter/scrollable-video@1.0.3/dist/main.86a0a5788205961bf35c.bundle.js"></script>
+  </div>
+
   <div style="height: 200vh;">
     <img style="width:100%;height: 100vh;" class="sticky-top" src="assets/cover-big.png">
   </div>
 
   <!-- 標題＋進度條 -->
   <div id="topic" class="container-fluid sticky-top" style="height: 10vh;padding: 0;z-index: 2000;">
-    <div style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;height: 9vh;display: flex;align-items: center;background-color:rgba(42, 64, 61, 1);">
+    <div
+      style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;height: 9vh;display: flex;align-items: center;background-color:rgba(42, 64, 61, 1);">
       <h2 style="color: white;text-align: center; width:99vw;height: fit-content;">快篩「高教雙語政策」！上路一年後，大學課堂還好嗎？
       </h2>
     </div>
-    <div class="sticky-top" style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;height: 1vh; background-color:rgba(195, 203, 214, 1);">
-      <div id="statusbar" style="box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;height: 1vh; width: 0px; background-color:rgba(116, 139, 111, 1);position: relative;">
+    <div class="sticky-top"
+      style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;height: 1vh; background-color:rgba(195, 203, 214, 1);">
+      <div id="statusbar"
+        style="box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;height: 1vh; width: 0px; background-color:rgba(116, 139, 111, 1);position: relative;">
       </div>
     </div>
   </div>
