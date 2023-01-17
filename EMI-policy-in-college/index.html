@@ -442,6 +442,41 @@
     crossorigin="anonymous"></script>
   <script>
 
+    // 偵測裝置
+    function getOS() {
+      var userAgent = window.navigator.userAgent,
+        platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+
+      if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+      } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+      } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+      } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+      } else if (/Linux/.test(platform)) {
+        os = 'Linux';
+      }
+
+      return os;
+    }
+
+    $(function(){
+      var device = getOS();
+      console.log(device);
+      if (device == "iOS"){
+        console.log("1");
+        $(".scroll_video").css("height", 0 + "vh");
+      } else{
+        console.log("2");
+      }
+    });
+
     // 封面捲動式影片
     $(function () {
       var cover_scroll_max = $(".scroll_video").height() - $(window).height();
@@ -541,7 +576,7 @@
       $(window).scroll(function () {
         var winw = $(window).width();
         var current_pos = $(window).scrollTop();
-        console.log(winw);
+        // console.log(winw);
         if (winw <= 1000) {
           $("#infogram").css("width", 80 + "vw");
         } else {
@@ -556,7 +591,7 @@
       $(window).scroll(function () {
         var winw = $(window).width();
         var current_pos = $(window).scrollTop();
-        console.log(winw);
+        // console.log(winw);
         if (winw <= 1000) {
           $("#textbox1").css("top", 150 + "vh");
         } else {
