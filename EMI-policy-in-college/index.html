@@ -621,20 +621,20 @@
     });
 
     // 左右互搏
-    $(function () {
-      $(window).scroll(function () {
-        var current_pos = $(window).scrollTop();
-        var leftandright_pos = $("#leftandright").offset().top;
-        var leftandright_height = $("#leftandright").height();
-        if (current_pos >= leftandright_pos - 50 && current_pos <= leftandright_pos + leftandright_height - 100) {
-          // $("#topic").css("visibility", "hidden");
-          $("#topic").removeClass("sticky-top");
-        } else {
-          // $("#topic").css("visibility", "visible");
-          $("#topic").addClass("sticky-top");
-        }
-      });
-    });
+    // $(function () {
+    //   $(window).scroll(function () {
+    //     var current_pos = $(window).scrollTop();
+    //     var leftandright_pos = $("#leftandright").offset().top;
+    //     var leftandright_height = $("#leftandright").height();
+    //     if (current_pos >= leftandright_pos - 50 && current_pos <= leftandright_pos + leftandright_height - 100) {
+    //       // $("#topic").css("visibility", "hidden");
+    //       $("#topic").removeClass("sticky-top");
+    //     } else {
+    //       // $("#topic").css("visibility", "visible");
+    //       $("#topic").addClass("sticky-top");
+    //     }
+    //   });
+    // });
 
   </script>
 </body>
