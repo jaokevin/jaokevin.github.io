@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 關西尊榮深度探索手冊 | KANSAI LUXURY GUIDE</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans TC, Playfair Display, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',
+                            indigo: '#1e1b4b',
+                            gold: '#d97706',
+                            goldLight: '#fef3c7',
+                            goldHover: '#b45309',
+                            slateBg: '#f8fafc',
+                            cardBg: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-brand-slateBg text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 pb-20">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-amber-500/20 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg">
+                        関
+                    </div>
+                    <div>
+                        <span class="font-serif text-lg tracking-wider text-amber-400 font-bold">KANSAI</span>
+                        <span class="text-xs block text-slate-400 tracking-widest uppercase">Luxury Cultural Guide</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex space-x-1 lg:space-x-3 text-sm font-medium">
+                    <a href="#preface" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">寫在出發前</a>
+                    <a href="#overview" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">行程總覽</a>
+                    <a href="#itinerary" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">逐日細節</a>
+                    <a href="#culture" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">歷史文化導覽</a>
+                    <a href="#directory" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">景點美食百科</a>
+                    <a href="#toolkit" class="px-3 py-2 rounded-md hover:text-amber-400 hover:bg-slate-800 transition">隨身工具箱</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2 text-sm">
+            <a href="#preface" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">寫在出發前</a>
+            <a href="#overview" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">行程總覽</a>
+            <a href="#itinerary" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">逐日細節</a>
+            <a href="#culture" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">歷史文化導覽</a>
+            <a href="#directory" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">景點美食百科</a>
+            <a href="#toolkit" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-amber-400">隨身工具箱</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero-pattern text-white relative overflow-hidden py-16 lg:py-24 border-b border-amber-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-4 tracking-widest uppercase">
+                    <i class="fa-solid fa-compass mr-2 text-amber-400"></i> 從歷史與文化，看懂一座城市的靈魂
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif mb-6 leading-tight">
+                    關西深度自由行導覽手冊 <br>
+                    <span class="gold-gradient-text">大阪 ‧ 奈良 ‧ 神戶 ‧ 和歌山</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+                    以極致舒適的大眾運輸為接駁，穿梭於干年古都神韻、明治洋風港灣、繁華商都煙火氣與紀州德川家之城，開啟一場兼具歷史底蘊、頂級美食與典故探索的假期。
+                </p>
+
+                <!-- Quick Travel Date Badge Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-3xl mx-auto bg-slate-900/90 p-4 rounded-2xl border border-slate-700/60 backdrop-blur-sm shadow-2xl">
+                    <div class="p-2.5">
+                        <span class="text-xs text-slate-400 block uppercase font-medium">行程日期</span>
+                        <span class="text-sm font-semibold text-amber-300">2026/07/30 - 08/03</span>
+                    </div>
+                    <div class="p-2.5">
+                        <span class="text-xs text-slate-400 block uppercase font-medium">住宿規劃</span>
+                        <span class="text-sm font-semibold text-white">大阪 (3晚) / 和歌山 (1晚)</span>
+                    </div>
+                    <div class="p-2.5">
+                        <span class="text-xs text-slate-400 block uppercase font-medium">交通策略</span>
+                        <span class="text-sm font-semibold text-white">ICOCA / 大阪周遊券 / 貴志券</span>
+                    </div>
+                    <div class="p-2.5">
+                        <span class="text-xs text-slate-400 block uppercase font-medium">核心探索</span>
+                        <span class="text-sm font-semibold text-amber-300">4大城市 ‧ 6大歷史章節</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-16">
+
+        <!-- SECTION 0: Preface Section -->
+        <section id="preface" class="scroll-mt-24">
+            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white border border-amber-500/30 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-amber-400 text-9xl font-serif pointer-events-none">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <div class="relative z-10 max-w-4xl">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="p-2 bg-amber-500/20 text-amber-400 rounded-lg text-lg">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </span>
+                        <h2 class="text-xl sm:text-2xl font-bold font-serif text-amber-300">寫在出發之前</h2>
+                    </div>
+                    <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                        <p>
+                            這本手冊的目的，不是取代地圖或美食清單，而是希望在你踏上每一個景點之前，先了解<strong class="text-amber-300 font-semibold">「為什麼它會在那裡」</strong>。同樣是拍照打卡，知道北野異人館背後藏著一段外國人如何在異地落地生根的故事，或是知道奈良的鹿其實承載著千年信仰，旅程的深度就會完全不同。
+                        </p>
+                        <p>
+                            手冊依照你的行程順序編排：<span class="text-white font-medium bg-slate-800 px-2 py-0.5 rounded border border-slate-700">大阪 ➔ 奈良 ➔ 神戶 ➔ 大阪（採購）➔ 和歌山</span>。每一章會先介紹這座城市的歷史脈絡與性格，再帶入行程中會經過的景點與美食典故。建議在搭車、等待或睡前抽空翻閱，讓背景知識先進入腦海，實地造訪時就能有「啊，原來如此」的體會，而不只是走馬看花。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Overview & Logistics -->
+        <section id="overview" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="p-2 bg-amber-500/10 text-amber-600 rounded-lg text-xl">
+                    <i class="fa-solid fa-plane-departure"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">行程總覽與交通住宿</h2>
+            </div>
+
+            <!-- Overview Table -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm mb-8">
+                <div class="p-4 bg-slate-900 text-white font-bold text-sm flex items-center justify-between">
+                    <span><i class="fa-solid fa-table-list text-amber-400 mr-2"></i> 2026 關西 5 日行程總覽表</span>
+                    <span class="text-xs text-slate-400 font-normal">7/29(三)夜出發 ➔ 8/03(一)返台</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm text-slate-700">
+                        <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
+                            <tr>
+                                <th class="p-3.5 sm:p-4 whitespace-nowrap">日期</th>
+                                <th class="p-3.5 sm:p-4">行程重點與動線</th>
+                                <th class="p-3.5 sm:p-4 whitespace-nowrap">住宿地點</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-amber-700 whitespace-nowrap">7/29 (三) 夜 <br>～ 7/30 (四)</td>
+                                <td class="p-3.5 sm:p-4">新竹搭客運赴桃園機場 (T1) ➔ 02:30 搭機飛關西機場 (T1)</td>
+                                <td class="p-3.5 sm:p-4 text-slate-400 font-medium">機上 / 旅途中</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap">7/30 (四) Day 1</td>
+                                <td class="p-3.5 sm:p-4">抵達關西機場 ➔ 大阪難波寄行李 ➔ 奈良一日遊（東大寺、春日大社、興福寺）➔ 生駒纜車 ➔ 回大阪道頓堀採購</td>
+                                <td class="p-3.5 sm:p-4 font-semibold text-slate-800">大阪 (FDS ZEAL)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap">7/31 (五) Day 2</td>
+                                <td class="p-3.5 sm:p-4">神戶一日遊：池田日清杯麵博物館 ➔ 北野異人館 ➔ 神戶舊居留地 ➔ 美利堅公園 / umie 夜景</td>
+                                <td class="p-3.5 sm:p-4 font-semibold text-slate-800">大阪 (FDS ZEAL)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap">8/01 (六) Day 3</td>
+                                <td class="p-3.5 sm:p-4">大阪採購與水都日：木津市場海鮮 ➔ 天王寺動物園 ➔ 新世界通天閣 ➔ 阿倍野 ➔ 大阪港聖瑪莉亞號/摩天輪 ➔ 道頓堀觀光船/法善寺</td>
+                                <td class="p-3.5 sm:p-4 font-semibold text-slate-800">大阪 (FDS ZEAL)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap">8/02 (日) Day 4</td>
+                                <td class="p-3.5 sm:p-4">移動至和歌山：和歌山城 ➔ 黑潮市場鮪魚解體秀 ➔ 貴志川線貓站長巡禮 ➔ 和歌山拉麵名店宵夜</td>
+                                <td class="p-3.5 sm:p-4 font-semibold text-sky-800">和歌山 (東橫Inn)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap">8/03 (一) Day 5</td>
+                                <td class="p-3.5 sm:p-4">和歌山晨間散策與退房 ➔ JR 關空快速直達關西機場 ➔ KIX 免稅店採購 ➔ 15:20 搭機返台</td>
+                                <td class="p-3.5 sm:p-4 text-emerald-700 font-bold">溫暖的家</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Logistics Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Flight Logistics Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-ticket text-amber-500 mr-2"></i> 航班資訊 (Flight)
+                        </h3>
+                        <span class="text-xs px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full font-medium">紅眼去/午回</span>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <div class="text-xs font-semibold text-amber-600 mb-1">【去程】7/30 (四) 機場接駁與航班</div>
+                            <p class="text-slate-600">7/29 23:00 清大搭客運至桃園 T1</p>
+                            <p class="font-bold text-slate-800 mt-1">02:30 桃園 (T1) ➔ 06:05 關西 (T1)</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <div class="text-xs font-semibold text-sky-600 mb-1">【回程】8/03 (一) 返台航班</div>
+                            <p class="font-bold text-slate-800">15:20 關西 (T1) ➔ 17:20 桃園 (T1)</p>
+                            <p class="text-xs text-slate-500 mt-1">12:00 和歌山搭乘 JR 關空快速直達機場</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accommodation Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-hotel text-amber-500 mr-2"></i> 飯店住宿 (Hotels)
+                        </h3>
+                        <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full font-medium">嚴選交通樞紐</span>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="p-3 border border-amber-200 bg-amber-50/50 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <span class="font-bold text-slate-900">FDS ZEAL</span>
+                                <span class="text-xs font-semibold text-amber-700">7/30–8/01 (3晚)</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> 大阪難波/心齋橋周邊</p>
+                            <p class="text-xs text-slate-500 mt-1">地理位置絕佳，方便夜間美食、藥妝採購與各私鐵銜接。</p>
+                        </div>
+                        <div class="p-3 border border-slate-200 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <span class="font-bold text-slate-900">Toyoko-Inn JR Wakayama</span>
+                                <span class="text-xs font-semibold text-sky-700">8/02 (1晚)</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> 東橫Inn JR和歌山站東口</p>
+                            <p class="text-xs text-slate-500 mt-1">出站即達，方便寄放行李、轉乘貴志川線與直達機場。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transport Passes Strategy Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+                        <h3 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-train text-amber-500 mr-2"></i> 票券搭配策略 (Passes)
+                        </h3>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full font-medium">聰明省時省力</span>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">IC</div>
+                            <div>
+                                <span class="font-bold text-slate-900">ICOCA 卡（萬用主力）</span>
+                                <p class="text-xs text-slate-500">全程進出站逼卡、搭公車與便利商店付款首選。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">D3</div>
+                            <div>
+                                <span class="font-bold text-slate-900">大阪周遊券 1 日券</span>
+                                <p class="text-xs text-slate-500">Day 3 使用，免費搭地下鐵、聖瑪莉亞號、摩天輪與觀光船。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-sky-100 text-sky-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">D4</div>
+                            <div>
+                                <span class="font-bold text-slate-900">貴志川線電車一日券</span>
+                                <p class="text-xs text-slate-500">800日圓，Day 4 於 JR 和歌山站 9 號月台購買。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Detailed Day-by-Day Itinerary -->
+        <section id="itinerary" class="scroll-mt-24">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-amber-500/10 text-amber-600 rounded-lg text-xl">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">逐日精緻行程細節</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">點選下方天數分頁，查看每日詳細時刻表、交通指南與必吃美食</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Day Tabs -->
+            <div class="flex space-x-2 overflow-x-auto pb-2 custom-scrollbar" id="day-tabs">
+                <button onclick="switchDay(1)" id="tab-btn-1" class="day-tab-btn active px-5 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center space-x-2 bg-slate-900 text-amber-400 shadow-md">
+                    <span class="font-bold">DAY 1</span>
+                    <span class="text-xs opacity-80">(7/30 四) 奈良/生駒/難波</span>
+                </button>
+                <button onclick="switchDay(2)" id="tab-btn-2" class="day-tab-btn px-5 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center space-x-2 bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <span class="font-bold">DAY 2</span>
+                    <span class="text-xs opacity-80">(7/31 五) 池田泡麵/神戶港</span>
+                </button>
+                <button onclick="switchDay(3)" id="tab-btn-3" class="day-tab-btn px-5 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center space-x-2 bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <span class="font-bold">DAY 3</span>
+                    <span class="text-xs opacity-80">(8/01 六) 木津市場/大阪港</span>
+                </button>
+                <button onclick="switchDay(4)" id="tab-btn-4" class="day-tab-btn px-5 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center space-x-2 bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <span class="font-bold">DAY 4</span>
+                    <span class="text-xs opacity-80">(8/02 日) 和歌山城/貴志站</span>
+                </button>
+                <button onclick="switchDay(5)" id="tab-btn-5" class="day-tab-btn px-5 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center space-x-2 bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <span class="font-bold">DAY 5</span>
+                    <span class="text-xs opacity-80">(8/03 一) 免稅採購/返台</span>
+                </button>
+            </div>
+
+            <!-- Day Content Containers -->
+            <div id="day-contents" class="mt-6">
+                <!-- DAY 1 CONTENT -->
+                <div id="day-1" class="day-panel space-y-6">
+                    <div class="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-4 rounded-xl border-l-4 border-amber-500">
+                        <div class="font-bold text-slate-900">Day 1 行程主題：紅眼飛抵關西 ➔ 古都奈良神鹿公園 ➔ 生駒山頂覽勝 ➔ 道頓堀商圈採購</div>
+                        <p class="text-xs text-slate-600 mt-1">對應歷史導覽：請參閱【第二章｜奈良——日本的搖籃，佛教與皇權交會之地】與【第一章｜大阪商人性格】</p>
+                    </div>
+
+                    <!-- Timeline Items -->
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">02:30 - 08:00</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-plane mr-1"></i>入境與交通</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">抵達關西機場 T1 ➔ 南海電鐵前往難波</h4>
+                                <p class="text-sm text-slate-600 mt-1">7/29 23:00 自清大搭客運至桃園T1，搭乘 02:30 班機飛抵關西。搭乘南海電鐵直達「南海難波站」。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">08:00 - 09:30</span>
+                                    <span class="text-xs text-emerald-600 font-medium"><i class="fa-solid fa-suitcase mr-1"></i>寄物與早餐</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">寄放行李（黑貓宅急便/寄物櫃）＆活力早餐</h4>
+                                <p class="text-sm text-slate-600 mt-1">於南海難波站內寄放行李，隨後於車站周邊喫茶店享用早餐梳洗。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">09:30 - 13:00</span>
+                                    <span class="text-xs text-indigo-600 font-medium"><i class="fa-solid fa-torii-gate mr-1"></i>古都景點</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">大阪難波 ➔ 近鐵奈良 ➔ 奈良公園與三社一寺巡禮</h4>
+                                <p class="text-sm text-slate-600 mt-1">搭近鐵快急至近鐵奈良站。出站買柿葉壽司帶至奈良公園享用，參觀東大寺大佛殿、興福寺五重塔與春日大社。</p>
+                                <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                                    <span class="bg-slate-100 p-2 rounded-lg text-slate-700 font-medium"><i class="fa-solid fa-tree text-emerald-500 mr-1"></i>興福寺/五重塔</span>
+                                    <span class="bg-slate-100 p-2 rounded-lg text-slate-700 font-medium"><i class="fa-solid fa-place-of-worship text-amber-500 mr-1"></i>東大寺/大佛</span>
+                                    <span class="bg-slate-100 p-2 rounded-lg text-slate-700 font-medium"><i class="fa-solid fa-dharmachakra text-rose-500 mr-1"></i>春日大社</span>
+                                    <span class="bg-slate-100 p-2 rounded-lg text-slate-700 font-medium"><i class="fa-solid fa-utensils text-sky-500 mr-1"></i>東向商店街</span>
+                                </div>
+                                <div class="mt-3 p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-800">
+                                    💡 <strong>必吃名產與典故</strong>：中谷堂現搗麻糬、大佛布丁、柿葉壽司（保存智慧）、體驗餵食「神鹿」。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">13:00 - 16:00</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-cable-car mr-1"></i>景觀遊樂</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">生駒山上遊樂園（Ikoma Sanjo Amusement Park）</h4>
+                                <p class="text-sm text-slate-600 mt-1">近鐵至生駒站轉乘復古鋼索纜車登頂，俯瞰大阪奈良雙盆地景色。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">16:00 - 21:00</span>
+                                    <span class="text-xs text-rose-600 font-medium"><i class="fa-solid fa-cart-shopping mr-1"></i>飯店Check-in與購物</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">返難波 FDS ZEAL Check-in ➔ Bic Camera / 道頓堀採購</h4>
+                                <p class="text-sm text-slate-600 mt-1">至 FDS ZEAL 辦理入住梳洗，隨後於 Bic Camera 與唐吉訶德採購，感受道頓堀「食い倒れ」與商人城市的誇張招牌文化。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 CONTENT -->
+                <div id="day-2" class="day-panel hidden space-y-6">
+                    <div class="bg-gradient-to-r from-sky-500/10 via-sky-500/5 to-transparent p-4 rounded-xl border-l-4 border-sky-500">
+                        <div class="font-bold text-slate-900">Day 2 行程主題：池田手作杯麵 ➔ 神戶北野洋風異人館 ➔ 舊居留地 ➔ 神戶港夜景</div>
+                        <p class="text-xs text-slate-600 mt-1">對應歷史導覽：請參閱【第三章｜神戶——東洋最美的開港都市】（包含台灣人安藤百福傳奇、神戶大空襲記憶）</p>
+                    </div>
+
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">08:30 - 11:30</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-bowl-food mr-1"></i>手作體驗</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">大阪梅田 ➔ 池田日清杯麵博物館（CupNoodles Museum）</h4>
+                                <p class="text-sm text-slate-600 mt-1">阪急寶塚線至池田站。了解出身台灣嘉義的安藤百福（吳百福）發明世界第一款泡麵與杯麵的創意傳奇，並手作專屬杯麵。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">11:30 - 14:00</span>
+                                    <span class="text-xs text-emerald-600 font-medium"><i class="fa-solid fa-utensils mr-1"></i>神戶美食</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">池田 ➔ 神戶三宮 / 元町午餐 (元祖餃子苑)</h4>
+                                <p class="text-sm text-slate-600 mt-1">搭阪急至三宮/元町。享用元祖餃子苑（沾特製味噌醬）或預訂頂級神戶牛排套餐。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">14:00 - 17:00</span>
+                                    <span class="text-xs text-indigo-600 font-medium"><i class="fa-solid fa-building-columns mr-1"></i>洋風散策</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">北野異人館街 ➔ 舊居留地時尚街區</h4>
+                                <p class="text-sm text-slate-600 mt-1">參觀風見雞館、文化財星巴克，了解「雜居地」歷史；漫步至舊居留地 38 番館，觀察牆面刻劃的神戶大空襲機槍掃射彈痕痕跡。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">17:00 - 20:30</span>
+                                    <span class="text-xs text-rose-600 font-medium"><i class="fa-solid fa-icons mr-1"></i>港灣夜景</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">美利堅公園 BE KOBE ➔ MOSAIC / umie 港灣夜景</h4>
+                                <p class="text-sm text-slate-600 mt-1">打卡 BE KOBE 地標與神戶港塔，於 MOSAIC 享用明石燒/玉子燒與晚餐，欣賞夜景後返大阪。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 3 CONTENT -->
+                <div id="day-3" class="day-panel hidden space-y-6">
+                    <div class="bg-gradient-to-r from-emerald-500/10 via-emerald-500/5 to-transparent p-4 rounded-xl border-l-4 border-emerald-500">
+                        <div class="font-bold text-slate-900">Day 3 行程主題：木津市場海鮮 ➔ 天王寺動物園 ➔ 新世界通天閣 ➔ 大阪港聖瑪莉亞號 ➔ 道頓堀觀光船</div>
+                        <p class="text-xs text-slate-600 mt-1">對應歷史導覽：請參閱【第一章｜大阪——天下的廚房】與【第四章｜再訪大阪——通天閣下的老靈魂】（使用大阪周遊券）</p>
+                    </div>
+
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">08:00 - 09:30</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-fish mr-1"></i>市場美食</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">木津卸賣市場（Kizu Market）海鮮早餐</h4>
+                                <p class="text-sm text-slate-600 mt-1">造訪大阪在地廚房，品嚐平價澎湃海鮮丼、刺身與當季水蜜桃/麝香葡萄。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">09:30 - 14:00</span>
+                                    <span class="text-xs text-emerald-600 font-medium"><i class="fa-solid fa-hippo mr-1"></i>動物園與懷舊風情</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">天王寺動物園 ➔ 新世界通天閣 ➔ 阿倍野 HARUKAS</h4>
+                                <p class="text-sm text-slate-600 mt-1">漫步百年歷史天王寺動物園，逛 1903 年勸業博覽會發源地的「新世界」，吃 Jan-Jan 橫丁串炸（醬汁不能二次沾！）。對照阿倍野 HARUKAS 摩天大樓新舊景觀。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">16:30 - 19:30</span>
+                                    <span class="text-xs text-sky-600 font-medium"><i class="fa-solid fa-ship mr-1"></i>大阪港海灣</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">大阪港區：聖瑪莉亞號觀光船 ➔ 天保山大摩天輪</h4>
+                                <p class="text-sm text-slate-600 mt-1">體會「水都大阪」轉型計畫。免費搭乘聖瑪莉亞號帆船巡航，並搭乘天保山大摩天輪欣賞夕陽海景。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">20:00 - 22:30</span>
+                                    <span class="text-xs text-rose-600 font-medium"><i class="fa-solid fa-wine-glass mr-1"></i>道頓堀水上船與橫丁宵夜</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">道頓堀水上觀光船 ➔ 法善寺橫丁水掛不動尊</h4>
+                                <p class="text-sm text-slate-600 mt-1">搭乘水上觀光船，隨後至法善寺石板路向綠苔「水掛不動尊」澆水祈福，嚐關西風味御好燒或串燒。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 4 CONTENT -->
+                <div id="day-4" class="day-panel hidden space-y-6">
+                    <div class="bg-gradient-to-r from-rose-500/10 via-rose-500/5 to-transparent p-4 rounded-xl border-l-4 border-rose-500">
+                        <div class="font-bold text-slate-900">Day 4 行程主題：和歌山城巡禮 ➔ 黑潮市場鮪魚秀 ➔ 貴志川線貓站長 ➔ 和歌山拉麵</div>
+                        <p class="text-xs text-slate-600 mt-1">對應歷史導覽：請參閱【第五章｜和歌山——紀州德川家的城下町】（德川吉宗發跡、小玉貓站長故事）</p>
+                    </div>
+
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">08:30 - 11:30</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-chess-rook mr-1"></i>名城巡禮</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">南海難波 ➔ 和歌山市站寄行李 ➔ 和歌山城</h4>
+                                <p class="text-sm text-slate-600 mt-1">搭南海電鐵至和歌山市站，東橫Inn寄行李後公車至和歌山城。參觀秀吉命秀長築城之西國要塞、暴坊將軍德川吉宗發跡地，走過木造傾斜「御橋廊下」。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">12:15 - 14:30</span>
+                                    <span class="text-xs text-emerald-600 font-medium"><i class="fa-solid fa-drumstick-bite mr-1"></i>海鮮表演午餐</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">黑潮市場：★ 12:30 現場鮪魚解體秀與海鮮午餐</h4>
+                                <p class="text-sm text-slate-600 mt-1">觀賞 12:30 職人黑鮪魚解體表演！品嚐鮮切鮪魚刺身、海鮮丼或海邊 BBQ，體會黑潮海洋文化。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">15:15 - 17:30</span>
+                                    <span class="text-xs text-indigo-600 font-medium"><i class="fa-solid fa-cat mr-1"></i>鐵道萌寵</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">JR 和歌山站 9 號月台 ➔ 貴志車站貓站長巡禮</h4>
+                                <p class="text-sm text-slate-600 mt-1">買貴志川線一日券（800円），搭乘彩繪電車至貴志站拜訪「二代玉」貓站長、參拜小玉神社，感受一隻貓救活一條鐵路的奇蹟。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">18:00 - 21:00</span>
+                                    <span class="text-xs text-rose-600 font-medium"><i class="fa-solid fa-bowl-rice mr-1"></i>飯店與名店拉麵</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">東橫Inn Check-in ➔ 和歌山拉麵名店巡禮</h4>
+                                <p class="text-sm text-slate-600 mt-1">入住東橫Inn後，品嚐「井出商店」或「車庫系」豚骨醬油拉麵，體驗配水煮蛋與早壽司的在地獨特吃法。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 5 CONTENT -->
+                <div id="day-5" class="day-panel hidden space-y-6">
+                    <div class="bg-gradient-to-r from-purple-500/10 via-purple-500/5 to-transparent p-4 rounded-xl border-l-4 border-purple-500">
+                        <div class="font-bold text-slate-900">Day 5 行程主題：和歌山晨間散策 ➔ 關西機場免稅店採購 ➔ 滿載而歸返台</div>
+                        <p class="text-xs text-slate-600 mt-1">交通優勢：從 JR 和歌山站搭乘「關空快速」直達關西機場 T1。</p>
+                    </div>
+
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">09:00 - 11:30</span>
+                                    <span class="text-xs text-amber-600 font-medium"><i class="fa-solid fa-mug-hot mr-1"></i>悠閒晨間</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">和歌山站周邊早餐與退房整理</h4>
+                                <p class="text-sm text-slate-600 mt-1">於飯店享用早餐，整理行李戰利品後退房。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">12:00 - 13:00</span>
+                                    <span class="text-xs text-sky-600 font-medium"><i class="fa-solid fa-train mr-1"></i>直達機場</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">JR 和歌山站 ➔ 關西國際機場 (KIX)</h4>
+                                <p class="text-sm text-slate-600 mt-1">搭乘 JR 關空快速直達關西機場 T1（約 40-50 分鐘，不需繁複轉車）。</p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-white shadow"></span>
+                            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">13:00 - 17:20</span>
+                                    <span class="text-xs text-emerald-600 font-medium"><i class="fa-solid fa-plane-departure mr-1"></i>免稅購物與返台</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 text-base">機場報到 ➔ KIX 免稅店採購 ➔ 15:20 起飛返台</h4>
+                                <p class="text-sm text-slate-600 mt-1">辦理託運出境，於關西機場免稅店採購伴手禮。15:20 起飛，17:20 抵達桃園 T1，結束滿載知識與美景的關西行！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Deep Cultural Guides (6 Chapters) -->
+        <section id="culture" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="p-2 bg-amber-500/10 text-amber-600 rounded-lg text-2xl">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">四大城市歷史與文化深度導覽</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">按行程編排之 6 大專章：讓你在踏上景點前，先讀懂「為什麼它會在那裡」</p>
+                </div>
+            </div>
+
+            <!-- Chapter Navigation Selector Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-8" id="chapter-selector">
+                <button onclick="showChapter(1)" id="chap-btn-1" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-amber-500 bg-slate-900 text-amber-400 shadow">
+                    第一章｜大阪
+                </button>
+                <button onclick="showChapter(2)" id="chap-btn-2" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                    第二章｜奈良
+                </button>
+                <button onclick="showChapter(3)" id="chap-btn-3" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                    第三章｜神戶
+                </button>
+                <button onclick="showChapter(4)" id="chap-btn-4" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                    第四章｜再訪大阪
+                </button>
+                <button onclick="showChapter(5)" id="chap-btn-5" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                    第五章｜和歌山
+                </button>
+                <button onclick="showChapter(6)" id="chap-btn-6" class="chap-btn px-3 py-2.5 rounded-xl text-xs font-bold transition border border-slate-200 bg-white text-slate-700 hover:bg-slate-100">
+                    第六章｜結語提醒
+                </button>
+            </div>
+
+            <!-- CHAPTER PANELS -->
+            <div id="chapter-panels">
+
+                <!-- CHAPTER 1: OSAKA -->
+                <article id="chap-panel-1" class="chap-panel bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-800 rounded-full">第一章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">大阪——天下的廚房，商人的城市</h3>
+                        <p class="text-sm text-amber-600 font-medium">一座由「水」與「商人」堆疊出來的城市</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            大阪的故事，要從十六世紀的豐臣秀吉說起。1583 年，秀吉在原本一向宗信徒的根據地「石山本願寺」舊址，開始興建大坂城，並以此為中心規劃城下町。他刻意從堺、平野等既有商業城市招募商人前來定居，短時間內讓大坂人口暴增至二十多萬人，一座「政治、軍事、經濟」三位一體的城市就此成形。
+                        </p>
+                        <p>
+                            秀吉去世後，德川家康贏得天下，政治中心遷往江戶（今東京），大坂一度在「大坂夏之陣」的戰火中化為灰燼。但真正讓大坂脫胎換骨的，是江戶幕府重建之後的水路建設：東橫堀川、西橫堀川等運河網絡，讓各地大名將年貢米與特產運到大坂販售換取現金，再採購鹽、棉、油、酒等貨物運回領地。這套「先賣米、再買貨」的物流系統，讓大坂成為全日本貨物與資金的匯集地，也就是後世所稱的<strong class="text-amber-800">「天下の台所」（天下的廚房）</strong>。
+                        </p>
+
+                        <!-- Knowledge Callout Box -->
+                        <div class="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl my-4 text-xs sm:text-sm text-amber-900 space-y-1.5">
+                            <div class="font-bold text-amber-800 flex items-center text-sm">
+                                <i class="fa-solid fa-lightbulb text-amber-500 mr-2"></i> 💡 小知識：「天下の台所」其實是後來才出現的說法
+                            </div>
+                            <p>
+                                有趣的是，根據大阪市史料調查會的考證，江戶時代的文獻其實從未直接寫過「天下之台所」這個詞，多半只稱大坂為「諸國之台所」。「天下の台所」一詞最早出現在 1895 年的商業資料中，之後在大正時期因史學家幸田成友的著作而廣為流傳，才被誤以為是江戶時代就存在的古老說法。這提醒我們：城市的「稱號」往往是後人為了說故事而賦予的標籤，但背後的商業實力和庶民生活的積累，才是真正值得細看的部分。
+                            </p>
+                        </div>
+
+                        <p>
+                            正因為是商人的城市而非武士或貴族的城市，大阪發展出一種務實、直爽、不拘小節的性格——重視實際利益勝過虛榮排場，說話直接、幽默感濃厚（大阪是日本「漫才」文化的發源地），也造就了<strong class="text-amber-800">「食い倒れ」（為了吃不惜傾家蕩產）</strong>的飲食文化。你在道頓堀看到的誇張看板與熱鬧氣氛，其實正是這種商人性格的延續。
+                        </p>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-tower-observation text-amber-500 mr-2"></i> 通天閣與新世界：庶民的遊樂園記憶
+                        </h4>
+                        <p>
+                            新世界一帶的故事，起於 1903 年在天王寺舉辦的「第五回內國勸業博覽會」。博覽會結束後，會場一分為二：東半部成為天王寺公園，西半部則在 1912 年蓋起了第一代通天閣，塔的造型結合了巴黎凱旋門與艾菲爾鐵塔的意象，一度是東洋最高建築，並以纜車和遊樂園「Luna Park」相連，「新世界」之名由此而來，意指這是一個充滿未來感與異國情調的新天地。
+                        </p>
+                        <p>
+                            可惜第一代通天閣在 1943 年因為腳下的電影院大火波及而拆除。直到 1956 年，靠著地方居民「一定要把通天閣蓋回來」的心願，第二代通天閣才重新矗立，成為今天大阪最具代表性的地標之一，塔內供奉著象徵幸福之神的「Billiken 比利肯」。而通天閣南側狹窄的「ジャンジャン橫丁」，因街上三味線與太鼓的伴奏聲「Jan-Jan」作響而得名，至今仍是串炸店與老式遊藝場林立的下町風景，串炸文化的「醬汁不能重複沾」的規矩也是從這裡發揚光大的。
+                        </p>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-utensils text-amber-500 mr-2"></i> 御好燒（大阪燒）：戰後庶民智慧的結晶
+                        </h4>
+                        <p>
+                            御好燒（お好み焼き）字面上的意思就是「依你的喜好去煎」。它的原型可追溯到安土桃山時代茶會上流行的點心「麩の焼」，江戶到明治時期演變出東京的「文字燒」以及庶民小吃「一錢洋食」。真正演變成今日大阪燒的形式，則是在二戰後物資匱乏的年代——人們把手邊能取得的高麗菜、雞蛋、麵粉和一點點肉或海鮮通通混進麵糊裡一起煎熟，再刷上濃厚的醬汁與美滋滋，是一道「有什麼就加什麼」的生活智慧料理。
+                        </p>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs sm:text-sm">
+                            <strong>關西風 vs 廣島風做法差異：</strong><br>
+                            大阪燒（關西風）是把所有食材「混合」進麵糊裡一起煎；廣島燒則是把麵糊煎成薄餅後，將高麗菜、豬肉、炒麵等食材一層層「疊放」上去。店家在你面前示範的手法，正是這兩派最鮮明的差異所在。
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 2: NARA -->
+                <article id="chap-panel-2" class="chap-panel hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-800 rounded-full">第二章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">奈良——日本的搖籃，佛教與皇權交會之地</h3>
+                        <p class="text-sm text-amber-600 font-medium">平城京：日本第一個真正的「首都」</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            西元 710 年，元明天皇仿照中國唐朝長安城的棋盤式規劃，在奈良盆地建立了「平城京」，並將此地定為首都，直到 784 年遷都長岡京為止，前後共 74 年，史稱「奈良時代」。這是日本歷史上第一個具有完整都城規劃、且長期作為首都的城市，也是日本從氏族社會邁向中央集權律令國家的關鍵時期。
+                        </p>
+                        <p>
+                            奈良時代最大的特徵，就是佛教與皇權緊密結合：天皇透過大規模興建寺院，一方面祈求鎮護國家、消災祈福，一方面也藉此強化統治的正當性。今天你會走訪的東大寺、興福寺、春日大社，正是這段歷史最直接的見證，三者與春日山原始林、元興寺、藥師寺、唐招提寺、平城宮跡，共同在 1998 年被聯合國教科文組織登錄為世界遺產「古都奈良的文化財」。
+                        </p>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-place-of-worship text-amber-500 mr-2"></i> 東大寺與奈良大佛：世界最大的木造建築
+                        </h4>
+                        <p>
+                            東大寺由聖武天皇於西元 8 世紀下令興建，是華嚴宗大本山，同時也是統轄日本全國「國分寺」體系中位階最高的總本山——白話來說，就是奈良時代版本的「總部級寺院」。大佛殿正面寬 57 公尺、深 50 公尺，至今仍是世界現存最大的木造建築。殿內供奉的盧舍那佛（也就是「奈良大佛」）高約 15 公尺，是世界最大的金銅佛像，<strong class="text-amber-800">右手掌心朝前表示「施予眾生力量」，左手掌心朝上放在膝上，象徵「回應眾生的心願」</strong>。
+                        </p>
+                        <p>
+                            聖武天皇之所以傾全國之力興建如此規模的大佛，背景其實與當時天災、饑荒與政治動盪頻繁有關，他希望透過佛法的力量安定人心、鞏固國家。
+                        </p>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-torii-gate text-amber-500 mr-2"></i> 興福寺與春日大社：藤原家族的權力與守護
+                        </h4>
+                        <p>
+                            <strong>興福寺（權力象徵）</strong>：創建於西元 669 年，710 年由藤原不比等遷移至此，成為藤原家族的氏寺。興福寺保存了全日本 17% 的國寶級佛教雕刻，其中最知名的莫過於「阿修羅像」——三面六臂、神情肅穆又略帶哀愁。五重塔則由藤原不比等之女、聖武天皇的夫人光明皇后於 730 年建立，現存塔高 50.1 公尺，是日本現存第二高木塔。
+                        </p>
+                        <p>
+                            <strong>春日大社（守護神社）</strong>：創建於 768 年，由藤原永手建立，目的是「鎮護平城京」並祈求藤原氏繁榮昌盛。最特別的傳統是「式年造替」：每二十年就會重新修築一次社殿，最近一次（第 60 次）於 2016 年完成。
+                        </p>
+
+                        <div class="p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl text-xs sm:text-sm text-emerald-900 my-4">
+                            <strong>為什麼奈良公園到處都是鹿？</strong><br>
+                            相傳春日大社主神「武甕槌命」當年就是騎著白鹿從茨城縣鹿島來到奈良，因此鹿被視為神明的使者（神鹿），受到嚴格保護，千百年來與人共存，成為奈良公園最療癒也最具代表性的畫面。
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 3: KOBE -->
+                <article id="chap-panel-3" class="chap-panel hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-sky-100 text-sky-800 rounded-full">第三章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">神戶——東洋最美的開港都市</h3>
+                        <p class="text-sm text-sky-600 font-medium">千年港都，一夕開港</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            神戶不是「因為開港才存在」的城市，早在平安時代末期，這裡就已是重要的貿易港口；它真正躍上國際舞台的轉捩點，是 1868 年（慶應三年）的「兵庫開港」。神戶背靠六甲山，面向大阪灣，「背山面海」的地形與函館、橫濱、長崎並列為日本四大異國風情港都，但神戶特別劃設了「雜居地」：規劃出一塊外國人與日本人混居的區域，連清朝商人也聚居於此，形成了今日的「南京町」（神戶中華街）。
+                        </p>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-building text-sky-500 mr-2"></i> 北野異人館與舊居留地
+                        </h4>
+                        <p>
+                            <strong>北野異人館</strong>：當時外國商人聘請專屬建築師蓋起英式、法式、德式洋房，鼎盛時期曾有超過三百棟，如今留存三十餘棟。最著名的「風見雞館」（德國貿易商托馬斯宅邸）屋頂風向雞成為地標，保留原始木造結構的「星巴克神戶北野異人館店」亦登錄為文化財。
+                        </p>
+                        <p>
+                            <strong>舊居留地</strong>：外國人的辦公商業區，由英國工程師 J.W. Hart 規劃成 126 塊西式街廓，曾被譽為「東方設計最精美的租界城市」。現存愛馬仕神戶店「舊居留地 38 番館」展現美式文藝復興風格。
+                        </p>
+
+                        <div class="p-4 bg-slate-100 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-1">
+                            <div class="font-bold text-slate-900"><i class="fa-solid fa-crosshairs text-rose-500 mr-1"></i> 神戶大空襲與機槍彈痕歷史</div>
+                            <p>
+                                1945 年美軍對神戶進行大戰略轟炸，這正是野坂昭如《螢火蟲之墓》的時代背景。當你走在舊居留地或三宮車站周邊，看到牆面上刻意保留的機槍掃射彈痕，那是這座城市對戰爭記憶的見證與提醒。
+                            </p>
+                        </div>
+
+                        <hr class="my-6 border-slate-100">
+
+                        <h4 class="font-bold text-lg text-slate-900 flex items-center">
+                            <i class="fa-solid fa-bowl-food text-amber-500 mr-2"></i> 日清杯麵博物館：一位台灣人改變全世界飲食習慣
+                        </h4>
+                        <p>
+                            池田日清杯麵博物館紀念泡麵發明人<strong>安藤百福（本名吳百福，1910年生於台灣嘉義）</strong>。二戰後他在日本曾面臨破產，47歲身無分文之際，為了拯救糧食短缺，於 1958 年研發出世界第一款「雞湯拉麵」。1971 年（61歲）更受美國超市將泡麵折半放進紙杯啟發，發明了「杯麵」。他更大度地開放專利共享，催生了今日龐大的全球速食麵市場。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 4: OSAKA AGAIN -->
+                <article id="chap-panel-4" class="chap-panel hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">第四章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">再訪大阪——通天閣下的老靈魂</h3>
+                        <p class="text-sm text-emerald-600 font-medium">老城區與新地標的並存</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            當行程重新回到大阪，重點將放在天王寺、新世界、阿倍野與大阪港區，體驗大阪跨越百年的變化與水都再生。
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>
+                                <strong>天王寺動物園</strong>：開園超過百年，是日本歷史最悠久的動物園之一，見證了天王寺地區從博覽會會場演變為商業區的過程。
+                            </li>
+                            <li>
+                                <strong>阿倍野 HARUKAS</strong>：日本第一高樓，展望台可遠眺神戶與明石海峽大橋。與昭和氣息的新世界僅一街之隔，展現「懷舊」與「更新」並存的大阪。
+                            </li>
+                            <li>
+                                <strong>大阪港區與水都再生</strong>：天保山、海遊館原本為工業港口，近年轉型為觀光樂園；呼應了大阪自古「水都」性格，也是 2001 年起「水都大阪」再生計畫的典範。
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 5: WAKAYAMA -->
+                <article id="chap-panel-5" class="chap-panel hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-rose-100 text-rose-800 rounded-full">第五章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">和歌山——紀州德川家的城下町</h3>
+                        <p class="text-sm text-rose-600 font-medium">從豐臣到德川的西國要塞</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            <strong>和歌山城</strong>：1585 年豐臣秀吉命弟弟豐臣秀長築城，由藤堂高虎擔任總工程監督。1619 年德川家康第十子德川賴宣入城，成為紀州藩（55萬5千石）初代藩主。紀州藩為德川御三家之一，著名的第八代將軍「暴坊將軍」德川吉宗即出身於此。從天守閣可遠眺紀淡海峽與四國，為當年扼守西國海路要衝的戰略要地。
+                        </p>
+                        <p>
+                            <strong>貴志川線與「貓站長」奇蹟</strong>：貴志川線原本連接近郊三座神社，曾面臨廢線危機。2007 年小玉（Tama）被任命為貓站長，吸引全球觀光客，創造「小玉經濟學」拯救了一條鐵道。小玉過世後被奉為「名譽永久站長」供奉於玉神社，現由「二代玉」接棒。貓臉造型的貴志站採用傳統檜皮葺工法，並運行草莓/梅星彩繪電車。
+                        </p>
+
+                        <div class="p-4 bg-rose-50 border-l-4 border-rose-500 rounded-r-xl text-xs sm:text-sm text-rose-900 my-4 space-y-1">
+                            <div class="font-bold">和歌山拉麵流派與特殊吃法：</div>
+                            <p>
+                                湯頭以醬油混合豚骨熬煮，分為「車庫系（清爽醬油）」與「井出系（濃郁豚骨）」。當地人吃拉麵時，桌上會擺放水煮蛋與「早壽司（鯖魚押壽司）」，邊吃拉麵邊配著吃，是和歌山獨一無二的飲食風景！
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CHAPTER 6: SUMMARY -->
+                <article id="chap-panel-6" class="chap-panel hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">第六章</span>
+                        <h3 class="text-2xl font-bold font-serif text-slate-900 mt-2">給自己的提醒：如何不只是走馬看花</h3>
+                        <p class="text-sm text-purple-600 font-medium">四座城市串起日本歷史的四大側面</p>
+                    </div>
+
+                    <div class="prose max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>讀完前面幾章，你會發現這趟行程其實串起了一條清晰的歷史線索：</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                                <span class="font-bold text-amber-900">1. 奈良 (710-784)</span>
+                                <p class="text-xs text-slate-600 mt-1">日本第一個首都 ➔ 代表「宗教立國」與律令制起點。</p>
+                            </div>
+                            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+                                <span class="font-bold text-emerald-900">2. 大阪 (16-19世紀)</span>
+                                <p class="text-xs text-slate-600 mt-1">商人階級崛起 ➔ 代表「經濟立國」與庶民活力。</p>
+                            </div>
+                            <div class="p-3 bg-sky-50 rounded-xl border border-sky-200">
+                                <span class="font-bold text-sky-900">3. 神戶 (1868 起)</span>
+                                <p class="text-xs text-slate-600 mt-1">鎖國結束開港 ➔ 代表「開國西化」與東西交會。</p>
+                            </div>
+                            <div class="p-3 bg-rose-50 rounded-xl border border-rose-200">
+                                <span class="font-bold text-rose-900">4. 和歌山 (1619 起)</span>
+                                <p class="text-xs text-slate-600 mt-1">紀州德川家名城 ➔ 代表「幕府統治」與西國要塞。</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            建議在每天出發前，花五分鐘重讀當天對應的章節，把「今天要去的地方，在歷史上扮演什麼角色」放在心裡。眼前的建築、店家、甚至一碗拉麵，都會多一層意義。祝你這趟關西之旅，走得比一般觀光客更深、更有感覺！
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: Spot Directory & Gourmet Encyclopedia -->
+        <section id="directory" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-amber-500/10 text-amber-600 rounded-lg text-xl">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">景點與美食百科庫</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">快速搜尋或分類篩選行程中的所有名店與景點典故</p>
+                    </div>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-2 text-xs font-medium">
+                    <button onclick="filterSpots('all')" class="spot-filter-btn active px-3 py-2 rounded-lg bg-slate-900 text-white transition">全部</button>
+                    <button onclick="filterSpots('gourmet')" class="spot-filter-btn px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition">美食必吃</button>
+                    <button onclick="filterSpots('culture')" class="spot-filter-btn px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition">歷史神社</button>
+                    <button onclick="filterSpots('view')" class="spot-filter-btn px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition">絕景娛樂</button>
+                </div>
+            </div>
+
+            <!-- Spot Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="spot-grid">
+                <!-- Spot 1 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">美食/奈良</span>
+                        <span class="text-xs text-slate-400">近鐵奈良站</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">柿葉壽司本舖田中</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>09:30 - 19:00</p>
+                    <p class="text-sm text-slate-600">利用柿子葉包裹鮭魚或鯖魚押壽司，柿葉殺菌防腐且帶清香，是古代山區保存海鮮的智慧結晶。</p>
+                </div>
+
+                <!-- Spot 2 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-amber-100 text-amber-800 rounded">美食/奈良</span>
+                        <span class="text-xs text-slate-400">東向商店街</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">中谷堂 現搗麻糬</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>10:00 - 19:00</p>
+                    <p class="text-sm text-slate-600">以極速現場搗麻糬表演聞名！蓬餅外層沾滿艾草與黃豆粉，內餡紅豆綿密。</p>
+                </div>
+
+                <!-- Spot 3 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded">美食/神戶</span>
+                        <span class="text-xs text-slate-400">神戶元町</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">元祖餃子苑</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>11:30 - 15:00, 17:00 - 20:30</p>
+                    <p class="text-sm text-slate-600">神戶煎餃發源老店之一，最出名的是沾「特製味噌醬」食用，煎餃外皮香酥汁多。</p>
+                </div>
+
+                <!-- Spot 4 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded">美食/神戶</span>
+                        <span class="text-xs text-slate-400">神戶港/MOSAIC</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">明石燒 (玉子燒)</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>11:00 - 21:00</p>
+                    <p class="text-sm text-slate-600">使用大量蛋液製成，質地極致軟嫩，沾昆布高湯享用，為關西粉物文化的始祖之一。</p>
+                </div>
+
+                <!-- Spot 5 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded">美食/大阪</span>
+                        <span class="text-xs text-slate-400">大國町站</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">木津卸賣市場 海鮮丼</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>06:00 - 12:00 (早市)</p>
+                    <p class="text-sm text-slate-600">大阪在地內行人的食堂，海鮮丼澎湃平價，並能買到當季頂級水蜜桃與麝香葡萄。</p>
+                </div>
+
+                <!-- Spot 6 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="view">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">景點/和歌山</span>
+                        <span class="text-xs text-slate-400">和歌山遊艇城</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">黑潮市場 鮪魚解體秀</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>解體秀時間: ★ 12:30</p>
+                    <p class="text-sm text-slate-600">每日固定現場專業職人黑鮪魚解體表演！看完全部位鮮切入口，展現黑潮漁業文化。</p>
+                </div>
+
+                <!-- Spot 7 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="culture">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">景點/和歌山</span>
+                        <span class="text-xs text-slate-400">貴志川線</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">貴志車站 (二代玉貓站長)</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>執勤時間: 10:00 - 16:00</p>
+                    <p class="text-sm text-slate-600">貓咪外觀造形之檜皮葺車站！拜訪二代玉貓站長，逛限定周邊並在 Tama Cafe 享用咖啡。</p>
+                </div>
+
+                <!-- Spot 8 -->
+                <div class="spot-card bg-white rounded-2xl p-5 border border-slate-200 shadow-sm" data-category="gourmet">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-bold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">美食/和歌山</span>
+                        <span class="text-xs text-slate-400">JR 和歌山站周邊</span>
+                    </div>
+                    <h3 class="font-bold text-base text-slate-900 mb-1">井出商店 (和歌山拉麵)</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-clock text-slate-400 mr-1"></i>11:30 - 23:30</p>
+                    <p class="text-sm text-slate-600">濃郁豚骨醬油流派的名店！桌上備有水煮蛋與早壽司，邊吃拉麵邊搭配是在地傳統。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Travel Toolkit -->
+        <section id="toolkit" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="p-2 bg-amber-500/10 text-amber-600 rounded-lg text-xl">
+                    <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900">行前隨身工具箱</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">互動式行李清單、實用日語會話與緊急聯絡資訊</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Interactive Checklist Card -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm lg:col-span-2">
+                    <h3 class="font-bold text-lg text-slate-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-list-check text-amber-500 mr-2"></i> 行前隨身清單 CheckList
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">護照 (確認效期6個月以上)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">Visit Japan Web 入境截圖</span>
+                        </label>
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">ICOCA 卡 / 周遊券憑證</span>
+                        </label>
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">日幣現鈔 (建議3-5萬円)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">行動電源 (隨身攜帶不可託運)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span class="text-slate-700">日本 eSIM / 上網卡號設定</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Emergency Contacts & Phrases -->
+                <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-amber-400 mb-3 flex items-center">
+                            <i class="fa-solid fa-phone-volume mr-2"></i> 緊急求助電話
+                        </h3>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex justify-between"><span>警察局 (Police)</span><span class="font-bold text-white">110</span></div>
+                            <div class="flex justify-between"><span>火警/救護車 (Ambulance)</span><span class="font-bold text-white">119</span></div>
+                            <div class="flex justify-between"><span>台北駐大阪經濟文化辦事處</span><span class="font-bold text-amber-300">+81-6-6227-8623</span></div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-800 pt-4">
+                        <h3 class="font-bold text-base text-amber-400 mb-3">實用日常日語</h3>
+                        <div class="space-y-2 text-xs">
+                            <div><span class="text-slate-400">請問這個多少錢？</span> <br><span class="text-amber-200 font-mono">Kore wa ikura desu ka?</span></div>
+                            <div><span class="text-slate-400">請給我這個：</span> <br><span class="text-amber-200 font-mono">Kore o kudasa-i</span></div>
+                            <div><span class="text-slate-400">洗手間在哪裡？</span> <br><span class="text-amber-200 font-mono">Toi-re wa doko desu ka?</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-slate-200 bg-white py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-xs space-y-2">
+            <p class="font-serif text-sm font-bold text-slate-800">2026 KANSAI LUXURY CULTURAL HANDBOOK</p>
+            <p>專屬導遊客製規劃 ‧ 祝您擁有尊榮美好的日本關西深度假期</p>
+            <p class="text-slate-400">© 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Day Tab Switcher Logic
+        function switchDay(dayNumber) {
+            // Hide all day panels
+            document.querySelectorAll('.day-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // Show selected panel
+            document.getElementById(`day-${dayNumber}`).classList.remove('hidden');
+
+            // Reset tab button styles
+            document.querySelectorAll('.day-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-amber-400', 'shadow-md');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+
+            // Highlight active tab
+            const activeBtn = document.getElementById(`tab-btn-${dayNumber}`);
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            activeBtn.classList.add('bg-slate-900', 'text-amber-400', 'shadow-md');
+        }
+
+        // Chapter Tab Switcher Logic
+        function showChapter(chapNumber) {
+            // Hide all chapter panels
+            document.querySelectorAll('.chap-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // Show selected panel
+            document.getElementById(`chap-panel-${chapNumber}`).classList.remove('hidden');
+
+            // Reset button styles
+            document.querySelectorAll('.chap-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-amber-400', 'border-amber-500', 'shadow');
+                btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+            });
+
+            // Highlight active button
+            const activeChapBtn = document.getElementById(`chap-btn-${chapNumber}`);
+            activeChapBtn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+            activeChapBtn.classList.add('bg-slate-900', 'text-amber-400', 'border-amber-500', 'shadow');
+        }
+
+        // Spot Directory Filter Logic
+        function filterSpots(category) {
+            const cards = document.querySelectorAll('.spot-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Update Filter Button Styles
+            document.querySelectorAll('.spot-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            event.target.classList.add('bg-slate-900', 'text-white');
+        }
+    </script>
+</body>
+</html>
