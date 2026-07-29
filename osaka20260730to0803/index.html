@@ -1,1 +1,1288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關西深度旅行手冊｜大阪・奈良・神戶・和歌山</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2A2621;
+    --ink-soft:#6b6257;
+    --paper:#F5EFE1;
+    --paper-deep:#ECE3CE;
+    --kon:#182430;
+    --kon-light:#24374A;
+    --kon-line:#3a4f63;
+    --gold:#B8933E;
+    --vermillion:#B2372B;
+    --hairline:#d9cfb8;
+    --white:#FBF8F1;
 
+    --day1:#A9750C; /* 大阪→奈良 : ochre */
+    --day2:#1D5C8A; /* 神戶 : marine blue */
+    --day3:#B2372B; /* 大阪採購 : vermillion */
+    --day4:#5C7A3D; /* 和歌山 : moss green */
+    --day5:#726A5E; /* 賦歸 : warm grey */
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Noto Serif TC', serif; margin:0; color:var(--ink);}
+  p{margin:0 0 1em 0;}
+  ::selection{background:var(--gold); color:var(--white);}
+
+  /* ============ layout shell ============ */
+  .shell{
+    display:grid;
+    grid-template-columns:236px 1fr;
+    min-height:100vh;
+  }
+  @media (max-width:880px){
+    .shell{grid-template-columns:1fr;}
+  }
+
+  /* ============ sidebar ============ */
+  .sidebar{
+    background:var(--kon);
+    color:#EAE3D2;
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    padding:28px 0 40px;
+    border-right:1px solid #0d151d;
+  }
+  @media (max-width:880px){
+    .sidebar{
+      position:relative; height:auto; padding:16px 0;
+      display:flex; flex-direction:column;
+    }
+  }
+  .brand{
+    padding:0 22px 22px;
+    border-bottom:1px solid var(--kon-line);
+    margin-bottom:10px;
+  }
+  .brand .kicker{
+    font-family:'Shippori Mincho', serif;
+    font-size:11px;
+    letter-spacing:.28em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:8px;
+  }
+  .brand h1{
+    color:#F7F1E1;
+    font-size:24px;
+    line-height:1.35;
+    font-weight:700;
+  }
+  .brand .dates{
+    display:block;
+    margin-top:10px;
+    font-size:12.5px;
+    color:#9FB1BF;
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:.03em;
+  }
+
+  nav.daynav{padding:6px 12px;}
+  @media (max-width:880px){
+    nav.daynav{
+      display:flex; overflow-x:auto; gap:8px; padding:10px 14px 6px;
+      -webkit-overflow-scrolling:touch;
+    }
+  }
+  .daynav button{
+    all:unset;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:100%;
+    padding:12px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    color:#C9D2D9;
+    transition:background .15s ease, color .15s ease;
+    border-left:3px solid transparent;
+  }
+  @media (max-width:880px){
+    .daynav button{width:auto; white-space:nowrap; margin-bottom:0; border-left:none; border-bottom:3px solid transparent;}
+  }
+  .daynav button:hover{background:var(--kon-light);}
+  .daynav button.active{
+    background:var(--kon-light);
+    color:#fff;
+    border-left-color:var(--dc, var(--gold));
+  }
+  @media (max-width:880px){
+    .daynav button.active{border-left-color:transparent; border-bottom-color:var(--dc, var(--gold));}
+  }
+  .daynav .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--dc, var(--gold));
+    flex:none;
+  }
+  .daynav .label{display:flex; flex-direction:column; gap:1px;}
+  .daynav .label .d{font-family:'Shippori Mincho', serif; font-size:13px; font-weight:700;}
+  .daynav .label .c{font-size:11px; color:#8C9AA6;}
+  .daynav button.active .label .c{color:#c7d3da;}
+
+  .sidebar-foot{
+    padding:22px 22px 0;
+    margin-top:16px;
+    border-top:1px solid var(--kon-line);
+    font-size:12px;
+    color:#8C9AA6;
+  }
+  @media (max-width:880px){.sidebar-foot{display:none;}}
+
+  /* ============ main ============ */
+  main{padding:0; max-width:100%;}
+  .page{display:none; animation:fadein .35s ease;}
+  .page.active{display:block;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .container{max-width:820px; margin:0 auto; padding:56px 28px 100px;}
+  @media (max-width:600px){.container{padding:36px 18px 80px;}}
+
+  /* ---- station sign header (signature element) ---- */
+  .station-sign{
+    background:var(--dc);
+    color:#fff;
+    border-radius:2px;
+    margin-bottom:40px;
+    overflow:hidden;
+    box-shadow:0 10px 30px -14px rgba(0,0,0,.35);
+  }
+  .station-sign .band{
+    height:8px;
+    background:repeating-linear-gradient(90deg, rgba(255,255,255,.9) 0 26px, transparent 26px 34px);
+    opacity:.85;
+  }
+  .station-sign .body{
+    padding:26px 30px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .station-sign .date-kicker{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    letter-spacing:.14em;
+    opacity:.85;
+    display:block;
+    margin-bottom:6px;
+  }
+  .station-sign h2{
+    color:#fff; font-size:34px; font-weight:900; letter-spacing:.02em;
+  }
+  .station-sign .stay{
+    text-align:right;
+    font-size:12.5px;
+    line-height:1.6;
+    opacity:.92;
+  }
+  .station-sign .stay b{font-family:'Shippori Mincho', serif; display:block; font-size:13px; letter-spacing:.06em;}
+  .station-sign .band.bottom{opacity:.5;}
+
+  .day-intro{
+    font-size:15.5px;
+    color:#3c362e;
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-left:4px solid var(--dc);
+    padding:20px 24px;
+    border-radius:2px;
+    margin-bottom:44px;
+  }
+  .day-intro p:last-child{margin-bottom:0;}
+
+  /* ---- timeline ---- */
+  .timeline{position:relative; padding-left:0;}
+  .stop{
+    display:grid;
+    grid-template-columns:74px 20px 1fr;
+    column-gap:6px;
+    position:relative;
+  }
+  @media (max-width:560px){
+    .stop{grid-template-columns:58px 16px 1fr;}
+  }
+  .stop::before{
+    content:"";
+    position:absolute;
+    left:calc(74px + 9px);
+    top:6px; bottom:-30px;
+    width:1px;
+    background:var(--hairline);
+  }
+  @media (max-width:560px){.stop::before{left:calc(58px + 7px);}}
+  .stop:last-child::before{display:none;}
+
+  .stop-time{
+    padding-top:2px;
+    text-align:right;
+    font-family:'Shippori Mincho', serif;
+  }
+  .stop-time .t{display:block; font-size:16px; font-weight:700; color:var(--dc); line-height:1.3;}
+  .stop-time .t2{display:block; font-size:11px; color:var(--ink-soft);}
+
+  .stop-rail{display:flex; justify-content:center;}
+  .stop-dot{
+    width:11px; height:11px; border-radius:50%;
+    background:var(--paper);
+    border:2.5px solid var(--dc);
+    margin-top:5px;
+  }
+  .stop-dot.hollow{background:var(--paper); border-style:dashed;}
+
+  .stop-content{padding:0 0 34px 6px;}
+  .stop-content h3{font-size:19px; font-weight:700; margin-bottom:6px; letter-spacing:.01em;}
+  .stop-content .stop-sub{font-size:12.5px; color:var(--ink-soft); font-family:'Shippori Mincho', serif; margin:-2px 0 8px;}
+  .stop-desc{font-size:15px; color:#3c362e; margin-bottom:10px;}
+  .stop-desc:last-child{margin-bottom:0;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .tag{
+    font-size:11.5px;
+    padding:3px 10px;
+    border-radius:20px;
+    border:1px solid transparent;
+    font-family:'Noto Sans TC', sans-serif;
+    letter-spacing:.02em;
+  }
+  .tag.transport{background:#E7EEF2; color:#345066;}
+  .tag.food{background:#F7EBCB; color:#7A5A16;}
+  .tag.sight{background:#F0E4E1; color:#7C3A2E;}
+  .tag.shop{background:#E7EFDD; color:#3F5C2A;}
+  .tag.optional{background:transparent; border-color:var(--hairline); color:var(--ink-soft); border-style:dashed;}
+
+  /* ---- history capsule ---- */
+  details.capsule{
+    margin-top:14px;
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-radius:2px;
+    padding:0;
+  }
+  details.capsule summary{
+    cursor:pointer;
+    list-style:none;
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:14.5px;
+    color:#3c362e;
+  }
+  details.capsule summary::-webkit-details-marker{display:none;}
+  details.capsule summary::after{
+    content:"＋";
+    margin-left:auto;
+    font-family:'Shippori Mincho', serif;
+    color:var(--dc, var(--vermillion));
+    font-size:16px;
+  }
+  details.capsule[open] summary::after{content:"－";}
+  .seal{
+    flex:none;
+    width:24px; height:24px;
+    border-radius:50%;
+    border:1.4px solid var(--vermillion);
+    color:var(--vermillion);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif TC', serif;
+    font-size:12px;
+    font-weight:900;
+  }
+  details.capsule .capsule-body{
+    padding:0 18px 18px 50px;
+    font-size:14.5px;
+    color:#453f36;
+  }
+  details.capsule .capsule-body p{margin-bottom:.9em;}
+  details.capsule .capsule-body p:last-child{margin-bottom:0;}
+
+  /* ---- info box / callout ---- */
+  .callout{
+    background:var(--paper-deep);
+    border:1px solid var(--hairline);
+    border-radius:2px;
+    padding:18px 20px;
+    margin:18px 0 34px 0;
+    font-size:14.5px;
+  }
+  .callout .callout-title{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:14.5px;
+    color:var(--dc, var(--ink));
+    display:block;
+    margin-bottom:8px;
+  }
+  .callout ul{margin:0; padding-left:1.15em;}
+  .callout li{margin-bottom:5px;}
+  .callout li:last-child{margin-bottom:0;}
+
+  .foodgrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px,1fr));
+    gap:10px;
+    margin:18px 0 36px;
+  }
+  .fooditem{
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-top:3px solid var(--dc);
+    padding:12px 14px;
+    border-radius:2px;
+    font-size:13.5px;
+  }
+  .fooditem b{display:block; font-family:'Noto Serif TC', serif; font-size:14.5px; margin-bottom:3px;}
+
+  .section-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    letter-spacing:.22em;
+    color:var(--dc, var(--vermillion));
+    display:block;
+    margin:48px 0 14px;
+  }
+  .section-label.first{margin-top:0;}
+
+  hr.rule{border:none; border-top:1px solid var(--hairline); margin:44px 0;}
+
+  /* ---- overview page ---- */
+  .hero{
+    padding:70px 28px 40px;
+    text-align:center;
+    background:radial-gradient(ellipse at 50% -10%, #2A3B4C 0%, var(--kon) 55%);
+    color:#F5EFE1;
+  }
+  .hero .kicker{
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:.35em;
+    font-size:12px;
+    color:var(--gold);
+    display:block;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:44px;
+    color:#fff;
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:16px;
+  }
+  @media (max-width:600px){.hero h1{font-size:32px;}}
+  .hero p.lead{
+    max-width:520px;
+    margin:0 auto;
+    color:#C9D2D9;
+    font-size:15px;
+  }
+
+  table.overview{
+    width:100%;
+    border-collapse:collapse;
+    margin:28px 0 40px;
+    font-size:14px;
+  }
+  table.overview th, table.overview td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid var(--hairline);
+    vertical-align:top;
+  }
+  table.overview thead th{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    color:var(--ink-soft);
+    font-size:12px;
+    letter-spacing:.08em;
+    border-bottom:2px solid var(--ink);
+  }
+  table.overview td.day-cell{white-space:nowrap; font-weight:700;}
+  table.overview tr td:first-child{border-left:3px solid var(--rowcolor, var(--hairline));}
+
+  .thesis-line{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin:36px 0 8px;
+  }
+  @media (max-width:700px){.thesis-line{grid-template-columns:repeat(2,1fr);}}
+  .thesis-item{
+    border-top:3px solid var(--tc);
+    padding-top:10px;
+  }
+  .thesis-item .city{font-family:'Noto Serif TC', serif; font-weight:700; font-size:15px; margin-bottom:3px;}
+  .thesis-item .theme{font-size:12.5px; color:var(--ink-soft);}
+
+  footer.pagefoot{
+    text-align:center; font-size:12px; color:var(--ink-soft);
+    padding:30px 20px 60px;
+  }
+
+  /* ---- flight / hotel / wishlist cards (overview page) ---- */
+  .flightgrid, .hotelgrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin:18px 0 40px;
+  }
+  @media (max-width:640px){.flightgrid, .hotelgrid{grid-template-columns:1fr;}}
+
+  .flightcard, .hotelcard{
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:20px 22px;
+    position:relative;
+  }
+  .flightcard-label, .hotelcard-tag{
+    display:inline-block;
+    font-family:'Shippori Mincho', serif;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:2px 10px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .flightcard-route{font-size:13.5px; color:var(--ink-soft); margin-bottom:4px;}
+  .flightcard-no{font-family:'Noto Serif TC', serif; font-weight:700; font-size:17px; margin-bottom:12px;}
+  .flightcard-time{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px; color:var(--ink-soft);
+    display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+  .flightcard-time b{font-size:22px; color:var(--ink); font-weight:700;}
+  .flightcard-meta{font-size:12.5px; color:var(--ink-soft); margin-bottom:14px;}
+  .flightcard-link, .hotelcard-link{
+    display:inline-block;
+    font-size:13px;
+    color:var(--vermillion);
+    text-decoration:none;
+    border-bottom:1px solid currentColor;
+    padding-bottom:1px;
+  }
+  .flightcard-link:hover, .hotelcard-link:hover{opacity:.7;}
+
+  .hotelcard h4{font-size:18px; margin:2px 0 12px; line-height:1.4;}
+  .hotelcard-row{font-size:13.5px; margin-bottom:6px;}
+  .hotelcard-row b{font-family:'Noto Serif TC', serif; margin-right:8px; color:var(--ink-soft); font-weight:700;}
+  .hotelcard-row.addr{
+    font-size:12.5px; color:var(--ink-soft);
+    padding:10px 0 14px; margin-bottom:10px;
+    border-top:1px dashed var(--hairline);
+    border-bottom:1px dashed var(--hairline);
+  }
+
+  .wishgrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(96px,1fr));
+    gap:10px;
+    margin:14px 0 12px;
+  }
+  .wishitem{
+    text-align:center;
+    background:var(--white);
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    padding:10px 8px;
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+
+  /* mobile toggle */
+  .mobile-hint{display:none;}
+  @media (max-width:880px){
+    .mobile-hint{
+      display:block; font-size:11px; color:#8C9AA6; padding:0 22px 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="kicker">KANSAI FIELD NOTES</span>
+      <h1>關西深度旅行手冊</h1>
+      <span class="dates">2026.07.30 → 2026.08.03</span>
+    </div>
+    <p class="mobile-hint">左右滑動切換日期 →</p>
+    <nav class="daynav" id="daynav">
+      <button data-target="overview" class="active" style="--dc:var(--gold)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">總覽</span><span class="c">行前速覽</span></span>
+      </button>
+      <button data-target="day1" style="--dc:var(--day1)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">7.30（四）</span><span class="c">大阪 → 奈良</span></span>
+      </button>
+      <button data-target="day2" style="--dc:var(--day2)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">7.31（五）</span><span class="c">神戶一日</span></span>
+      </button>
+      <button data-target="day3" style="--dc:var(--day3)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">8.1（六）</span><span class="c">大阪・採購日</span></span>
+      </button>
+      <button data-target="day4" style="--dc:var(--day4)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">8.2（日）</span><span class="c">和歌山</span></span>
+      </button>
+      <button data-target="day5" style="--dc:var(--day5)">
+        <span class="dot"></span>
+        <span class="label"><span class="d">8.3（一）</span><span class="c">賦歸</span></span>
+      </button>
+    </nav>
+    <div class="sidebar-foot">
+      這本手冊把行程細節與城市背景放在一起，出發前翻一翻，實地造訪時心裡會更有底。
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="page active" id="overview">
+      <div class="hero">
+        <span class="kicker">大阪　・　奈良　・　神戶　・　和歌山</span>
+        <h1>不只是走馬看花的<br>關西五日</h1>
+        <p class="lead">這本手冊把每一天的實際行程，和值得先知道的城市背景放在一起——出發前先讀懂「為什麼是這裡」，抵達時就能看見別人看不見的層次。</p>
+      </div>
+
+      <div class="container">
+        <span class="section-label first">行程總覽</span>
+        <table class="overview">
+          <thead>
+            <tr><th style="width:120px">日期</th><th>行程重點</th><th style="width:110px">住宿</th></tr>
+          </thead>
+          <tbody>
+            <tr style="--rowcolor:var(--day1)"><td class="day-cell">7/29（三）夜</td><td>新竹清大搭客運 → 桃園機場第一航廈</td><td>－</td></tr>
+            <tr style="--rowcolor:var(--day1)"><td class="day-cell">7/30（四）</td><td>飛抵關西機場 → 大阪難波 → 奈良一日（東大寺・春日大社・興福寺）→ 回大阪道頓堀</td><td>大阪</td></tr>
+            <tr style="--rowcolor:var(--day2)"><td class="day-cell">7/31（五）</td><td>神戶一日：日清杯麵博物館・北野異人館・神戶舊居留地・美利堅公園</td><td>大阪</td></tr>
+            <tr style="--rowcolor:var(--day3)"><td class="day-cell">8/1（六）</td><td>大阪採購日：天王寺動物園・新世界通天閣・阿倍野・海遊館・天保山</td><td>大阪</td></tr>
+            <tr style="--rowcolor:var(--day4)"><td class="day-cell">8/2（日）</td><td>移動至和歌山：和歌山城・黑潮市場・貴志川線貓站長・和歌山拉麵</td><td>和歌山</td></tr>
+            <tr style="--rowcolor:var(--day5)"><td class="day-cell">8/3（一）</td><td>和歌山 → 關西機場 → 賦歸</td><td>－</td></tr>
+          </tbody>
+        </table>
+
+        <span class="section-label">航班資訊</span>
+        <div class="flightgrid">
+          <div class="flightcard">
+            <span class="flightcard-label">去程</span>
+            <div class="flightcard-route">TPE 桃園機場 → KIX 關西機場</div>
+            <div class="flightcard-no">Jetstar Japan　GK50</div>
+            <div class="flightcard-time"><span>2026.07.30（四）</span><b>02:30</b>→<b>06:05</b></div>
+            <div class="flightcard-meta">桃園機場 T1 出發・關西機場 T1 抵達（機型 Airbus A320，時刻以航空公司公告為準）</div>
+            <a class="flightcard-link" href="https://www.flightaware.com/live/flight/JJP50" target="_blank" rel="noopener">查看即時航班動態 ↗</a>
+          </div>
+          <div class="flightcard">
+            <span class="flightcard-label">回程</span>
+            <div class="flightcard-route">KIX 關西機場 → TPE 桃園機場</div>
+            <div class="flightcard-no">Jetstar Japan　GK55</div>
+            <div class="flightcard-time"><span>2026.08.03（一）</span><b>15:20</b>→<b>17:20</b></div>
+            <div class="flightcard-meta">關西機場 T1 出發・桃園機場 T1 抵達（機型 Airbus A320，時刻以航空公司公告為準）</div>
+            <a class="flightcard-link" href="https://www.flightaware.com/live/flight/JJP55" target="_blank" rel="noopener">查看即時航班動態 ↗</a>
+          </div>
+        </div>
+
+        <span class="section-label">住宿資訊</span>
+        <div class="hotelgrid">
+          <div class="hotelcard">
+            <span class="hotelcard-tag">7/30 － 8/2　（3 晚）</span>
+            <h4>FDS ZEAL（FDS ジール）</h4>
+            <div class="hotelcard-row"><b>入住</b>2026/07/30（四）16:00 － 0:00</div>
+            <div class="hotelcard-row"><b>退房</b>2026/08/02（日）10:00 前</div>
+            <div class="hotelcard-row addr">2 Chome-9-23 Sakuragawa, Naniwa Ward, Osaka, 556-0022 Japan</div>
+            <a class="hotelcard-link" href="https://www.google.com/maps/search/?api=1&query=2+Chome-9-23+Sakuragawa%2C+Naniwa+Ward%2C+Osaka%2C+556-0022+Japan" target="_blank" rel="noopener">在 Google 地圖開啟 ↗</a>
+          </div>
+          <div class="hotelcard">
+            <span class="hotelcard-tag">8/2 － 8/3　（1 晚）</span>
+            <h4>Toyoko Inn JR 和歌山站東口</h4>
+            <div class="hotelcard-row"><b>入住</b>2026/08/02（日）15:00 起</div>
+            <div class="hotelcard-row"><b>退房</b>2026/08/03（一）10:00 前</div>
+            <div class="hotelcard-row addr">2 Chome-1-7 Kuroda, Wakayama, 640-8341 Japan</div>
+            <a class="hotelcard-link" href="https://www.google.com/maps/search/?api=1&query=2+Chome-1-7+Kuroda%2C+Wakayama%2C+640-8341+Japan" target="_blank" rel="noopener">在 Google 地圖開啟 ↗</a>
+          </div>
+        </div>
+
+        <span class="section-label">美食許願清單</span>
+        <p>這趟行程記得幫自己留機會吃到：</p>
+        <div class="wishgrid">
+          <div class="wishitem">糰子</div>
+          <div class="wishitem">大阪燒</div>
+          <div class="wishitem">炸串</div>
+          <div class="wishitem">咖哩飯</div>
+          <div class="wishitem">天婦羅</div>
+          <div class="wishitem">燒肉</div>
+          <div class="wishitem">壽司</div>
+          <div class="wishitem">定食</div>
+        </div>
+        <p style="font-size:13.5px;color:var(--ink-soft)">新世界的串カツ（炸串）與大阪燒已排進大阪採購日的行程；其餘幾項可以視每天用餐彈性，在商店街、車站周邊或晚餐時段順手安排——奈良、大阪的商店街幾乎都能找到糰子與定食，壽司則可留意迴轉壽司店或奈良的柿葉壽司。</p>
+
+        <span class="section-label">四座城市，四段歷史</span>
+        <p>這趟行程剛好串起一條清楚的時間線：奈良代表「宗教立國」，大阪代表「商人經濟」，神戶代表「開國西化」，和歌山代表「幕府統治」。建議每天出發前，先花幾分鐘重讀當天分頁最前面的城市背景，把「今天要去的地方，在歷史上扮演什麼角色」放進腦中，實地走訪時，眼前的建築、店家、甚至一碗拉麵，都會多一層意義。</p>
+
+        <div class="thesis-line">
+          <div class="thesis-item" style="--tc:var(--day1)">
+            <div class="city">奈良（710－784）</div>
+            <div class="theme">日本第一個首都<br>佛教與皇權結合的起點</div>
+          </div>
+          <div class="thesis-item" style="--tc:var(--day3)">
+            <div class="city">大阪（16－19世紀）</div>
+            <div class="theme">商人階級崛起<br>物流與經濟中心</div>
+          </div>
+          <div class="thesis-item" style="--tc:var(--day2)">
+            <div class="city">神戶（1868起）</div>
+            <div class="theme">鎖國結束<br>西方文明湧入的窗口</div>
+          </div>
+          <div class="thesis-item" style="--tc:var(--day4)">
+            <div class="city">和歌山（1619起）</div>
+            <div class="theme">德川御三家<br>鞏固西國統治的要地</div>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <span class="section-label">如何使用這本手冊</span>
+        <p>左側（手機版為上方橫向）選單依日期分頁，每一天都是一條完整的時間軸：時間、地點、交通方式一目瞭然。時間軸中標示「📖 深入認識」的方框可以點開，是與該地點相關的歷史背景小專欄——不想看可以完全跳過不影響行程閱讀，有興趣時點開就能多讀一層故事。美食與備選景點則另外用色塊整理在每天段落中。</p>
+      </div>
+    </section>
+
+    <!-- ================= DAY 1 : 大阪 → 奈良 ================= -->
+    <section class="page" id="day1" style="--dc:var(--day1)">
+      <div class="container">
+        <div class="station-sign">
+          <div class="band"></div>
+          <div class="body">
+            <div>
+              <span class="date-kicker">DAY 1 ／ 2026.07.30（四）</span>
+              <h2>大阪 → 奈良</h2>
+            </div>
+            <div class="stay"><b>住宿</b>大阪　FDS ZEAL FDS ジール</div>
+          </div>
+          <div class="band bottom"></div>
+        </div>
+
+        <div class="day-intro">
+          <p><b>奈良，是日本的搖籃。</b>西元 710 年，元明天皇仿唐朝長安城規劃「平城京」，奈良自此成為日本第一個真正意義上的首都，直到 784 年遷都為止，史稱「奈良時代」。這段時期最大的特徵，是佛教與皇權緊密結合——天皇透過大規模興建寺院祈求鎮護國家，也藉此鞏固統治正當性。今天會走訪的東大寺、興福寺、春日大社，正是這段歷史最直接的見證，三者連同周邊資產已被列為世界遺產「古都奈良的文化財」。</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">23:00</span><span class="t2">7/29 夜</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>新竹清大 搭客運 → 桃園機場第一航廈</h3>
+              <div class="tags"><span class="tag transport">交通</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">02:30</span><span class="t2">－06:05</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>飛往關西機場</h3>
+              <p class="stop-desc">航班資訊以實際機票為準。</p>
+              <div class="tags"><span class="tag transport">飛機</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">07:00</span><span class="t2">－08:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>關西機場 → 南海難波</h3>
+              <div class="tags"><span class="tag transport">南海電鐵</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">08:00</span><span class="t2">－09:30</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>大阪難波車站：寄放行李、吃早餐</h3>
+              <p class="stop-desc">黑貓宅急便 Yamato Transport Namba Station Center 寄放行李，輕裝展開一日奈良行。</p>
+              <div class="tags"><span class="tag transport">行李</span><span class="tag food">早餐</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">09:30</span><span class="t2">－10:30</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>大阪難波 → 近鐵奈良</h3>
+              <p class="stop-desc">建議先買「柿葉壽司本舖田中」，帶到奈良公園邊賞鹿邊吃。</p>
+              <div class="tags"><span class="tag transport">近鐵</span><span class="tag food">柿葉壽司本舖田中</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>柿葉壽司：沒有冰箱年代的保存智慧</summary>
+                <div class="capsule-body">
+                  <p>柿葉壽司是奈良山區的傳統作法：在沒有冰箱的年代，用柿葉包裹鯖魚、鮭魚壽司，柿葉本身具有天然殺菌效果，能延長保存時間，也讓壽司染上一股淡淡的葉香。這道菜看似樸素，其實是山區居民為了把海邊運來的魚保存久一點、吃得更久的生活智慧。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">10:30</span><span class="t2">－12:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>奈良公園周邊：興福寺・東大寺・春日大社・若草山</h3>
+              <p class="stop-desc">建議路線：從近鐵奈良站步行約 5 分鐘先到興福寺，再穿過鹿群聚集的奈良公園前往東大寺，最後走到春日大社；時間允許可望向若草山。</p>
+              <div class="tags"><span class="tag sight">世界遺產</span></div>
+
+              <details class="capsule">
+                <summary><span class="seal">史</span>興福寺：藤原家族的權力象徵</summary>
+                <div class="capsule-body">
+                  <p>興福寺創建於西元 669 年，710 年遷都平城京時由藤原不比等一併遷至此地，成為藤原家族的氏寺（家族專屬寺院）。藤原氏是奈良、平安時代掌握朝廷實權的最大外戚家族，興福寺的興衰幾乎與家族政治勢力同步起伏。</p>
+                  <p>寺內保存了全日本 17% 的國寶級佛教雕刻，其中最知名的是三面六臂、神情肅穆的「阿修羅像」。標誌性的五重塔由光明皇后於 730 年建立，歷經五次燒毀重建，現存塔身為室町時代（1426 年）所建，總高 50.1 公尺，是日本現存第二高的木塔。</p>
+                </div>
+              </details>
+
+              <details class="capsule">
+                <summary><span class="seal">史</span>東大寺與奈良大佛：世界最大的木造建築</summary>
+                <div class="capsule-body">
+                  <p>東大寺由聖武天皇於西元 8 世紀下令興建，是統轄全國「國分寺」體系中位階最高的總本山。大佛殿正面寬 57 公尺、深 50 公尺，至今仍是世界現存最大的木造建築。殿內供奉的盧舍那佛（奈良大佛）高約 15 公尺，是世界最大金銅佛像，右手掌心朝前表示「施予眾生力量」，左手掌心朝上象徵「回應眾生的心願」。</p>
+                  <p>聖武天皇之所以傾全國之力興建如此規模的大佛，背景其實與當時天災、饑荒與政治動盪頻繁有關——他希望透過佛法的力量安定人心、鞏固國家。</p>
+                </div>
+              </details>
+
+              <details class="capsule">
+                <summary><span class="seal">史</span>春日大社：藤原家族的守護神社</summary>
+                <div class="capsule-body">
+                  <p>春日大社創建於 768 年，同樣由藤原家族所建，目的是「鎮護平城京」並祈求家族繁榮——本殿供奉四柱神明，其中兩柱是藤原氏的氏神，另兩柱被視為家族的先祖神靈，等於是一座「政治世家的家廟」。神社每二十年會重新修築一次社殿（式年造替），最近一次於 2016 年完成，讓建築技藝與信仰精神代代相傳。</p>
+                </div>
+              </details>
+
+              <details class="capsule">
+                <summary><span class="seal">史</span>為什麼奈良公園到處都是鹿？</summary>
+                <div class="capsule-body">
+                  <p>這與春日大社的創建傳說直接相關：相傳武甕槌命當年騎著白鹿從鹿島來到奈良，因此鹿被視為神明的使者（神鹿），受到嚴格保護，千百年來與人共存，成為奈良公園最療癒也最具代表性的畫面。向遊客討食「鹿仙貝」的鹿群，其實承載著延續超過千年的信仰。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">12:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>午餐：東向商店街</h3>
+              <div class="tags"><span class="tag food">午餐</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">13:00</span><span class="t2">起</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>東向商店街 逛街 ／ 生駒山上遊樂園</h3>
+              <p class="stop-desc">東向商店街是連接近鐵奈良站與奈良公園之間最熱鬧的購物街，「東向」之名來自商店街面向東邊的興福寺而建。中谷堂的手打麻糬以師傅高速搗麻糬的表演聞名，是必看的排隊美食。</p>
+              <div class="tags"><span class="tag shop">逛街</span><span class="tag food">中谷堂麻糬</span><span class="tag food">大佛布丁</span><span class="tag optional">生駒山上遊樂園（備選）</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">16:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>回大阪難波：拿行李、Check-in</h3>
+              <div class="tags"><span class="tag transport">近鐵返回</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">17:30</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>道頓堀：唐吉訶德（donki）、Big Camera</h3>
+              <div class="tags"><span class="tag shop">購物</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>道頓堀的誇張看板，是大阪商人性格的延續</summary>
+                <div class="capsule-body">
+                  <p>大阪自豐臣秀吉築城起，就刻意招募商人定居，形成一座由商人、而非武士或貴族主導的城市。務實、直爽、不拘小節，重視實際利益勝過虛榮排場——這種商人性格延續至今，也讓大阪成為日本「漫才」文化的發源地，以及「食い倒れ」（為了吃不惜傾家蕩產）飲食文化的重鎮。道頓堀誇張醒目的看板與熱鬧氣氛，正是這種性格最直接的視覺表現。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="section-label">奈良必吃・必逛清單</span>
+        <div class="foodgrid">
+          <div class="fooditem"><b>柿葉壽司本舖田中</b>奈良公園野餐首選</div>
+          <div class="fooditem"><b>中谷堂麻糬</b>手打麻糬秀＋現吃</div>
+          <div class="fooditem"><b>大佛布丁</b>奈良代表性伴手禮</div>
+          <div class="fooditem"><b>Azekuraya</b>東向商店街周邊</div>
+          <div class="fooditem"><b>IKOMA GOURMET STAND</b>生駒山周邊美食</div>
+          <div class="fooditem"><b>奈良監獄</b>特色歷史建築（外觀參觀）</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DAY 2 : 神戶 ================= -->
+    <section class="page" id="day2" style="--dc:var(--day2)">
+      <div class="container">
+        <div class="station-sign">
+          <div class="band"></div>
+          <div class="body">
+            <div>
+              <span class="date-kicker">DAY 2 ／ 2026.07.31（五）</span>
+              <h2>神戶一日散策</h2>
+            </div>
+            <div class="stay"><b>住宿</b>大阪　FDS ZEAL FDS ジール</div>
+          </div>
+          <div class="band bottom"></div>
+        </div>
+
+        <div class="day-intro">
+          <p><b>神戶，是東洋最美的開港都市。</b>1868 年（慶應三年）「兵庫開港」是實質意義上的神戶開港，也是它躍上國際舞台的轉捩點。神戶背靠六甲山、面向大阪灣，與函館、橫濱、長崎並列日本四大異國風情港都——但神戶特別之處，在於它是唯一劃設「雜居地」（外國人與日本人混居區）的城市，這也是南京町（神戶中華街）的由來。今天會走過的異人館、舊居留地，正是這段「西風東漸」歷史最鮮明的舞台。</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">09:30</span><span class="t2">開門</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>日清杯麵博物館（大阪池田）</h3>
+              <p class="stop-desc">位於大阪池田市，安藤百福發明紀念館，可 DIY 客製化屬於自己的杯麵，開館後先去可避開人潮，再前往神戶市區。</p>
+              <div class="tags"><span class="tag sight">博物館</span><span class="tag optional">DIY 體驗需現場排隊</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>一位台灣人，改變了全世界的飲食習慣</summary>
+                <div class="capsule-body">
+                  <p>安藤百福本名吳百福，1910 年出生於日治時期的台灣嘉義，自幼父母雙亡，由在台南經營布料批發的祖父撫養長大。22 歲時他在台北創立針織品貿易公司，二戰後前往日本發展，卻在事業擴展過程中一度破產，47 歲幾乎身無分文。</p>
+                  <p>為了解決日本戰後的糧食短缺問題，他投入速食麵研發，1958 年發明世界第一款泡麵「雞湯拉麵」。13 年後的 1971 年，已 61 歲的他受到美國超市採購人員把泡麵剝半裝進紙杯加熱水吃的畫面啟發，經過五年試驗發明「杯麵」，讓泡麵徹底跨越各國飲食習慣的差異。他並未壟斷專利，而是廣泛授權其他廠商，這個決定反而催生出龐大的全球泡麵市場。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">午餐</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>池田 或 神戶（三宮 / 元町站）</h3>
+              <p class="stop-desc">元町：元祖餃子苑——神戶元町一帶的知名老店，將煎餃文化在地化，是當地人也熱愛的排隊名店。</p>
+              <div class="tags"><span class="tag food">元祖餃子苑</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">14:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>北野異人館街</h3>
+              <p class="stop-desc">風見雞館、星巴克 神戶北野異人館店、北野章魚燒。</p>
+              <div class="tags"><span class="tag sight">風見雞館</span><span class="tag sight">星巴克北野異人館店</span><span class="tag food">北野章魚燒</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>三百棟洋房，如今只剩三十</summary>
+                <div class="capsule-body">
+                  <p>「異人」是當時神戶市民對這群樣貌迥異的西方人的稱呼——畢竟在鎖國兩百多年後，多數日本庶民從未近距離見過金髮碧眼的外國人。北野町被劃為外國人居留地後，來自各國的商人（多半身居要職、經濟寬裕）紛紛聘請專屬建築師蓋起風格各異的洋房。鼎盛時期北野一帶曾有超過三百棟異人住宅，如今只留存三十餘棟，部分作為博物館開放，部分登錄為文化財並轉租給企業使用——像是保留原始木造樓梯與起居空間的星巴克北野異人館店，就是其中一棟。</p>
+                  <p>風見雞館是德國貿易商托馬斯的宅邸，屋頂上的風向雞裝飾使它成為地標，與同樣熱門的「萌黃之館」皆已被指定為日本國家重要文化財。1995 年阪神大地震曾讓不少異人館建築嚴重受損，之後陸續修復重建，才有今天完整的異人館街景。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">15:30</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>神戶舊居留地</h3>
+              <p class="stop-desc">神戶大空襲機槍掃射彈痕、神戶市立博物館。</p>
+              <div class="tags"><span class="tag sight">舊居留地</span><span class="tag sight">神戶市立博物館</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>外國人的辦公商業區，與一段戰爭記憶</summary>
+                <div class="capsule-body">
+                  <p>如果說北野異人館是外國人的「住宅區」，舊居留地就是他們的「辦公與商業區」。1858 年安政條約簽訂後，日本開放五個通商口岸，神戶舊居留地由英國工程師規劃成 126 塊西式街廓，曾被譽為「東方設計最精美的租界城市」。1899 年居留地歸還日本後，逐漸發展為商業金融中心。</p>
+                  <p>可惜二戰末期的神戶大空襲（1945 年 3 月 17 日與 6 月 5 日的兩次轟炸最為慘烈），讓舊居留地遭受嚴重破壞，現存西式建築僅剩約三成。這段歷史也是小說《螢火蟲之墓》的時代背景——描述一對兄妹在空襲中失去家園與母親，最終死於飢荒的故事，後由吉卜力工作室改編為動畫電影。牆面上刻意保留的機槍掃射彈痕，不只是歷史遺跡，更是這座城市對戰爭記憶的一種見證。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">傍晚</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>美利堅公園・神戶港塔・麵包超人購物商場・umie 臨海樂園</h3>
+              <div class="tags"><span class="tag sight">港區散策</span><span class="tag shop">umie</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">晚餐</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>umie 臨海樂園周遭</h3>
+              <div class="tags"><span class="tag food">晚餐</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">回大阪</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>返回大阪住宿</h3>
+              <div class="tags"><span class="tag transport">交通</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="section-label">備存方案（視時間彈性安排）</span>
+        <div class="callout">
+          <span class="callout-title">如果時間充裕 / 需要雨備</span>
+          <ul>
+            <li><b>明石海峽大橋</b> — 距離較遠，但是獨特的世界級景觀，時間不夠可留待下次。</li>
+            <li><b>atoa 劇場型水族館</b> — 適合作為下雨天備案。</li>
+          </ul>
+        </div>
+
+        <span class="section-label">神戶必吃清單</span>
+        <div class="foodgrid">
+          <div class="fooditem"><b>明石玉子燒</b>蛋液比例更高的章魚燒，沾昆布高湯食用</div>
+          <div class="fooditem"><b>御好燒（大阪燒）</b>戰後庶民智慧的粉食料理</div>
+          <div class="fooditem"><b>北野章魚燒</b>異人館周邊排隊小吃</div>
+          <div class="fooditem"><b>元祖餃子苑</b>元町在地排隊名店</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DAY 3 : 大阪採購 ================= -->
+    <section class="page" id="day3" style="--dc:var(--day3)">
+      <div class="container">
+        <div class="station-sign">
+          <div class="band"></div>
+          <div class="body">
+            <div>
+              <span class="date-kicker">DAY 3 ／ 2026.08.01（六）</span>
+              <h2>大阪・採購日</h2>
+            </div>
+            <div class="stay"><b>住宿</b>大阪　FDS ZEAL FDS ジール</div>
+          </div>
+          <div class="band bottom"></div>
+        </div>
+
+        <div class="day-intro">
+          <p><b>大阪，是天下的廚房。</b>1583 年豐臣秀吉築大坂城，刻意從堺、平野等商業城市招募商人定居，短時間讓人口暴增至二十多萬。江戶時代靠著水路運輸網絡，各地大名把年貢米與特產運到大阪販售換現金，再採購貨物運回領地——這套「先賣米、再買貨」的物流系統，讓大阪成為全日本貨物與資金的匯集地，也就是後世所稱的「天下の台所」。今天會走過的通天閣、新世界、天王寺、阿倍野，正好可以看到這座「商人城市」從昭和到現代的層層堆疊。</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">出發前先辦好</span>
+          <ul><li>購買「大阪周遊券」1 日券，今天景點多為周遊券可涵蓋範圍，可省下不少交通與門票費用。</li></ul>
+        </div>
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">08:00</span><span class="t2">左右</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>早餐：木津市場</h3>
+              <div class="tags"><span class="tag food">早餐</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">09:30</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>大阪市立天王寺動物園</h3>
+              <div class="tags"><span class="tag sight">動物園</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>跨越百年的市民記憶</summary>
+                <div class="capsule-body">
+                  <p>天王寺動物園開園已超過百年，是日本歷史最悠久的動物園之一，長期以來都是大阪市民週末休閒的重要場所，也見證了天王寺、阿倍野地區從博覽會會場逐步發展為今日商業區的過程。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">12:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>午餐：新世界商店街</h3>
+              <div class="tags"><span class="tag food">午餐</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>通天閣與新世界：庶民的遊樂園記憶</summary>
+                <div class="capsule-body">
+                  <p>新世界一帶的故事，起於 1903 年在天王寺舉辦的「第五回內國勸業博覽會」。博覽會結束後，會場一分為二：東半部成為天王寺公園，西半部則在 1912 年蓋起了第一代通天閣，塔的造型結合巴黎凱旋門與艾菲爾鐵塔的意象，一度是東洋最高建築。可惜第一代通天閣在 1943 年因大火波及拆除，直到 1956 年靠著地方居民「一定要把通天閣蓋回來」的心願，第二代通天閣才重新矗立，塔內供奉著象徵幸福之神的「Billiken 比利肯」。</p>
+                  <p>通天閣南側狹窄的「ジャンジャン橫丁」，因街上三味線與太鼓的伴奏聲「Jan-Jan」作響而得名，至今仍是串炸店與老式遊藝場林立的下町風景。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">午後</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>阿倍野區逛逛：通天閣・Abeno Harukas 近鐵百貨・阿倍野 Q's Mall</h3>
+              <div class="tags"><span class="tag sight">通天閣</span><span class="tag shop">Abeno Harukas</span><span class="tag shop">Q's Mall</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>阿倍野與 HARUKAS：大阪的天際線</summary>
+                <div class="capsule-body">
+                  <p>阿倍野 HARUKAS 是日本第一高樓，展望台可以遠眺神戶、明石海峽大橋，甚至京都塔——不妨站在這裡，回望前一天走過的神戶港灣。與充滿昭和氣息的新世界僅一街之隔，卻是截然不同的現代化景觀，正好體現大阪「新舊並存」的城市性格。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">17:00</span><span class="t2">前抵達</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>大阪港區：海遊館・聖瑪莉亞號・天保山大摩天輪</h3>
+              <div class="tags"><span class="tag sight">海遊館</span><span class="tag sight">天保山摩天輪</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>從工業港灣到親水樂園</summary>
+                <div class="capsule-body">
+                  <p>天保山、海遊館一帶原本是大阪重要的工業港口，近年逐步轉型為觀光休閒區域。事實上，大阪自古便因水路運輸而興盛，2001 年起更推動「水都大阪」再生計畫，積極整治河川水質、活化沿岸空間，天保山周邊的休閒化正是這股趨勢的延伸。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">晚餐</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>天保山購物中心</h3>
+              <div class="tags"><span class="tag food">晚餐</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">夜間</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>道頓堀水上觀光船</h3>
+              <p class="stop-desc">視現場座位狀況安排。</p>
+              <div class="tags"><span class="tag optional">視座位而定</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">宵夜</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>居酒屋（法善寺丁）</h3>
+              <div class="tags"><span class="tag food">宵夜</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="section-label">大阪燒，戰後庶民智慧的結晶</span>
+        <div class="callout">
+          <ul>
+            <li>大阪燒（關西風）把所有食材「混合」進麵糊裡一起煎；廣島燒則是把麵糊煎成薄餅後，將食材「一層層疊放」上去——下次吃的時候可以留意店家的手法，正是兩派最鮮明的差異。</li>
+            <li>這道菜的原型可追溯到安土桃山時代茶會點心「麩の焼」，真正演變成今日形式，是在二戰後物資匱乏年代，人們把手邊能取得的食材通通混進麵糊裡煎熟的生活智慧。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DAY 4 : 和歌山 ================= -->
+    <section class="page" id="day4" style="--dc:var(--day4)">
+      <div class="container">
+        <div class="station-sign">
+          <div class="band"></div>
+          <div class="body">
+            <div>
+              <span class="date-kicker">DAY 4 ／ 2026.08.02（日）</span>
+              <h2>移動至和歌山</h2>
+            </div>
+            <div class="stay"><b>住宿</b>Toyoko-Inn JR Wakayama-eki Higashi-guchi</div>
+          </div>
+          <div class="band bottom"></div>
+        </div>
+
+        <div class="day-intro">
+          <p><b>和歌山，是紀州德川家的城下町。</b>豐臣秀吉平定紀州後，命弟弟秀長於 1585 年築城；1619 年德川家康第十子賴宣入城，成為紀州藩（55 萬 5000 石）初代藩主。紀州藩是德川「御三家」之一（另兩家為尾張、水戶），地位特殊——江戶幕府第八代將軍德川吉宗，正是出身紀州藩。今天會看到的和歌山城，正是德川幕府鞏固西國統治的戰略象徵；而貴志川線的貓站長，則是另一段截然不同、關於地方鐵道如何靠一隻貓起死回生的當代故事。</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">上午</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>南海電鐵 → 和歌山</h3>
+              <div class="tags"><span class="tag transport">南海電鐵</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">抵達後</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>飯店放行李</h3>
+              <div class="tags"><span class="tag transport">Check-in 前寄放</span></div>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">上午</span><span class="t2">－中午</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>和歌山城</h3>
+              <div class="tags"><span class="tag sight">德川御三家</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>從豐臣到德川的西國要塞</summary>
+                <div class="capsule-body">
+                  <p>和歌山城的歷史可追溯至安土桃山時代：平定紀州地方後，豐臣秀吉命弟弟豐臣秀長於 1585 年開始築城，由築城名家藤堂高虎擔任總工程監督。1619 年，德川家康第十子德川賴宣以 18 歲之齡入城，並獲幕府賞賜大量銀兩進行大規模擴建，奠定紀州藩繁榮的根基。</p>
+                  <p>從天守閣眺望，可以看到紀之川出海口、紀淡海峽以及遠方的淡路島與四國——這正是德川幕府當年選擇讓賴宣坐鎮此地、扼守西國海路要衝的戰略考量。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">午餐</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>黑潮市場：鮪魚解體秀（11:00 ／ 12:30 ／ 15:00）</h3>
+              <p class="stop-desc">可配合場次時間安排午餐。</p>
+              <div class="tags"><span class="tag food">午餐</span><span class="tag sight">鮪魚解體秀</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>黑潮漁場養出的職人技藝</summary>
+                <div class="capsule-body">
+                  <p>黑潮市場緊鄰和歌山漁港，展現的是紀州半島自古以來仰賴黑潮漁場（親潮與黑潮交會處，漁業資源豐富）維生的產業文化。市場內定時舉行的鮪魚解體秀，不只是娛樂表演，更是漁港城市長期累積下來的專業職人技藝展示。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">下午</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>JR 和歌山站 9 號月台 → 購買「貴志川線一日券」→ 前往貴志車站</h3>
+              <div class="tags"><span class="tag transport">貴志川線一日券</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>一隻貓，救活一條鐵路的奇蹟</summary>
+                <div class="capsule-body">
+                  <p>貴志川線原本是連結沿線三座神社的「三社參り」交通路線，隨著時代演變一度面臨廢線危機。轉機出現在 2007 年 1 月 5 日——終點貴志站旁小店的看板貓「小玉（たま）」被正式任命為「貓站長」，憨萌形象迅速透過媒體傳遍日本內外，不僅帶動大量觀光人潮，更直接扭轉了這條瀕臨廢線鐵路的命運。</p>
+                  <p>小玉站長 2015 年過世後被奉為「名譽永久站長」，供奉於站內「玉神社」，被視為和歌山電鐵與地方公共交通的守護神；貓二世小玉Ⅱ世（暱稱二玉）接棒擔任站長至今。貴志站本身也改建為貓臉造型的獨特車站建築，屋頂採用傳統檜皮葺工法。如果幸運，還能遇上彩繪成草莓、梅花圖案的特色列車——這條原本可能被廢除的地方支線，如今已成為和歌山最具代表性的觀光名片。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="stop">
+            <div class="stop-time"><span class="t">晚餐</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>和歌山拉麵</h3>
+              <p class="stop-desc">候選店家：井出商店、山為食堂、マルイ（十二番丁店）、和 dining 清乃。</p>
+              <div class="tags"><span class="tag food">和歌山拉麵</span></div>
+              <details class="capsule">
+                <summary><span class="seal">史</span>醬油豚骨的在地流派</summary>
+                <div class="capsule-body">
+                  <p>和歌山拉麵是日本拉麵地圖上獨樹一格的流派，湯頭以醬油混合豚骨熬煮，分為「車庫系（清爽偏醬油）」與「井出系（濃郁偏豚骨）」兩大系統，據傳最初是碼頭工人與鐵路工人為了快速補充體力而發展出的庶民美食。當地人吃拉麵時還有一項特殊習慣——桌上會擺放水煮蛋、早壽司或鯖魚壽司，邊吃拉麵邊配著吃，是和歌山才有的獨特飲食風景。</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DAY 5 : 賦歸 ================= -->
+    <section class="page" id="day5" style="--dc:var(--day5)">
+      <div class="container">
+        <div class="station-sign">
+          <div class="band"></div>
+          <div class="body">
+            <div>
+              <span class="date-kicker">DAY 5 ／ 2026.08.03（一）</span>
+              <h2>賦歸</h2>
+            </div>
+            <div class="stay"><b>住宿</b>－</div>
+          </div>
+          <div class="band bottom"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="stop">
+            <div class="stop-time"><span class="t">12:00</span><span class="t2">－13:00</span></div>
+            <div class="stop-rail"><div class="stop-dot"></div></div>
+            <div class="stop-content">
+              <h3>和歌山 → 關西機場 T1</h3>
+              <div class="tags"><span class="tag transport">交通</span></div>
+            </div>
+          </div>
+          <div class="stop">
+            <div class="stop-time"><span class="t">15:20</span><span class="t2">－17:20</span></div>
+            <div class="stop-rail"><div class="stop-dot hollow"></div></div>
+            <div class="stop-content">
+              <h3>飛機賦歸</h3>
+              <p class="stop-desc">航班資訊以實際機票為準。</p>
+              <div class="tags"><span class="tag transport">飛機</span></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="rule">
+
+        <div class="day-intro" style="border-left-color:var(--gold);">
+          <p><b>回顧這五天：</b>從奈良的千年信仰，到大阪的商人精神，再到神戶的西風東漸，最後落腳和歌山的德川城下町——四座城市剛好各自代表日本歷史中「宗教立國」「經濟立國」「開國西化」「幕府統治」四個不同側面。希望這趟旅程走得比一般觀光客更深、更有感覺。旅途愉快，一路平安。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pagefoot">關西深度旅行手冊　私人行程規劃使用</footer>
+  </main>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('#daynav button');
+  const pages = document.querySelectorAll('.page');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      buttons.forEach(b => b.classList.remove('active'));
+      pages.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(target).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+      const mainScroll = document.querySelector('main');
+      if(mainScroll) mainScroll.scrollTop = 0;
+    });
+  });
+</script>
+
+</body>
+</html>
